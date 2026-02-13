@@ -21,9 +21,7 @@ export default function BookPage() {
             {t("description")}
           </p>
         </header>
-        <div className="rounded-xl border border-border bg-card p-4 shadow-sm md:p-6">
-          <RaceTicketEmbed />
-        </div>
+        <RaceTicketEmbed />
       </Container>
     </div>
   );
