@@ -1,0 +1,123 @@
+{
+  "languages": { "en": "English", "de": "Deutsch" },
+  "navbar": {
+    "fleet": "Fleet",
+    "trackdays": "Trackdays",
+    "aboutUs": "About Us",
+    "faq": "FAQ",
+    "giftVouchers": "Gift Vouchers",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "est": "EST. 2008",
+    "headlineLine1": "HEART OF",
+    "headlineLine2": "THE GREEN HELL.",
+    "description": "More than a rental company. We are a collective of Nordschleife enthusiasts dedicated to the pursuit of the perfect lap through heritage, precision, and safety.",
+    "bookExperience": "Book Your Experience",
+    "exploreFleet": "Explore the Fleet"
+  },
+  "book": {
+    "eyebrow": "Reserve",
+    "title": "Book your experience",
+    "description": "Select your date and vehicle below."
+  },
+  "visitGarage": {
+    "title": "Visit us",
+    "address": "Burgstraße 1 D-53520 Nürburg, Germany",
+    "getDirections": "Get directions"
+  },
+  "footer": {
+    "legal": "Legal",
+    "privacyPolicy": "Privacy policy",
+    "legalImprint": "Legal imprint",
+    "followUs": "Follow us",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "landline": "Landline",
+    "copyright": "All rights reserved."
+  },
+  "home": { "hello": "Hello World", "secondary": "Secondary" },
+  "trustStrip": {
+    "ariaLabel": "Key facts",
+    "stat1": { "value": "2008", "label": "Est." },
+    "stat2": { "value": "15+", "label": "Vehicles" },
+    "stat3": { "value": "Nürburgring", "label": "Our playground" },
+    "stat4": { "value": "100%", "label": "Track-ready" }
+  },
+  "fleet": {
+    "eyebrow": "The fleet",
+    "title": "Choose your beast",
+    "description": "Our fleet is meticulously maintained by track-specialized engineers to ensure peak performance for every lap.",
+    "prevLabel": "Previous",
+    "nextLabel": "Next",
+    "bookNow": "Book Now",
+    "specPower": "Power",
+    "specTopSpeed": "Top Speed",
+    "cars": {
+      "mini-cooper-s": {
+        "brand": "MINI",
+        "model": "Cooper S",
+        "tagline": "COMPACT THRILL"
+      },
+      "toyota-gr-yaris": {
+        "brand": "Toyota",
+        "model": "GR Yaris",
+        "tagline": "RALLY BRED"
+      },
+      "toyota-gr-supra": {
+        "brand": "Toyota",
+        "model": "GR Supra",
+        "tagline": "PURE SPORTS CAR"
+      },
+      "porsche-taycan-turbo-gt": {
+        "brand": "Porsche",
+        "model": "Taycan Turbo GT",
+        "tagline": "ELECTRIC RECORD SETTER"
+      },
+      "porsche-spyder-rs": {
+        "brand": "Porsche",
+        "model": "Spyder RS",
+        "tagline": "OPEN-TOP PRECISION"
+      },
+      "porsche-911-gt3-rs-992": {
+        "brand": "Porsche",
+        "model": "911 GT3 RS (992)",
+        "tagline": "THE TRACK MASTER"
+      },
+      "ferrari-296-gtb": {
+        "brand": "Ferrari",
+        "model": "296 GTB",
+        "tagline": "HYBRID SUPERCAR"
+      }
+    }
+  },
+  "whyRent4Ring": {
+    "heading": "Why Rent4Ring?",
+    "intro1": "At Rent4Ring, we take a genuine motorsport approach to every car in our fleet. Each vehicle is upgraded and modified in-house by experts and enthusiasts to ensure top-tier performance and reliability.",
+    "intro2": "We never cut corners. Forget cheap \"upgrades\" or budget components—our cars are equipped with the finest racing parts available:",
+    "closing": "With Rent4Ring, you're not just renting a car, you're renting a premium motorsport experience.",
+    "features": {
+      "brakes": {
+        "label": "HIGH FRICTION",
+        "title": "Brakes (Endless)",
+        "description": "We buy Endless racing pads for superior stopping power. Unmatched heat resistance and consistent bite for lap-after-lap precision."
+      },
+      "suspension": {
+        "label": "PRECISION TUNING",
+        "title": "Suspension (Öhlins)",
+        "description": "Custom engineered Öhlins DFV or TTX setups for precision handling, engineered alongside Nürburgring suspension experts 4RUO."
+      },
+      "tires": {
+        "label": "MECHANICAL GRIP",
+        "title": "Tires (Michelin / Yokohama)",
+        "description": "We prefer premium brands; most of our cars run Michelin and Yokohama track tires for maximum grip in every weather condition."
+      },
+      "safety": {
+        "label": "TOTAL PROTECTION",
+        "title": "Safety (Wiechers / Recaro)",
+        "description": "Full German-made Wiechers roll cages, Recaro seats, and Schroth 4-point harnesses for ultimate driver safety."
+      }
+    }
+  }
+}

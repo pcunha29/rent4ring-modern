@@ -1,0 +1,127 @@
+{
+  "languages": { "en": "Englisch", "de": "Deutsch" },
+  "navbar": {
+    "fleet": "Flotte",
+    "trackdays": "Trackdays",
+    "aboutUs": "Über uns",
+    "faq": "FAQ",
+    "giftVouchers": "Geschenkgutscheine",
+    "bookNow": "Jetzt buchen"
+  },
+  "hero": {
+    "est": "GEGR. 2008",
+    "headlineLine1": "HERZ DES",
+    "headlineLine2": "GRÜNEN HÖLLE.",
+    "description": "Mehr als ein Verleih. Wir sind eine Gemeinschaft von Nordschleifen-Enthusiasten, die durch Tradition, Präzision und Sicherheit den perfekten Rundenrekord verfolgen.",
+    "bookExperience": "Erlebnis buchen",
+    "exploreFleet": "Flotte entdecken"
+  },
+  "book": {
+    "eyebrow": "Reservierung",
+    "title": "Erlebnis buchen",
+    "description": "Wählen Sie unten Datum und Fahrzeug."
+  },
+  "visitGarage": {
+    "title": "Besuchen Sie uns",
+    "address": "Burgstraße 1 D-53520 Nürburg, Deutschland",
+    "getDirections": "Route planen"
+  },
+  "footer": {
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutz",
+    "legalImprint": "Impressum",
+    "followUs": "Folgen Sie uns",
+    "contact": "Kontakt",
+    "email": "E-Mail",
+    "phone": "Mobil",
+    "landline": "Festnetz",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "home": { "hello": "Hallo Welt", "secondary": "Sekundär" },
+  "trustStrip": {
+    "ariaLabel": "Kennzahlen",
+    "stat1": { "value": "2008", "label": "Gegr." },
+    "stat2": { "value": "15+", "label": "Fahrzeuge" },
+    "stat3": { "value": "Nürburgring", "label": "Unsere Strecke" },
+    "stat4": { "value": "100%", "label": "Streckenbereit" }
+  },
+  "fleet": {
+    "eyebrow": "Die Flotte",
+    "title": "Wähle deine Bestie",
+    "description": "Unsere Flotte wird von spezialisierten Rennsport-Ingenieuren gepflegt, um Höchstleistung bei jeder Runde zu gewährleisten.",
+    "prevLabel": "Zurück",
+    "nextLabel": "Weiter",
+    "bookNow": "Jetzt buchen",
+    "specPower": "Leistung",
+    "specTopSpeed": "Höchstgeschwindigkeit",
+    "badges": {
+      "inStock": "AUF LAGER",
+      "popular": "BELIEBT"
+    },
+    "cars": {
+      "mini-cooper-s": {
+        "brand": "MINI",
+        "model": "Cooper S",
+        "tagline": "KOMPAKTER THRILL"
+      },
+      "toyota-gr-yaris": {
+        "brand": "Toyota",
+        "model": "GR Yaris",
+        "tagline": "RALLYE-BLUT"
+      },
+      "toyota-gr-supra": {
+        "brand": "Toyota",
+        "model": "GR Supra",
+        "tagline": "REINER SPORTWAGEN"
+      },
+      "porsche-taycan-turbo-gt": {
+        "brand": "Porsche",
+        "model": "Taycan Turbo GT",
+        "tagline": "ELEKTRISCHER REKORDJÄGER"
+      },
+      "porsche-spyder-rs": {
+        "brand": "Porsche",
+        "model": "Spyder RS",
+        "tagline": "OFFENES PRÄZISIONSFAHRZEUG"
+      },
+      "porsche-911-gt3-rs-992": {
+        "brand": "Porsche",
+        "model": "911 GT3 RS (992)",
+        "tagline": "DER STRECKENMEISTER"
+      },
+      "ferrari-296-gtb": {
+        "brand": "Ferrari",
+        "model": "296 GTB",
+        "tagline": "HYBRID-SUPERSPORTWAGEN"
+      }
+    }
+  },
+  "whyRent4Ring": {
+    "heading": "Warum Rent4Ring?",
+    "intro1": "Bei Rent4Ring verfolgen wir einen echten Motorsport-Ansatz für jedes Fahrzeug in unserer Flotte. Jedes Auto wird von Experten und Enthusiasten in-house aufgerüstet und modifiziert, um höchste Leistung und Zuverlässigkeit zu gewährleisten.",
+    "intro2": "Wir machen keine Kompromisse. Vergessen Sie billige \"Upgrades\" oder Budget-Komponenten—unsere Fahrzeuge sind mit den besten Rennsport-Teilen ausgestattet:",
+    "closing": "Mit Rent4Ring mieten Sie nicht nur ein Auto, sondern ein Premium-Motorsport-Erlebnis.",
+    "features": {
+      "brakes": {
+        "label": "HOHE REIBUNG",
+        "title": "Bremsen (Endless)",
+        "description": "Wir setzen Endless-Rennbeläge für überlegenes Bremsvermögen ein. Unübertroffene Hitzebeständigkeit und konstanter Biss für Präzision Runde für Runde."
+      },
+      "suspension": {
+        "label": "PRÄZISIONSTUNING",
+        "title": "Federung (Öhlins)",
+        "description": "Maßgeschneiderte Öhlins DFV- oder TTX-Setups für präzises Handling, entwickelt mit den Nürburgring-Federexperten 4RUO."
+      },
+      "tires": {
+        "label": "MECHANISCHER GRIP",
+        "title": "Reifen (Michelin / Yokohama)",
+        "description": "Wir setzen auf Premium-Marken; die meisten unserer Autos fahren mit Michelin- und Yokohama-Rennreifen für maximalen Grip bei jedem Wetter."
+      },
+      "safety": {
+        "label": "VOLLER SCHUTZ",
+        "title": "Sicherheit (Wiechers / Recaro)",
+        "description": "Vollständige deutsche Wiechers-Rollkäfige, Recaro-Sitze und Schroth-4-Punkt-Gurte für maximale Fahrersicherheit."
+      }
+    }
+  }
+}
