@@ -9,7 +9,7 @@ export default function BookPage() {
 
   return (
     <div className="w-full pt-24 pb-16 md:pt-28 md:pb-24">
-      <Container className="max-w-4xl">
+      <Container>
         <header className="mb-10 text-center md:mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
             {t("eyebrow")}
