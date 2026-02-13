@@ -43,7 +43,7 @@ interface MotionPresetProps {
   ref?: React.Ref<HTMLDivElement | null>;
 }
 
-const motionComponents = motion as Record<string, React.ComponentType<any>>;
+const motionComponents = motion as unknown as Record<string, React.ComponentType<any>>;
 
 function MotionPreset({
   ref,
@@ -63,7 +63,10 @@ function MotionPreset({
 }: MotionPresetProps) {
   const localRef = React.useRef<HTMLDivElement>(null);
 
-  React.useImperativeHandle(ref, () => localRef.current);
+  React.useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(
+    ref,
+    () => localRef.current,
+  );
 
   const inViewResult = useInView(localRef, {
     once: inViewOnce,
