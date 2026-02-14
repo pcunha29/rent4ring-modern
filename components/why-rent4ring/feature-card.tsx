@@ -22,7 +22,7 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-xl bg-primary text-primary-foreground shadow-lg transition-transform duration-200",
+        "group relative flex flex-col overflow-hidden rounded-xl bg-primary text-primary-foreground shadow-lg transition-transform duration-200 h-full",
       )}
     >
       <div
