@@ -7,7 +7,7 @@ const WIDGET_CSS = "https://raceticket.de/widget/raceticket-widget.css";
 const WIDGET_JS = "https://raceticket.de/widget/raceticket-widget.js";
 const HOST_SLUG = "rent4ring";
 
-export function RaceTicketEmbed() {
+export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
   useEffect(() => {
     const id = "raceticket-widget-css";
     if (document.getElementById(id)) return;
@@ -27,20 +27,34 @@ export function RaceTicketEmbed() {
       (
         window as unknown as {
           RaceTicketWidget?: {
-            init: (opts: { container: string; hostSlug: string }) => void;
+            init: (opts: {
+              container: string;
+              hostSlug: string;
+              filterCarId?: number;
+              filterCarMode?: string;
+            }) => void;
           };
         }
       ).RaceTicketWidget
     ) {
+      console.log("filterCarId", filterCarId);
+      console.log("filterCarMode", filterCarId ? "preselect" : "");
       (
         window as unknown as {
           RaceTicketWidget: {
-            init: (opts: { container: string; hostSlug: string }) => void;
+            init: (opts: {
+              container: string;
+              hostSlug: string;
+              filterCarId?: number;
+              filterCarMode?: string;
+            }) => void;
           };
         }
       ).RaceTicketWidget.init({
         container: "#raceticket-widget",
         hostSlug: HOST_SLUG,
+        filterCarId: filterCarId || undefined,
+        filterCarMode: filterCarId ? "preselect" : "",
       });
     }
   };

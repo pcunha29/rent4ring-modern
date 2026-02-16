@@ -28,6 +28,7 @@ const FLEET_DATA: Record<
     specPower: string;
     specTopSpeed: string;
     imagePath: string;
+    carId: number;
   }
 > = {
   "mini-cooper-s": {
@@ -37,6 +38,7 @@ const FLEET_DATA: Record<
     specPower: "192 HP",
     specTopSpeed: "242 km/h",
     imagePath: "/vehicles/r4r-MINI-COOPER-S-rental-10.jpg",
+    carId: 44,
   },
   "toyota-gr-yaris": {
     priceFrom: 219,
@@ -45,6 +47,7 @@ const FLEET_DATA: Record<
     specPower: "261 HP",
     specTopSpeed: "230 km/h",
     imagePath: "/vehicles/r4r-yaris-97.jpeg",
+    carId: 44,
   },
   "toyota-gr-supra": {
     priceFrom: 249,
@@ -53,6 +56,7 @@ const FLEET_DATA: Record<
     specPower: "387 HP",
     specTopSpeed: "250 km/h",
     imagePath: "/vehicles/r4r-gr-supra-rental-11.jpg",
+    carId: 44,
   },
   "porsche-taycan-turbo-gt": {
     priceFrom: 299,
@@ -61,6 +65,7 @@ const FLEET_DATA: Record<
     specPower: "1,093 HP",
     specTopSpeed: "305 km/h",
     imagePath: "/vehicles/r4r-2.jpg",
+    carId: 44,
   },
   "porsche-spyder-rs": {
     priceFrom: 399,
@@ -69,6 +74,7 @@ const FLEET_DATA: Record<
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
     imagePath: "/vehicles/r4r-2.jpg",
+    carId: 44,
   },
   "porsche-911-gt3-rs-992": {
     priceFrom: 699,
@@ -77,6 +83,7 @@ const FLEET_DATA: Record<
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
     imagePath: "/vehicles/r4r-2.jpg",
+    carId: 44,
   },
   "ferrari-296-gtb": {
     priceFrom: 699,
@@ -85,6 +92,7 @@ const FLEET_DATA: Record<
     specPower: "830 HP",
     specTopSpeed: "330 km/h",
     imagePath: "/vehicles/r4r-2.jpg",
+    carId: 44,
   },
 };
 
@@ -241,7 +249,9 @@ export function FleetSlider() {
                     className="mt-5 w-full border-border font-semibold uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary"
                     asChild
                   >
-                    <Link href="/book">{t("bookNow")}</Link>
+                    <Link href={`/book?carId=${data.carId}`}>
+                      {t("bookNow")}
+                    </Link>
                   </Button>
                 </div>
               </article>

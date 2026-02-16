@@ -4,9 +4,15 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { RaceTicketEmbed } from "@/components/book/raceticket-embed";
+import { useSearchParams } from "next/navigation";
 
 export default function BookPage() {
   const t = useTranslations("book");
+
+  const searchParams = useSearchParams();
+  const carId = searchParams.get("carId")
+    ? parseInt(searchParams.get("carId")!)
+    : (undefined as number | undefined);
 
   return (
     <div className="w-full pb-16 md:pb-24">
@@ -46,7 +52,7 @@ export default function BookPage() {
 
       <Container className="mt-0 pt-0">
         <div className="rounded-xl bg-card p-4 md:p-6">
-          <RaceTicketEmbed />
+          <RaceTicketEmbed filterCarId={carId ?? undefined} />
         </div>
       </Container>
     </div>
