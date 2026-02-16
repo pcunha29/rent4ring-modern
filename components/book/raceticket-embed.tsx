@@ -54,7 +54,7 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
   };
 
   // When script is already loaded (e.g. after navigating back), init in useEffect.
-  // Unique containerId per mount so the widget binds to the new DOM node, not a cached detached one.
+  // Runs on mount and when filterCarId changes; containerId is stable per instance (useId).
   useEffect(() => {
     const widget = getWidget();
     if (!widget) return;
@@ -69,7 +69,6 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
       });
     });
     return () => cancelAnimationFrame(frame);
-    // containerId is stable per instance (useId); filterCarId may change via searchParams
   }, [containerId, filterCarId]);
 
   return (

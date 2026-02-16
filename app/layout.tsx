@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
 import { Inter, Nunito, Roboto_Mono } from "next/font/google";
+import { AnalyticsProvider } from "@/components/analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Analytics />
+      <AnalyticsProvider />
       <body
         className={`${inter.variable} ${nunito.variable} ${robotoMono.variable} antialiased`}
       >
