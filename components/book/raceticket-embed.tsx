@@ -48,8 +48,8 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
     widget.init({
       container: `#${containerId}`,
       hostSlug: HOST_SLUG,
-      filterCarId: filterCarId ?? undefined,
-      filterCarMode: filterCarId != null ? "preselect" : "",
+      filterCarId: 44,
+      filterCarMode: "preselect",
     });
   };
 
@@ -64,8 +64,8 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
       widget.init({
         container: `#${containerId}`,
         hostSlug: HOST_SLUG,
-        filterCarId: filterCarId ?? undefined,
-        filterCarMode: filterCarId != null ? "preselect" : "",
+        filterCarId: 44,
+        filterCarMode: "preselect",
       });
     });
     return () => cancelAnimationFrame(frame);
