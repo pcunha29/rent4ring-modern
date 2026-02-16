@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { RaceTicketEmbed } from "@/components/book/raceticket-embed";
-import { useSearchParams } from "next/navigation";
 
-export default function BookPage() {
+function BookPageContent() {
   const t = useTranslations("book");
-
   const searchParams = useSearchParams();
   const carId = searchParams.get("carId")
-    ? parseInt(searchParams.get("carId")!)
-    : (undefined as number | undefined);
+    ? parseInt(searchParams.get("carId")!, 10)
+    : undefined;
 
   return (
     <div className="w-full pb-16 md:pb-24">
@@ -37,7 +37,7 @@ export default function BookPage() {
         />
         <Container className="relative z-10 flex min-h-[280px] flex-col justify-center py-16 md:min-h-[320px] md:pb-20 pt-0">
           <header className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
               {t("eyebrow")}
             </p>
             <h1 className="mt-2 font-serif text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -56,5 +56,26 @@ export default function BookPage() {
         </div>
       </Container>
     </div>
+  );
+}
+
+function BookPageFallback() {
+  const t = useTranslations("book");
+  return (
+    <div className="w-full pb-16 md:pb-24 pt-24 md:pt-48">
+      <Container>
+        <div className="rounded-xl bg-card p-4 md:p-6 min-h-[480px] flex items-center justify-center">
+          <p className="text-muted-foreground">{t("title")}</p>
+        </div>
+      </Container>
+    </div>
+  );
+}
+
+export default function BookPage() {
+  return (
+    <Suspense fallback={<BookPageFallback />}>
+      <BookPageContent />
+    </Suspense>
   );
 }
