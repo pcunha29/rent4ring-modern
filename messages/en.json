@@ -45,6 +45,13 @@
     "stat3": { "value": "Nürburgring", "label": "Our playground" },
     "stat4": { "value": "100%", "label": "Track-ready" }
   },
+  "cookieConsent": {
+    "ariaLabel": "Cookie consent",
+    "message": "We use cookies to improve your experience and for analytics.",
+    "privacyLink": "Privacy policy",
+    "allow": "Allow all",
+    "decline": "Decline"
+  },
   "fleet": {
     "eyebrow": "The fleet",
     "title": "Choose your beast",

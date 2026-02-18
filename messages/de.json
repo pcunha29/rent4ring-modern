@@ -45,6 +45,13 @@
     "stat3": { "value": "Nürburgring", "label": "Unsere Strecke" },
     "stat4": { "value": "100%", "label": "Streckenbereit" }
   },
+  "cookieConsent": {
+    "ariaLabel": "Cookie-Einwilligung",
+    "message": "Wir verwenden Cookies für ein besseres Erlebnis und für Analysen.",
+    "privacyLink": "Datenschutz",
+    "allow": "Alle akzeptieren",
+    "decline": "Ablehnen"
+  },
   "fleet": {
     "eyebrow": "Die Flotte",
     "title": "Wähle deine Bestie",

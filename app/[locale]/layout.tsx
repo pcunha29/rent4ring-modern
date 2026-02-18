@@ -4,6 +4,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { LocaleLang } from "./LocaleLang";
+import { CookieConsent } from "@/components/cookie-consent";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 
@@ -33,6 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
       </div>
     </NextIntlClientProvider>
   );
