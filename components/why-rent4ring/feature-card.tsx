@@ -35,6 +35,8 @@ export function getFeatures(): readonly Feature[] {
 
 export default function FeatureCard({ feature }: { feature: Feature }) {
   const t = useTranslations("whyRent4Ring");
+  const gradient = feature.gradient;
+  const hasImage = "image" in feature && feature.image;
 
   return (
     <article
@@ -45,12 +47,11 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
       <div
         className={cn(
           "relative h-36 shrink-0 overflow-hidden sm:h-40",
-          !("image" in feature && feature.image) &&
-            cn("bg-linear-to-br", feature.gradient),
+          !hasImage && cn("bg-linear-to-br", gradient),
         )}
         aria-hidden
       >
-        {"image" in feature && feature.image && (
+        {hasImage && (
           <>
             <Image
               src={feature.image}
@@ -62,7 +63,7 @@ export default function FeatureCard({ feature }: { feature: Feature }) {
             <div
               className={cn(
                 "absolute inset-0 bg-linear-to-br opacity-80",
-                feature.gradient,
+                gradient,
               )}
               aria-hidden
             />
