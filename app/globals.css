@@ -246,8 +246,3 @@ body {
 .bento-card {
   transition: transform 0.25s ease-out;
 }
-
-/* RaceTicket embed – forced styling (overrides widget CSS) */
-[data-raceticket-container] .-rt-voucher-cta button {
-  color: white !important;
-}
