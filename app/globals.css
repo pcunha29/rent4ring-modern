@@ -246,3 +246,9 @@ body {
 .bento-card {
   transition: transform 0.25s ease-out;
 }
+
+
+.rt-widget-main .rt-voucher-cta button,
+.rt-steps-nav .rt-steps-nav__container nav ol li button {
+  color: white !important;
+}
