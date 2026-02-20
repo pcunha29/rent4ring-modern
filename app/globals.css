@@ -247,12 +247,40 @@ body {
   transition: transform 0.25s ease-out;
 }
 
-
-
+/* ================================================================ */
 /* Backup styles for RaceTicket embed, they only work 
 when applied to their custom css dasboard */
+/* ================================================================ */
 
-/* .rt-widget-main .rt-voucher-cta button,
+/* .rt-widget-main > div > div > button,
+.rt-widget-main .rt-voucher-cta button,
 .rt-steps-nav .rt-steps-nav__container nav ol li button {
   color: white !important;
-} */
+}
+.rt-widget-main .rt-section .rt-btn{
+  width: 150px;
+}
+.rt-widget-main .rt-rental-flow .rt-rental-step .rt-btn {
+  width: 125px;
+}
+
+.rt-widget-main .rt-rental-flow .rt-rental-step .rt-voucher-cta button{
+}
+
+.rt-widget-main .rt-rental-flow .rt-rental-step .rt-section .rt-grid .rt-car-card .rt-car-card__meta { 
+  display: none;
+}
+
+.rt-widget-main .rt-rental-flow .rt-rental-step .rt-section .rt-grid .rt-car-card .rt-car-card__header{
+  margin-bottom: 0;
+}
+
+.rt-widget-main .rt-rental-flow .rt-rental-step .rt-section .rt-stack .rt-grid .rt-package-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rt-widget-main form .rt-grid .rt-label .rt-phone-input{
+  color: #1e293b;
+}  */
