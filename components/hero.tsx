@@ -17,7 +17,7 @@ export function Hero() {
         alt=""
         fill
         priority
-        className="object-cover"
+        className="object-cover blur-[1px] md:blur-none"
         sizes="100vw"
       />
       {/* Overlay: darker on left for text readability */}

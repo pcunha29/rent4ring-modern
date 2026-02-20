@@ -261,12 +261,12 @@ export function FleetSlider() {
           </div>
           {/* Left-edge gradient mask */}
           <div
-            className="pointer-events-none absolute left-0 top-0 bottom-4 w-16 bg-linear-to-r from-muted to-transparent"
+            className="hidden md:block pointer-events-none absolute left-0 top-0 bottom-4 w-16 bg-linear-to-r from-muted to-transparent"
             aria-hidden
           />
           {/* Right-edge gradient mask */}
           <div
-            className="pointer-events-none absolute right-0 top-0 bottom-4 w-16 bg-linear-to-r from-transparent to-muted"
+            className="hidden md:block pointer-events-none absolute right-0 top-0 bottom-4 w-16 bg-linear-to-r from-transparent to-muted"
             aria-hidden
           />
         </div>
