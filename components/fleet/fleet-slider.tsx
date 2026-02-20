@@ -37,7 +37,7 @@ const FLEET_DATA: Record<
     spec0_100: "6.2s",
     specPower: "192 HP",
     specTopSpeed: "242 km/h",
-    imagePath: "/vehicles/r4r-MINI-COOPER-S-rental-10.jpg",
+    imagePath: "/vehicles/r4r-mini-cooper.jpg",
     carId: 44,
   },
   "toyota-gr-yaris": {
@@ -46,7 +46,7 @@ const FLEET_DATA: Record<
     spec0_100: "5.5s",
     specPower: "261 HP",
     specTopSpeed: "230 km/h",
-    imagePath: "/vehicles/r4r-yaris-97.jpeg",
+    imagePath: "/vehicles/r4r-yaris.jpg",
     carId: 44,
   },
   "toyota-gr-supra": {
@@ -55,7 +55,7 @@ const FLEET_DATA: Record<
     spec0_100: "4.3s",
     specPower: "387 HP",
     specTopSpeed: "250 km/h",
-    imagePath: "/vehicles/r4r-gr-supra-rental-11.jpg",
+    imagePath: "/vehicles/r4r-supra.jpg",
     carId: 44,
   },
   "porsche-taycan-turbo-gt": {
@@ -64,7 +64,7 @@ const FLEET_DATA: Record<
     spec0_100: "2.6s",
     specPower: "1,093 HP",
     specTopSpeed: "305 km/h",
-    imagePath: "/vehicles/r4r-2.jpg",
+    imagePath: "/vehicles/r4r-taycan.jpg",
     carId: 44,
   },
   "porsche-spyder-rs": {
@@ -73,7 +73,7 @@ const FLEET_DATA: Record<
     spec0_100: "3.2s",
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
-    imagePath: "/vehicles/r4r-2.jpg",
+    imagePath: "/vehicles/r4r-spyderRS.jpg",
     carId: 44,
   },
   "porsche-911-gt3-rs-992": {
@@ -82,7 +82,7 @@ const FLEET_DATA: Record<
     spec0_100: "3.2s",
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
-    imagePath: "/vehicles/r4r-2.jpg",
+    imagePath: "/vehicles/r4r-gt3rs.jpg",
     carId: 44,
   },
   "ferrari-296-gtb": {
@@ -91,7 +91,7 @@ const FLEET_DATA: Record<
     spec0_100: "2.9s",
     specPower: "830 HP",
     specTopSpeed: "330 km/h",
-    imagePath: "/vehicles/r4r-2.jpg",
+    imagePath: "/vehicles/r4r-296.jpg",
     carId: 44,
   },
 };
@@ -158,105 +158,117 @@ export function FleetSlider() {
           </div>
         </header>
 
-        <div
-          ref={scrollRef}
-          className={cn(
-            "flex gap-8 overflow-x-auto overflow-y-hidden pb-4",
-            "scroll-smooth snap-x snap-mandatory",
-            "[scrollbar-width:none] [-webkit-overflow-scrolling:touch]",
-            "[&::-webkit-scrollbar]:hidden",
-          )}
-        >
-          {FLEET_SLUGS.map((slug) => {
-            const data = FLEET_DATA[slug];
-            const brand = t(`cars.${slug}.brand`);
-            const model = t(`cars.${slug}.model`);
-            const tagline = t(`cars.${slug}.tagline`);
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className={cn(
+              "flex gap-8 overflow-x-auto overflow-y-hidden pb-4 ",
+              "scroll-smooth snap-x snap-mandatory",
+              "[scrollbar-width:none] [-webkit-overflow-scrolling:touch]",
+              "[&::-webkit-scrollbar]:hidden",
+            )}
+          >
+            {FLEET_SLUGS.map((slug) => {
+              const data = FLEET_DATA[slug];
+              const brand = t(`cars.${slug}.brand`);
+              const model = t(`cars.${slug}.model`);
+              const tagline = t(`cars.${slug}.tagline`);
 
-            return (
-              <article
-                key={slug}
-                className={cn(
-                  "group flex w-[min(100%,300px)] shrink-0 snap-start flex-col overflow-hidden rounded-xl bg-card shadow-lg transition-transform duration-200",
-                  "sm:w-[320px] md:w-[340px]",
-                  "hover:shadow-xl hover:-translate-y-0.5",
-                )}
-              >
-                <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
-                  <Image
-                    src={data.imagePath}
-                    alt=""
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                    sizes="(max-width: 640px) 300px, 340px"
-                  />
-                  <div
-                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    aria-hidden
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <div className="min-w-0 flex-1">
-                      <p className="font-serif text-sm font-semibold tracking-tight text-foreground sm:text-base">
-                        {brand}
-                      </p>
-                      <h3 className="mt-0.5 font-serif text-lg font-bold tracking-tight text-foreground sm:text-xl">
-                        {model}
-                      </h3>
-                      <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                        {tagline}
-                      </p>
-                    </div>
-                    <span className="shrink-0 text-right">
-                      <span className="font-semibold text-secondary">
-                        €{data.priceFrom}
-                      </span>
-                      <span className="text-sm font-medium text-muted-foreground">
-                        /lap
-                      </span>
-                    </span>
+              return (
+                <article
+                  key={slug}
+                  className={cn(
+                    "group flex w-[min(100%,300px)] shrink-0 snap-start flex-col overflow-hidden rounded-xl bg-card shadow-lg transition-transform duration-200",
+                    "sm:w-[320px] md:w-[340px]",
+                    "hover:shadow-xl hover:-translate-y-0.5",
+                  )}
+                >
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
+                    <Image
+                      src={data.imagePath}
+                      alt=""
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      sizes="(max-width: 640px) 300px, 340px"
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      aria-hidden
+                    />
                   </div>
-                  <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
-                    <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                        0-100
-                      </dt>
-                      <dd className="mt-0.5 font-semibold text-foreground">
-                        {data.spec0_100}
-                      </dd>
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <div className="min-w-0 flex-1">
+                        <p className="font-serif text-sm font-semibold tracking-tight text-foreground sm:text-base">
+                          {brand}
+                        </p>
+                        <h3 className="mt-0.5 font-serif text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                          {model}
+                        </h3>
+                        <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                          {tagline}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-right">
+                        <span className="font-semibold text-secondary">
+                          €{data.priceFrom}
+                        </span>
+                        <span className="text-sm font-medium text-muted-foreground">
+                          /lap
+                        </span>
+                      </span>
                     </div>
-                    <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                        {t("specPower")}
-                      </dt>
-                      <dd className="mt-0.5 font-semibold text-foreground">
-                        {data.specPower}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                        {t("specTopSpeed")}
-                      </dt>
-                      <dd className="mt-0.5 font-semibold text-foreground">
-                        {data.specTopSpeed}
-                      </dd>
-                    </div>
-                  </dl>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="mt-5 w-full border-border font-semibold uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                    asChild
-                  >
-                    <Link href={`/book?carId=${data.carId}`}>
-                      {t("bookNow")}
-                    </Link>
-                  </Button>
-                </div>
-              </article>
-            );
-          })}
+                    <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
+                      <div>
+                        <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                          0-100
+                        </dt>
+                        <dd className="mt-0.5 font-semibold text-foreground">
+                          {data.spec0_100}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                          {t("specPower")}
+                        </dt>
+                        <dd className="mt-0.5 font-semibold text-foreground">
+                          {data.specPower}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                          {t("specTopSpeed")}
+                        </dt>
+                        <dd className="mt-0.5 font-semibold text-foreground">
+                          {data.specTopSpeed}
+                        </dd>
+                      </div>
+                    </dl>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="mt-5 w-full border-border font-semibold uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                      asChild
+                    >
+                      <Link href={`/book?carId=${data.carId}`}>
+                        {t("bookNow")}
+                      </Link>
+                    </Button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          {/* Left-edge gradient mask */}
+          <div
+            className="pointer-events-none absolute left-0 top-0 bottom-4 w-16 bg-linear-to-r from-muted to-transparent"
+            aria-hidden
+          />
+          {/* Right-edge gradient mask */}
+          <div
+            className="pointer-events-none absolute right-0 top-0 bottom-4 w-16 bg-linear-to-r from-transparent to-muted"
+            aria-hidden
+          />
         </div>
       </Container>
     </section>

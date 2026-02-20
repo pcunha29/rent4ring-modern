@@ -18,7 +18,7 @@ const FEATURES = [
   {
     id: "tires",
     gradient: "from-stone-800 to-primary",
-    image: "/michelin.jpg",
+    image: "/yokohama.jpg",
   },
   {
     id: "safety",

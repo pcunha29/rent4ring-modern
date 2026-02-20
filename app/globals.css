@@ -248,7 +248,11 @@ body {
 }
 
 
-.rt-widget-main .rt-voucher-cta button,
+
+/* Backup styles for RaceTicket embed, they only work 
+when applied to their custom css dasboard */
+
+/* .rt-widget-main .rt-voucher-cta button,
 .rt-steps-nav .rt-steps-nav__container nav ol li button {
   color: white !important;
-}
+} */

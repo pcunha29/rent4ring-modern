@@ -11,7 +11,7 @@ export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-[85vh] w-full overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-[85vh] w-full overflow-hidden">
       <Image
         src="/vehicles/gt3rs-3.jpg"
         alt=""
@@ -29,7 +29,7 @@ export function Hero() {
       />
       <Container
         className={cn(
-          "relative z-10 flex min-h-[85vh] flex-col justify-center py-20",
+          "relative z-10 flex min-h-[60vh] flex-col items-center justify-center text-center md:min-h-[85vh] md:items-end md:text-right py-20",
         )}
       >
         <p
@@ -58,7 +58,7 @@ export function Hero() {
         >
           {t("description")}
         </p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap justify-end gap-4">
           <Button variant="default" size="lg" asChild>
             <Link href="/book">{t("bookExperience")}</Link>
           </Button>

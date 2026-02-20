@@ -9,7 +9,7 @@ const FEATURES = getFeatures();
 
 const BentoGrid = () => {
   return (
-    <section id="why-rent4ring" className="bg-muted py-8 sm:py-16 lg:py-24">
+    <section id="why-rent4ring" className="bg-muted py-8 sm:py-16">
       <Container>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <MotionPreset

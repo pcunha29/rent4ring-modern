@@ -20,10 +20,10 @@ export function VisitGarage() {
       aria-labelledby="visit-us-heading"
     >
       <Image
-        src="/bg_footer.png"
+        src="/r4r-welcome.jpg"
         alt=""
         fill
-        className="object-cover"
+        className="object-cover opacity-40 saturate-[0.6] blur-[2px]"
         sizes="100vw"
         priority={false}
       />
