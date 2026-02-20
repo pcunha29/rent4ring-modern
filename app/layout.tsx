@@ -20,7 +20,42 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Rent4Ring",
-  description: "Hello World",
+  description:
+    "Welcome to Rent4Ring - Premium Nürburgring Rental Cars for an Unforgettable Experience",
+  keywords: [
+    "Rent4Ring",
+    "Nürburgring",
+    "Rental Cars",
+    "Nordschleife",
+    "Nürburgring Nordschleife",
+    "Touristenfahrten",
+    "Touristenfahrt",
+    "Touristenfahrt Nürburgring",
+    "Track Days",
+    "Track Days Nürburgring",
+    "Track Days Germany",
+    "Track Days Europe",
+  ],
+  openGraph: {
+    title: "Rent4Ring",
+    description:
+      "Welcome to Rent4Ring - Premium Nürburgring Rental Cars for an Unforgettable Experience",
+    images: ["/r4r-welcome.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
+  alternates: {
+    canonical: "https://rent4ring.de",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
