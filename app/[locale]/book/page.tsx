@@ -17,7 +17,7 @@ function BookPageContent() {
   return (
     <div className="w-full pb-16 md:pb-24">
       {/* Header with background image and gentle fade into booking */}
-      <section className="relative min-h-[280px] w-full overflow-hidden pt-24 md:min-h-[320px] md:pt-48">
+      <section className="relative min-h-[250px] w-full overflow-hidden pt-24 md:pt-48">
         <Image
           src="/vehicles/r4r-gr-supra-book.jpg"
           alt=""
@@ -35,7 +35,7 @@ function BookPageContent() {
           }}
           aria-hidden
         />
-        <Container className="relative z-10 flex min-h-[280px] flex-col justify-center py-16 md:min-h-[320px] md:pb-20 pt-0">
+        <Container className="relative z-10 flex min-h-[250px] flex-col justify-center py-16 md:pb-20 pt-0">
           <header className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
               {t("eyebrow")}
