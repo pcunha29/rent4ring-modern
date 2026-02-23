@@ -38,7 +38,7 @@ const FLEET_DATA: Record<
     specPower: "192 HP",
     specTopSpeed: "242 km/h",
     imagePath: "/vehicles/r4r-mini-cooper.jpg",
-    carId: 44,
+    carId: 19,
   },
   "toyota-gr-yaris": {
     priceFrom: 219,
@@ -47,7 +47,7 @@ const FLEET_DATA: Record<
     specPower: "261 HP",
     specTopSpeed: "230 km/h",
     imagePath: "/vehicles/r4r-yaris.jpg",
-    carId: 44,
+    carId: 10,
   },
   "toyota-gr-supra": {
     priceFrom: 249,
@@ -56,7 +56,7 @@ const FLEET_DATA: Record<
     specPower: "387 HP",
     specTopSpeed: "250 km/h",
     imagePath: "/vehicles/r4r-supra.jpg",
-    carId: 44,
+    carId: 20,
   },
   "porsche-taycan-turbo-gt": {
     priceFrom: 299,
@@ -65,7 +65,7 @@ const FLEET_DATA: Record<
     specPower: "1,093 HP",
     specTopSpeed: "305 km/h",
     imagePath: "/vehicles/r4r-taycan.jpg",
-    carId: 44,
+    carId: 24,
   },
   "porsche-spyder-rs": {
     priceFrom: 399,
@@ -74,7 +74,7 @@ const FLEET_DATA: Record<
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
     imagePath: "/vehicles/r4r-spyderRS.jpg",
-    carId: 44,
+    carId: 22,
   },
   "porsche-911-gt3-rs-992": {
     priceFrom: 699,
@@ -83,7 +83,7 @@ const FLEET_DATA: Record<
     specPower: "525 HP",
     specTopSpeed: "296 km/h",
     imagePath: "/vehicles/r4r-gt3rs.jpg",
-    carId: 44,
+    carId: 21,
   },
   "ferrari-296-gtb": {
     priceFrom: 699,
@@ -92,7 +92,7 @@ const FLEET_DATA: Record<
     specPower: "830 HP",
     specTopSpeed: "330 km/h",
     imagePath: "/vehicles/r4r-296.jpg",
-    carId: 44,
+    carId: 23,
   },
 };
 

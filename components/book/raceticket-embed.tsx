@@ -10,7 +10,7 @@ const HOST_SLUG = "rent4ring";
 type WidgetInitOpts = {
   container: string;
   hostSlug: string;
-  filterCarId?: number;
+  filterCarGroupId?: number;
   filterCarMode?: string;
 };
 
@@ -23,7 +23,11 @@ function getWidget() {
   ).RaceTicketWidget;
 }
 
-export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
+export function RaceTicketEmbed({
+  filterCarGroupId,
+}: {
+  filterCarGroupId?: number;
+}) {
   const id = useId().replace(/:/g, "");
   const containerId = `raceticket-widget-${id}`;
 
@@ -48,13 +52,13 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
     widget.init({
       container: `#${containerId}`,
       hostSlug: HOST_SLUG,
-      filterCarId: filterCarId ?? undefined,
-      filterCarMode: filterCarId != null ? "preselect" : "",
+      filterCarGroupId: filterCarGroupId ?? undefined,
+      //filterCarMode: filterCarGroupId != null ? "preselect" : "",
     });
   };
 
   // When script is already loaded (e.g. after navigating back), init in useEffect.
-  // Runs on mount and when filterCarId changes; containerId is stable per instance (useId).
+  // Runs on mount and when filterCarGroupId changes; containerId is stable per instance (useId).
   useEffect(() => {
     const widget = getWidget();
     if (!widget) return;
@@ -64,12 +68,12 @@ export function RaceTicketEmbed({ filterCarId }: { filterCarId?: number }) {
       widget.init({
         container: `#${containerId}`,
         hostSlug: HOST_SLUG,
-        filterCarId: filterCarId ?? undefined,
-        filterCarMode: filterCarId != null ? "preselect" : "",
+        filterCarGroupId: filterCarGroupId ?? undefined,
+        //filterCarMode: filterCarGroupId != null ? "preselect" : "",
       });
     });
     return () => cancelAnimationFrame(frame);
-  }, [containerId, filterCarId]);
+  }, [containerId, filterCarGroupId]);
 
   return (
     <>
