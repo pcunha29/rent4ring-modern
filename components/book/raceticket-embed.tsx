@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId } from "react";
+import { useLocale } from "next-intl";
 import Script from "next/script";
 
 const WIDGET_CSS = "https://raceticket.de/widget/raceticket-widget.css";
@@ -10,6 +11,7 @@ const HOST_SLUG = "rent4ring";
 type WidgetInitOpts = {
   container: string;
   hostSlug: string;
+  locale?: "en" | "de";
   filterCarGroupId?: number;
   filterCarMode?: string;
 };
@@ -57,6 +59,7 @@ export function RaceTicketEmbed({
 }: {
   filterCarGroupId?: number;
 }) {
+  const locale = useLocale() as "en" | "de";
   const id = useId().replace(/:/g, "");
   const containerId = `raceticket-widget-${id}`;
 
@@ -81,6 +84,7 @@ export function RaceTicketEmbed({
     widget.init({
       container: `#${containerId}`,
       hostSlug: HOST_SLUG,
+      locale,
       filterCarGroupId: filterCarGroupId ?? undefined,
       //filterCarMode: filterCarGroupId != null ? "preselect" : "",
     });
@@ -97,6 +101,7 @@ export function RaceTicketEmbed({
       widget.init({
         container: `#${containerId}`,
         hostSlug: HOST_SLUG,
+        locale,
         filterCarGroupId: filterCarGroupId ?? undefined,
         //filterCarMode: filterCarGroupId != null ? "preselect" : "",
       });
@@ -107,7 +112,7 @@ export function RaceTicketEmbed({
       if (w && typeof w.destroy === "function") w.destroy();
       cleanupWidgetDOM();
     };
-  }, [containerId, filterCarGroupId]);
+  }, [containerId, filterCarGroupId, locale]);
 
   // Cleanup on unmount (e.g. when leaving the book page) – remove any widget UI left in body
   useEffect(() => {
