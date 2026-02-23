@@ -2,24 +2,54 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
+const spring = { type: "spring" as const, stiffness: 120, damping: 24 };
+const stagger = 0.08;
+
+const textVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { ...spring, delay: 0.15 + i * stagger },
+  }),
+};
+
 export function Hero() {
   const t = useTranslations("hero");
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.05]);
 
   return (
-    <section className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden">
-      <Image
-        src="/vehicles/gt3rs-3.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover blur-[1px] md:blur-none"
-        sizes="100vw"
-      />
+    <section
+      ref={sectionRef}
+      className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden"
+    >
+      <motion.div
+        style={{ y: imageY, scale: imageScale }}
+        className="absolute inset-0"
+      >
+        <Image
+          src="/vehicles/gt3rs-3.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover blur-[1px] md:blur-none"
+          sizes="100vw"
+        />
+      </motion.div>
       {/* Overlay: darker on left for text readability */}
       <div
         className={cn(
@@ -32,15 +62,23 @@ export function Hero() {
           "relative z-10 flex mt-8 md:mt-0 min-h-[65vh] flex-col items-center justify-center text-center md:min-h-[85vh] md:items-end md:text-right py-20",
         )}
       >
-        <p
+        <motion.p
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          custom={0}
           className={cn(
             "text-sm font-semibold uppercase tracking-[0.2em] text-secondary",
             "mb-4 sm:mb-5",
           )}
         >
           {t("est")}
-        </p>
-        <h1
+        </motion.p>
+        <motion.h1
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          custom={1}
           className={cn(
             "font-serif text-4xl font-bold leading-tight tracking-tight text-primary",
             "sm:text-5xl md:text-5xl lg:text-6xl",
@@ -49,23 +87,33 @@ export function Hero() {
         >
           <span className="block">{t("headlineLine1")}</span>
           <span className="block">{t("headlineLine2")}</span>
-        </h1>
-        <p
+        </motion.h1>
+        <motion.p
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          custom={2}
           className={cn(
             "max-w-xl text-base font-medium leading-relaxed text-black",
             "mb-8 md:mb-10 md:text-lg",
           )}
         >
           {t("description")}
-        </p>
-        <div className="flex flex-wrap justify-center md:justify-end gap-4">
+        </motion.p>
+        <motion.div
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          custom={3}
+          className="flex flex-wrap justify-center md:justify-end gap-4"
+        >
           <Button variant="default" size="lg" asChild>
             <Link href="/book">{t("bookExperience")}</Link>
           </Button>
           <Button variant="secondary" size="lg" asChild>
             <Link href="/#fleet">{t("exploreFleet")}</Link>
           </Button>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
