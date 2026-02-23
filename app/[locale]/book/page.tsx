@@ -19,7 +19,7 @@ function BookPageContent() {
       {/* Header with background image and gentle fade into booking */}
       <section className="relative min-h-[280px] w-full overflow-hidden pt-24 md:min-h-[320px] md:pt-48">
         <Image
-          src="/vehicles/r4r-gr-supra-rental-9.jpg"
+          src="/vehicles/r4r-gr-supra-book.jpg"
           alt=""
           fill
           className="object-cover saturate-[0.50] blur-xs"
