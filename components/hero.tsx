@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden"
+      className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden bg-muted"
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
