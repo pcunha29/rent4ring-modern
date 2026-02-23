@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -99,6 +99,34 @@ const FLEET_DATA: Record<
 export function FleetSlider() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("fleet");
+  const [scrollState, setScrollState] = useState({
+    canScrollLeft: false,
+    canScrollRight: true,
+  });
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollLeft = el.scrollLeft;
+    const threshold = 8;
+    setScrollState({
+      canScrollLeft: scrollLeft > threshold,
+      canScrollRight: scrollLeft < el.scrollWidth - el.clientWidth - threshold,
+    });
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    const ro = new ResizeObserver(updateScrollState);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      ro.disconnect();
+    };
+  }, [updateScrollState]);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -139,8 +167,14 @@ export function FleetSlider() {
               type="button"
               variant="ghost"
               size="icon"
-              className="size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary"
+              className={cn(
+                "size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
+                !scrollState.canScrollLeft &&
+                  "cursor-not-allowed opacity-50 hover:bg-transparent hover:text-foreground",
+              )}
               aria-label={t("prevLabel")}
+              aria-disabled={!scrollState.canScrollLeft}
+              disabled={!scrollState.canScrollLeft}
               onClick={() => scroll("left")}
             >
               <ChevronLeft className="size-5" />
@@ -149,8 +183,14 @@ export function FleetSlider() {
               type="button"
               variant="ghost"
               size="icon"
-              className="size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary"
+              className={cn(
+                "size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
+                !scrollState.canScrollRight &&
+                  "cursor-not-allowed opacity-50 hover:bg-transparent hover:text-foreground",
+              )}
               aria-label={t("nextLabel")}
+              aria-disabled={!scrollState.canScrollRight}
+              disabled={!scrollState.canScrollRight}
               onClick={() => scroll("right")}
             >
               <ChevronRight className="size-5" />

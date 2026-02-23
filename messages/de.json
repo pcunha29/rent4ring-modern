@@ -21,6 +21,14 @@
     "title": "Erlebnis buchen",
     "description": "Wählen Sie unten Datum und Fahrzeug."
   },
+  "notFound": {
+    "code": "404",
+    "eyebrow": "Falsche Abzweigung",
+    "title": "Du hast die Ideallinie verlassen.",
+    "description": "Diese Runde existiert nicht. Auch wir verfahren uns auf der Nordschleife mal. Zeit für einen Boxenstopp—zurück in die Box.",
+    "backHome": "Zurück auf die Strecke",
+    "bookExperience": "Erlebnis buchen"
+  },
   "visitGarage": {
     "title": "Besuchen Sie uns",
     "address": "Burgstraße 1 D-53520 Nürburg, Deutschland",

@@ -21,6 +21,14 @@
     "title": "Book your experience",
     "description": "Select your date and vehicle below."
   },
+  "notFound": {
+    "code": "404",
+    "eyebrow": "Wrong turn",
+    "title": "You left the racing line.",
+    "description": "This lap doesn't exist. Even we get lost at the Nordschleife sometimes. Time for a pit stop—head back to the garage.",
+    "backHome": "Back to the track",
+    "bookExperience": "Book Your Experience"
+  },
   "visitGarage": {
     "title": "Visit us",
     "address": "Burgstraße 1 D-53520 Nürburg, Germany",
