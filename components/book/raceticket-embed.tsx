@@ -18,9 +18,38 @@ function getWidget() {
   if (typeof window === "undefined") return undefined;
   return (
     window as unknown as {
-      RaceTicketWidget?: { init: (opts: WidgetInitOpts) => void };
+      RaceTicketWidget?: {
+        init: (opts: WidgetInitOpts) => void;
+        destroy?: () => void;
+      };
     }
   ).RaceTicketWidget;
+}
+
+/** Remove widget UI injected outside our container (e.g. subtotal bar in body) */
+function cleanupWidgetDOM() {
+  if (typeof document === "undefined") return;
+  // 1) Direct children of body with rt- class or raceticket id
+  const bodyChildren = Array.from(document.body.children);
+  bodyChildren.forEach((el) => {
+    const className = el.getAttribute("class") ?? "";
+    const id = el.getAttribute("id") ?? "";
+    const isRaceTicket =
+      className.includes("rt-") ||
+      id.startsWith("raceticket-") ||
+      id.includes("raceticket");
+    if (isRaceTicket) el.remove();
+  });
+  // 2) Any rt-subtotal / rt-summary / rt-bar tree (bar may be nested under a wrapper)
+  const barLike = document.querySelectorAll(
+    '[class*="rt-subtotal"], [class*="rt-summary"], [class*="rt-bar"], [class*="rt-sticky"]',
+  );
+  barLike.forEach((el) => {
+    let top: Element = el;
+    while (top.parentElement && top.parentElement !== document.body)
+      top = top.parentElement;
+    if (top.parentElement === document.body) top.remove();
+  });
 }
 
 export function RaceTicketEmbed({
@@ -72,8 +101,20 @@ export function RaceTicketEmbed({
         //filterCarMode: filterCarGroupId != null ? "preselect" : "",
       });
     });
-    return () => cancelAnimationFrame(frame);
+    return () => {
+      cancelAnimationFrame(frame);
+      const w = getWidget();
+      if (w && typeof w.destroy === "function") w.destroy();
+      cleanupWidgetDOM();
+    };
   }, [containerId, filterCarGroupId]);
+
+  // Cleanup on unmount (e.g. when leaving the book page) – remove any widget UI left in body
+  useEffect(() => {
+    return () => {
+      cleanupWidgetDOM();
+    };
+  }, []);
 
   return (
     <>
