@@ -52,7 +52,7 @@ function BookPageContent() {
 
       <Container className="mt-0 pt-0">
         <div className="rounded-xl bg-card p-4 md:p-6">
-          <RaceTicketEmbed filterCarId={carId ?? undefined} />
+          <RaceTicketEmbed filterCarGroupId={carId ?? undefined} />
         </div>
       </Container>
     </div>
