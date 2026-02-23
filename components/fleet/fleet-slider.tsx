@@ -259,14 +259,6 @@ export function FleetSlider() {
               );
             })}
           </div>
-          <div
-            className="hidden md:block pointer-events-none absolute left-0 top-0 bottom-4 w-16 bg-linear-to-r from-muted to-transparent"
-            aria-hidden
-          />
-          <div
-            className="hidden md:block pointer-events-none absolute right-0 top-0 bottom-4 w-16 bg-linear-to-r from-transparent to-muted"
-            aria-hidden
-          />
         </div>
       </Container>
     </section>
