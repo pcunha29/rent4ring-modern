@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+
+const MD_BREAKPOINT = 768;
 
 const spring = { type: "spring" as const, stiffness: 120, damping: 24 };
 const stagger = 0.08;
@@ -24,6 +26,14 @@ const textVariants = {
 export function Hero() {
   const t = useTranslations("hero");
   const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < MD_BREAKPOINT);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -37,19 +47,21 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden"
     >
-      <motion.div
-        style={{ y: imageY, scale: imageScale }}
-        className="absolute inset-0"
-      >
-        <Image
-          src="/vehicles/gt3rs-3.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover blur-[1px] md:blur-none"
-          sizes="100vw"
-        />
-      </motion.div>
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          style={{ y: isMobile ? 0 : imageY, scale: isMobile ? 1 : imageScale }}
+          className="absolute inset-0 will-change-transform"
+        >
+          <Image
+            src="/vehicles/gt3rs-3.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover blur-[1px] md:blur-none"
+            sizes="100vw"
+          />
+        </motion.div>
+      </div>
       {/* Overlay: darker on left for text readability */}
       <div
         className={cn(
