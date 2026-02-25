@@ -103,7 +103,6 @@ export function RaceTicketEmbed({
         hostSlug: HOST_SLUG,
         locale,
         filterCarGroupId: filterCarGroupId ?? undefined,
-        //filterCarMode: filterCarGroupId != null ? "preselect" : "",
       });
     });
     return () => {
