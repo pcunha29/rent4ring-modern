@@ -64,7 +64,7 @@ export default async function FleetDetailPage({ params }: Props) {
           alt={`${brand} ${model}`}
           fill
           priority
-          className="object-cover"
+          className="object-cover saturate-[0.50] blur-[2px]"
           sizes="100vw"
         />
         <div
