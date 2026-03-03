@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { BookingGateModal } from "@/components/booking-gate-modal";
 import { cn } from "@/lib/utils";
 
 const MD_BREAKPOINT = 768;
@@ -119,9 +120,13 @@ export function Hero() {
           custom={3}
           className="flex flex-wrap justify-center md:justify-end gap-4"
         >
-          <Button variant="default" size="lg" asChild>
-            <Link href="/book">{t("bookExperience")}</Link>
-          </Button>
+          <BookingGateModal
+            trigger={
+              <Button variant="default" size="lg">
+                {t("bookExperience")}
+              </Button>
+            }
+          />
           <Button variant="secondary" size="lg" asChild>
             <Link href="/#fleet">{t("exploreFleet")}</Link>
           </Button>

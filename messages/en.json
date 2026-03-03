@@ -187,6 +187,33 @@
       }
     }
   },
+  "bookingGate": {
+    "title": "Before You Book",
+    "subtitle": "Please confirm you meet the following requirements:",
+    "check1": "I understand I must be at least 21 years old",
+    "check2": "I understand I need a full and valid driving licence",
+    "check3": "I understand communication must be in English or German",
+    "check4": "I understand I need a credit card or cash to guarantee the deposit",
+    "check5": "I understand that if I do not fulfil these criteria on the day of my rental, my €100 pre-reservation fee is non-refundable",
+    "proceed": "Proceed to Booking",
+    "rentalConditions": "Rental Conditions",
+    "minAge": "Minimum age: 21 years",
+    "minExperience": "Minimum driving experience: 3 years",
+    "skillLevel": "Recommended skill level: Novice to Expert!",
+    "heightLimit": "Suitable for drivers up to approximately 195cm and 125kg",
+    "heightLimitNote": "Contact us if you are this size or larger",
+    "basicLiability": "Basic Liability",
+    "reducedLiability": "Reduced Liability",
+    "basicLiabilityNote": "Does not include guardrail, safety team, or recovery truck!",
+    "reducedLiabilityNote": "Costs extra. Please ask!",
+    "importantInfo": "Important Information",
+    "idRequired": "Personal ID / Passport required",
+    "licenceRequired": "Full and valid driving licence",
+    "treatAsOwn": "Treat it like your own car!",
+    "arriveEarly": "Please arrive at least 15 minutes before the start time of your booking. If you are delayed, contact us at least 15 minutes before. Otherwise we reserve the right to rent the car to someone else.",
+    "cancellationPolicy": "If you can't pick up the car or decide not to take it, please make the cancellation at least 2 days before the rental date!",
+    "fullDayPolicy": "For full-day openings we ask for a minimum booking of 4 laps. Drivers wanting fewer laps can walk-in on the day, or book a mid-week evening session."
+  },
   "whyRent4Ring": {
     "heading": "Why Rent4Ring?",
     "intro1": "At Rent4Ring, we take a genuine motorsport approach to every car in our fleet. Each vehicle is upgraded and modified in-house by experts and enthusiasts to ensure top-tier performance and reliability.",

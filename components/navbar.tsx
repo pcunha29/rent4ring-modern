@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { BookingGateModal } from "@/components/booking-gate-modal";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
@@ -69,16 +70,17 @@ export function Navbar() {
   );
 
   const bookNowButton = (
-    <Button
-      variant="secondary"
-      size="default"
-      className="transition-all duration-300 ease-out hover:opacity-90 active:scale-[0.98]"
-      asChild
-    >
-      <Link href="/book" onClick={() => setSheetOpen(false)}>
-        {t("bookNow")}
-      </Link>
-    </Button>
+    <BookingGateModal
+      trigger={
+        <Button
+          variant="secondary"
+          size="default"
+          className="transition-all duration-300 ease-out hover:opacity-90 active:scale-[0.98]"
+        >
+          {t("bookNow")}
+        </Button>
+      }
+    />
   );
 
   return (
@@ -183,15 +185,16 @@ export function Navbar() {
               <div className="mx-4 my-4 border-t border-border" />
               <div className="flex flex-col gap-3 px-4 pb-4">
                 {langSwitcher}
-                <Button
-                  variant="secondary"
-                  className={cn(transitionClasses, "active:scale-[0.98]")}
-                  asChild
-                >
-                  <Link href="/book" onClick={() => setSheetOpen(false)}>
-                    {t("bookNow")}
-                  </Link>
-                </Button>
+                <BookingGateModal
+                  trigger={
+                    <Button
+                      variant="secondary"
+                      className={cn(transitionClasses, "active:scale-[0.98]")}
+                    >
+                      {t("bookNow")}
+                    </Button>
+                  }
+                />
               </div>
             </SheetContent>
           </Sheet>

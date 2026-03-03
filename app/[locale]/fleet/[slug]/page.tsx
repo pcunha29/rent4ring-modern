@@ -2,9 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { PricingSection } from "./pricing-section";
 import { FLEET_SLUGS, FLEET_DATA, type FleetSlug } from "@/lib/fleet-data";
 
 export function generateStaticParams() {
@@ -37,6 +36,7 @@ export default async function FleetDetailPage({ params }: Props) {
 
   const t = await getTranslations({ locale, namespace: "fleet" });
   const d = await getTranslations({ locale, namespace: "fleet.detail" });
+  const rc = await getTranslations({ locale, namespace: "bookingGate" });
 
   const brand = t(`cars.${slug}.brand`);
   const model = t(`cars.${slug}.model`);
@@ -129,57 +129,70 @@ export default async function FleetDetailPage({ params }: Props) {
                 ))}
               </dl>
             </section>
+
+            {/* Rental Conditions */}
+            <section className="mt-10">
+              <h2 className="font-serif text-xl font-bold tracking-tight text-foreground md:text-2xl">
+                {rc("rentalConditions")}
+              </h2>
+              <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <ul className="space-y-1.5">
+                  <li>{rc("minAge")}</li>
+                  <li>{rc("minExperience")}</li>
+                  <li>{rc("skillLevel")}</li>
+                  <li>{rc("heightLimit")}</li>
+                </ul>
+
+                {vehicle.basicLiability !== null && (
+                  <div className="rounded-lg border border-border bg-muted/50 p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-foreground">
+                        {rc("basicLiability")}
+                      </span>
+                      <span className="font-semibold text-foreground">
+                        €{vehicle.basicLiability.toLocaleString()}*
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      *{rc("basicLiabilityNote")}
+                    </p>
+                    {vehicle.reducedLiability !== null && (
+                      <>
+                        <div className="mt-3 flex items-center justify-between">
+                          <span className="font-semibold text-foreground">
+                            {rc("reducedLiability")}
+                          </span>
+                          <span className="font-semibold text-foreground">
+                            €{vehicle.reducedLiability.toLocaleString()}
+                          </span>
+                        </div>
+                        <p className="mt-1 text-xs text-muted-foreground">
+                          {rc("reducedLiabilityNote")}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                )}
+
+                <div>
+                  <p className="font-semibold text-foreground">
+                    {rc("importantInfo")}
+                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    <li>{rc("idRequired")}</li>
+                    <li>{rc("licenceRequired")}</li>
+                    <li>{rc("treatAsOwn")}</li>
+                    <li>{rc("arriveEarly")}</li>
+                    <li>{rc("cancellationPolicy")}</li>
+                    <li>{rc("fullDayPolicy")}</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
           </div>
 
           {/* Right column — pricing packages */}
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <h2 className="font-serif text-xl font-bold tracking-tight text-foreground md:text-2xl">
-              {d("pricing")}
-            </h2>
-            <div className="mt-4 flex flex-col gap-4">
-              {vehicle.packages.map((pkg) => (
-                <div
-                  key={pkg.nameKey}
-                  className={`rounded-xl border bg-card p-5 ${
-                    pkg.featured
-                      ? "border-secondary shadow-lg"
-                      : "border-muted-foreground/10"
-                  }`}
-                >
-                  <h3 className="font-serif text-base font-bold text-foreground">
-                    {d(`packages.${pkg.nameKey}`)}
-                  </h3>
-                  <p className="mt-3 text-3xl font-bold text-foreground">
-                    € {pkg.firstLap},-
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {d("firstLap")}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {d(`packages.${pkg.descriptionKey}`)}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-                    <span className="text-sm text-muted-foreground">
-                      {d("additionalLap")}
-                    </span>
-                    <span className="text-sm font-semibold text-foreground">
-                      € {pkg.additionalLap},-
-                    </span>
-                  </div>
-                  <Button
-                    variant={pkg.featured ? "default" : "secondary"}
-                    size="sm"
-                    className="mt-4 w-full font-semibold uppercase"
-                    asChild
-                  >
-                    <Link href={`/book?carId=${vehicle.carId}`}>
-                      {d("bookNow")}: €{pkg.firstLap},-
-                    </Link>
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </aside>
+          <PricingSection packages={vehicle.packages} carId={vehicle.carId} />
         </div>
       </Container>
     </div>
