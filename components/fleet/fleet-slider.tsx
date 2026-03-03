@@ -8,93 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const FLEET_SLUGS = [
-  "mini-cooper-s",
-  "toyota-gr-yaris",
-  "toyota-gr-supra",
-  "porsche-taycan-turbo-gt",
-  "porsche-spyder-rs",
-  "porsche-911-gt3-rs-992",
-  "ferrari-296-gtb",
-] as const;
-
-const FLEET_DATA: Record<
-  (typeof FLEET_SLUGS)[number],
-  {
-    priceFrom: number;
-    vehicleCount: number;
-    spec0_100: string;
-    specPower: string;
-    specTopSpeed: string;
-    imagePath: string;
-    carId: number;
-  }
-> = {
-  "mini-cooper-s": {
-    priceFrom: 179,
-    vehicleCount: 8,
-    spec0_100: "6.2s",
-    specPower: "192 HP",
-    specTopSpeed: "242 km/h",
-    imagePath: "/vehicles/r4r-mini-cooper.jpg",
-    carId: 19,
-  },
-  "toyota-gr-yaris": {
-    priceFrom: 219,
-    vehicleCount: 8,
-    spec0_100: "5.5s",
-    specPower: "261 HP",
-    specTopSpeed: "230 km/h",
-    imagePath: "/vehicles/r4r-yaris.jpg",
-    carId: 10,
-  },
-  "toyota-gr-supra": {
-    priceFrom: 249,
-    vehicleCount: 6,
-    spec0_100: "4.3s",
-    specPower: "387 HP",
-    specTopSpeed: "250 km/h",
-    imagePath: "/vehicles/r4r-supra.jpg",
-    carId: 20,
-  },
-  "porsche-taycan-turbo-gt": {
-    priceFrom: 299,
-    vehicleCount: 1,
-    spec0_100: "2.6s",
-    specPower: "1,093 HP",
-    specTopSpeed: "305 km/h",
-    imagePath: "/vehicles/r4r-taycan.jpg",
-    carId: 24,
-  },
-  "porsche-spyder-rs": {
-    priceFrom: 399,
-    vehicleCount: 1,
-    spec0_100: "3.2s",
-    specPower: "525 HP",
-    specTopSpeed: "296 km/h",
-    imagePath: "/vehicles/r4r-spyderRS.jpg",
-    carId: 22,
-  },
-  "porsche-911-gt3-rs-992": {
-    priceFrom: 699,
-    vehicleCount: 1,
-    spec0_100: "3.2s",
-    specPower: "525 HP",
-    specTopSpeed: "296 km/h",
-    imagePath: "/vehicles/r4r-gt3rs.jpg",
-    carId: 21,
-  },
-  "ferrari-296-gtb": {
-    priceFrom: 699,
-    vehicleCount: 1,
-    spec0_100: "2.9s",
-    specPower: "830 HP",
-    specTopSpeed: "330 km/h",
-    imagePath: "/vehicles/r4r-296.jpg",
-    carId: 23,
-  },
-};
+import { FLEET_SLUGS, FLEET_DATA } from "@/lib/fleet-data";
 
 export function FleetSlider() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -218,11 +132,16 @@ export function FleetSlider() {
                 <article
                   key={slug}
                   className={cn(
-                    "group flex w-[min(100%,300px)] shrink-0 snap-start flex-col overflow-hidden rounded-xl bg-card shadow-lg transition-transform duration-200",
+                    "group relative flex w-[min(100%,300px)] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-muted-foreground/10 bg-card shadow-lg transition-transform duration-200",
                     "sm:w-[320px] md:w-[340px]",
                     "hover:shadow-xl hover:-translate-y-0.5",
                   )}
                 >
+                  <Link
+                    href={`/fleet/${slug}`}
+                    className="absolute inset-0 z-10"
+                    aria-label={`${brand} ${model} — ${t("viewMore")}`}
+                  />
                   <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
                     <Image
                       src={data.imagePath}
@@ -284,16 +203,9 @@ export function FleetSlider() {
                         </dd>
                       </div>
                     </dl>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      className="mt-5 w-full border-border font-semibold uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                      asChild
-                    >
-                      <Link href={`/book?carId=${data.carId}`}>
-                        {t("bookNow")}
-                      </Link>
-                    </Button>
+                    <span className="mt-5 inline-flex w-full items-center justify-center text-sm font-semibold uppercase text-muted-foreground underline underline-offset-4 transition-colors group-hover:text-foreground">
+                      {t("viewMore")}
+                    </span>
                   </div>
                 </article>
               );

@@ -69,41 +69,121 @@
     "bookNow": "Book Now",
     "specPower": "Power",
     "specTopSpeed": "Top Speed",
+    "viewMore": "View More",
+    "detail": {
+      "eyebrow": "Fleet",
+      "specManufacturer": "Manufacturer",
+      "specModel": "Model",
+      "specType": "Type",
+      "specEngine": "Engine",
+      "specTransmission": "Transmission",
+      "specPower": "Power",
+      "specWeight": "Weight",
+      "spec0_100": "0-100 km/h",
+      "specTopSpeed": "Top Speed",
+      "specifications": "Specifications",
+      "highlights": "Highlights",
+      "rentalConditions": "Rental Conditions",
+      "pricing": "Pricing",
+      "firstLap": "First Lap",
+      "additionalLap": "Additional lap",
+      "bookNowFor": "Book Now: €{price},-",
+      "bookNow": "Book Now",
+      "fromPrice": "From €{price},-",
+      "backToFleet": "Back to Fleet",
+      "packages": {
+        "arriveDrive": "Arrive & Drive",
+        "basic": "Basic Prices",
+        "arriveDriveDesc": "The \"Arrive and Drive\" package includes the first tank of fuel, and the use of our lap ticket. This saves you from refuelling at the end of your rental, and from queuing in line to buy your lap tickets.",
+        "basicDesc": "This only rents the car. Lap tickets and fuel are NOT included."
+      }
+    },
     "cars": {
       "mini-cooper-s": {
         "brand": "MINI",
         "model": "Cooper S",
-        "tagline": "COMPACT THRILL"
+        "tagline": "COMPACT THRILL",
+        "description": "The replacement for our Suzuki Swift Sport, the new MINI Cooper S offers a more powerful, more stable platform. Its paddle-shift DCT gearbox allows drivers to concentrate on the track ahead, while allowing faster, error-free, gear shifts.",
+        "feature1": "192hp - 2.0L 4-Cylinder Turbo",
+        "feature2": "7-speed DCT gearbox",
+        "feature3": "Stripped out and fitted with a full Wiechers rollcage, Recaro racing seats and Schroth harnesses",
+        "feature4": "Upgraded with our own custom Öhlins DFV suspension by 4RUO and uniball control arms from Forge Motorsports",
+        "feature5": "Lightweight, 17\" Preo-track alloys with Ultra High Performance tires",
+        "feature6": "Milltek Sports exhaust and sports air intake",
+        "feature7": "Upgraded brakes with top-spec Endless Racing pads, fluid and hoses"
       },
       "toyota-gr-yaris": {
         "brand": "Toyota",
         "model": "GR Yaris",
-        "tagline": "RALLY BRED"
+        "tagline": "RALLY BRED",
+        "description": "The updated GR Yaris is the perfect rental car for tackling the Nürburgring Nordschleife. Together with our driver-focused modifications, it delivers an exhilarating, confidence-inspiring experience for drivers of all skill levels. Its paddle-shift transmission and rally-bred engineering make it a dependable track weapon in any weather.",
+        "feature1": "280hp turbocharged engine",
+        "feature2": "Advanced AWD system for incredible grip and stability",
+        "feature3": "Seamless 8-speed automatic transmission with paddle shifters",
+        "feature4": "Custom MCS 3Way Remote suspension, perfectly tuned for the Nürburgring",
+        "feature5": "18\" lightweight wheels with high-performance road-legal race tires",
+        "feature6": "Roll-caged, with Recaro racing seats and Schroth harnesses for maximum safety and support",
+        "feature7": "Upgraded brakes with Endless pads, and Motul fluid"
       },
       "toyota-gr-supra": {
         "brand": "Toyota",
         "model": "GR Supra",
-        "tagline": "PURE SPORTS CAR"
+        "tagline": "PURE SPORTS CAR",
+        "description": "The newest addition to our rental fleet, the Supra is a fantastic RWD sportscar, capable of smooth and fast laps in the right hands.",
+        "feature1": "Semi-slick road-legal race tyres",
+        "feature2": "Custom Öhlins TTX dampers by 4RUO",
+        "feature3": "Factory GT4 control arms, featuring uniballs and our own camber+toe correction upgrades!",
+        "feature4": "Roll-caged, with Recaro Pole Position racing seats and Schroth harnesses",
+        "feature5": "8-speed paddle-shift",
+        "feature6": "Upgraded brakes using Motul fluid and Endless pads",
+        "feature7": "Excellent handling characteristics, high grip, and strong acceleration"
       },
       "porsche-taycan-turbo-gt": {
         "brand": "Porsche",
         "model": "Taycan Turbo GT",
-        "tagline": "ELECTRIC RECORD SETTER"
+        "tagline": "ELECTRIC RECORD SETTER",
+        "description": "The fastest electric car ever to lap the Nürburgring. Instant torque from dual electric motors and Porsche's legendary chassis engineering make this a truly surreal experience.",
+        "feature1": "1,093hp - Dual Electric Motors with overboost",
+        "feature2": "2-speed automatic rear-axle transmission",
+        "feature3": "Full Wiechers rollcage, Recaro racing seats and Schroth harnesses",
+        "feature4": "Active suspension management, rear-axle steering",
+        "feature5": "Porsche Ceramic Composite Brakes (PCCB)"
       },
       "porsche-spyder-rs": {
         "brand": "Porsche",
         "model": "Spyder RS",
-        "tagline": "OPEN-TOP PRECISION"
+        "tagline": "OPEN-TOP PRECISION",
+        "description": "Our Porsche 718 Spyder RS with Weissach Package offers one of the most thrilling driving experiences for the Nürburgring Nordschleife. With its high-revving naturally aspirated flat-six engine, cutting-edge PDK transmission, and lightweight design, this rental car is built to conquer one of the world's most challenging circuits.",
+        "feature1": "500hp naturally aspirated flat-six engine, revving to 9,000 rpm",
+        "feature2": "7-speed PDK automatic transmission for lightning-fast shifts",
+        "feature3": "Weissach Package: Carbon fiber components for reduced weight and enhanced aerodynamics",
+        "feature4": "Rear-wheel drive with precision chassis tuning for the Nordschleife",
+        "feature5": "Ultra-light magnesium wheels with Michelin Pilot Sport Cup 2 R tires",
+        "feature6": "Aerodynamic enhancements, including a motorsport-inspired rear diffuser and spoiler",
+        "feature7": "Racing-inspired interior with carbon bucket seats, Alcantara trim, and lightweight design"
       },
       "porsche-911-gt3-rs-992": {
         "brand": "Porsche",
         "model": "911 GT3 RS (992)",
-        "tagline": "THE TRACK MASTER"
+        "tagline": "THE TRACK MASTER",
+        "description": "The Porsche 992 GT3 RS is the ultimate expression of track-ready performance, perfectly suited for the Nürburgring Nordschleife. Straight from the factory, this car delivers precision, power, and handling, ensuring an unforgettable experience for drivers seeking a refined, high-performance machine.",
+        "feature1": "525hp naturally aspirated flat-six engine, revving to 9,000 rpm",
+        "feature2": "Rear-wheel drive with advanced aerodynamics for maximum downforce and cornering stability",
+        "feature3": "7-speed PDK transmission for lightning-fast shifts",
+        "feature4": "Track-focused Michelin Pilot Sport Cup 2 R tires",
+        "feature5": "Lightweight wheels for reduced unsprung weight",
+        "feature6": "Racing-inspired interior with carbon fiber bucket seats and a motorsport steering wheel"
       },
       "ferrari-296-gtb": {
         "brand": "Ferrari",
         "model": "296 GTB",
-        "tagline": "HYBRID SUPERCAR"
+        "tagline": "HYBRID SUPERCAR",
+        "description": "The hybrid supercar from Maranello. The 296 GTB pairs a twin-turbo V6 with an electric motor for 830hp of combined output, wrapped in Ferrari's signature driving drama and stunning Italian design.",
+        "feature1": "830hp - 3.0L V6 Twin-Turbo + Electric Motor",
+        "feature2": "8-speed DCT dual-clutch",
+        "feature3": "Full Wiechers rollcage and racing harnesses",
+        "feature4": "Ferrari Active Suspension with Side Slip Control",
+        "feature5": "Carbon-ceramic brakes, Michelin Pilot Sport Cup 2 tires"
       }
     }
   },

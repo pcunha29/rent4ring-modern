@@ -73,41 +73,121 @@
       "inStock": "AUF LAGER",
       "popular": "BELIEBT"
     },
+    "viewMore": "Details ansehen",
+    "detail": {
+      "eyebrow": "Flotte",
+      "specManufacturer": "Hersteller",
+      "specModel": "Modell",
+      "specType": "Typ",
+      "specEngine": "Motor",
+      "specTransmission": "Getriebe",
+      "specPower": "Leistung",
+      "specWeight": "Gewicht",
+      "spec0_100": "0-100 km/h",
+      "specTopSpeed": "Höchstgeschwindigkeit",
+      "specifications": "Spezifikationen",
+      "highlights": "Highlights",
+      "rentalConditions": "Mietbedingungen",
+      "pricing": "Preise",
+      "firstLap": "Erste Runde",
+      "additionalLap": "Zusätzliche Runde",
+      "bookNowFor": "Jetzt buchen: €{price},-",
+      "bookNow": "Jetzt buchen",
+      "fromPrice": "Ab €{price},-",
+      "backToFleet": "Zurück zur Flotte",
+      "packages": {
+        "arriveDrive": "Arrive & Drive",
+        "basic": "Basispreise",
+        "arriveDriveDesc": "Das \"Arrive and Drive\"-Paket beinhaltet die erste Tankfüllung und die Nutzung unseres Rundentickets. So sparen Sie sich das Nachtanken und das Anstehen für Rundentickets.",
+        "basicDesc": "Dies ist nur die Fahrzeugmiete. Rundentickets und Kraftstoff sind NICHT enthalten."
+      }
+    },
     "cars": {
       "mini-cooper-s": {
         "brand": "MINI",
         "model": "Cooper S",
-        "tagline": "KOMPAKTER THRILL"
+        "tagline": "KOMPAKTER THRILL",
+        "description": "Der Nachfolger unseres Suzuki Swift Sport. Der neue MINI Cooper S bietet eine leistungsstärkere, stabilere Plattform. Sein Doppelkupplungsgetriebe mit Schaltwippen ermöglicht schnellere, fehlerfreie Gangwechsel.",
+        "feature1": "192 PS - 2,0L 4-Zylinder Turbo",
+        "feature2": "7-Gang DCT Getriebe",
+        "feature3": "Entkernt und mit vollständigem Wiechers-Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten ausgestattet",
+        "feature4": "Aufgerüstet mit maßgeschneiderter Öhlins DFV-Federung von 4RUO und Uniball-Querlenkern von Forge Motorsports",
+        "feature5": "Leichte 17\"-Preo-Track-Felgen mit Ultra-High-Performance-Reifen",
+        "feature6": "Milltek Sportauspuff und Sport-Luftfilter",
+        "feature7": "Aufgerüstete Bremsen mit Endless Racing Belägen, Flüssigkeit und Leitungen"
       },
       "toyota-gr-yaris": {
         "brand": "Toyota",
         "model": "GR Yaris",
-        "tagline": "RALLYE-BLUT"
+        "tagline": "RALLYE-BLUT",
+        "description": "Der aktualisierte GR Yaris ist das perfekte Mietfahrzeug für die Nürburgring Nordschleife. Mit unseren fahrerorientierten Modifikationen bietet er ein begeisterndes, vertrauenserweckendes Erlebnis für Fahrer aller Könnerstufen. Sein Doppelkupplungsgetriebe und die rallye-erprobte Technik machen ihn bei jedem Wetter zur zuverlässigen Streckenwaffe.",
+        "feature1": "280 PS Turbomotor",
+        "feature2": "Fortschrittliches AWD-System für unglaublichen Grip und Stabilität",
+        "feature3": "Nahtloses 8-Gang-Automatikgetriebe mit Schaltwippen",
+        "feature4": "Maßgeschneiderte MCS 3Way Remote Federung, perfekt abgestimmt für den Nürburgring",
+        "feature5": "18\"-Leichtmetallräder mit straßenzugelassenen Hochleistungs-Rennreifen",
+        "feature6": "Mit Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten für maximale Sicherheit",
+        "feature7": "Aufgerüstete Bremsen mit Endless-Belägen und Motul-Bremsflüssigkeit"
       },
       "toyota-gr-supra": {
         "brand": "Toyota",
         "model": "GR Supra",
-        "tagline": "REINER SPORTWAGEN"
+        "tagline": "REINER SPORTWAGEN",
+        "description": "Der neueste Zugang zu unserer Mietflotte — die Supra ist ein fantastischer Hinterradantrieb-Sportwagen, der in den richtigen Händen zu schnellen und geschmeidigen Runden fähig ist.",
+        "feature1": "Semi-Slick straßenzugelassene Rennreifen",
+        "feature2": "Maßgeschneiderte Öhlins TTX-Dämpfer von 4RUO",
+        "feature3": "Werks-GT4-Querlenker mit Uniballs und eigenen Sturz+Spur-Korrektur-Upgrades!",
+        "feature4": "Mit Rollkäfig, Recaro Pole Position Rennsitzen und Schroth-Gurten",
+        "feature5": "8-Gang-Schaltwippen",
+        "feature6": "Aufgerüstete Bremsen mit Motul-Flüssigkeit und Endless-Belägen",
+        "feature7": "Hervorragende Fahreigenschaften, hoher Grip und starke Beschleunigung"
       },
       "porsche-taycan-turbo-gt": {
         "brand": "Porsche",
         "model": "Taycan Turbo GT",
-        "tagline": "ELEKTRISCHER REKORDJÄGER"
+        "tagline": "ELEKTRISCHER REKORDJÄGER",
+        "description": "Das schnellste Elektroauto, das je den Nürburgring umrundete. Sofortiges Drehmoment und Porsches legendäre Fahrwerkstechnik machen dies zu einem surrealen Erlebnis.",
+        "feature1": "1.093 PS — Duale Elektromotoren mit Overboost",
+        "feature2": "2-Gang Automatik-Hinterachsgetriebe",
+        "feature3": "Vollständiger Wiechers-Rollkäfig, Recaro-Rennsitze und Schroth-Gurte",
+        "feature4": "Aktives Fahrwerksmanagement, Hinterachslenkung",
+        "feature5": "Porsche Ceramic Composite Bremsen (PCCB)"
       },
       "porsche-spyder-rs": {
         "brand": "Porsche",
-        "model": "Spyder RS",
-        "tagline": "OFFENES PRÄZISIONSFAHRZEUG"
+        "model": "718 Spyder RS",
+        "tagline": "OFFENES PRÄZISIONSFAHRZEUG",
+        "description": "Unser Porsche 718 Spyder RS mit Weissach-Paket bietet eines der aufregendsten Fahrerlebnisse für die Nürburgring Nordschleife. Mit seinem hochdrehenden Saugmotor-Boxersechser, dem hochmodernen PDK-Getriebe und dem Leichtbau ist dieses Mietfahrzeug gebaut, um eine der anspruchsvollsten Rennstrecken der Welt zu bezwingen.",
+        "feature1": "500 PS Saugmotor-Boxer-Sechszylinder, drehend bis 9.000 U/min",
+        "feature2": "7-Gang-PDK-Automatikgetriebe für blitzschnelle Schaltvorgänge",
+        "feature3": "Weissach-Paket: Carbon-Komponenten für reduziertes Gewicht und verbesserte Aerodynamik",
+        "feature4": "Hinterradantrieb mit präziser Fahrwerksabstimmung für die Nordschleife",
+        "feature5": "Ultraleichte Magnesiumräder mit Michelin Pilot Sport Cup 2 R Reifen",
+        "feature6": "Aerodynamik-Verbesserungen, inkl. motorsport-inspiriertem Heckdiffusor und Spoiler",
+        "feature7": "Rennsport-inspiriertes Interieur mit Carbon-Schalensitzen, Alcantara und Leichtbau"
       },
       "porsche-911-gt3-rs-992": {
         "brand": "Porsche",
         "model": "911 GT3 RS (992)",
-        "tagline": "DER STRECKENMEISTER"
+        "tagline": "DER STRECKENMEISTER",
+        "description": "Der Porsche 992 GT3 RS ist der ultimative Ausdruck streckenreifer Performance, perfekt geeignet für die Nürburgring Nordschleife. Direkt ab Werk liefert dieses Auto Präzision, Leistung und Handling für ein unvergessliches Erlebnis für Fahrer, die eine verfeinerte Hochleistungsmaschine suchen.",
+        "feature1": "525 PS Saugmotor-Boxer-Sechszylinder, drehend bis 9.000 U/min",
+        "feature2": "Hinterradantrieb mit fortschrittlicher Aerodynamik für maximalen Abtrieb und Kurvenstabilität",
+        "feature3": "7-Gang-PDK-Getriebe für blitzschnelle Schaltvorgänge",
+        "feature4": "Streckenoptimierte Michelin Pilot Sport Cup 2 R Reifen",
+        "feature5": "Leichtgewichtige Räder für reduzierte ungefederte Massen",
+        "feature6": "Rennsport-inspiriertes Interieur mit Carbon-Schalensitzen und Motorsport-Lenkrad"
       },
       "ferrari-296-gtb": {
         "brand": "Ferrari",
         "model": "296 GTB",
-        "tagline": "HYBRID-SUPERSPORTWAGEN"
+        "tagline": "HYBRID-SUPERSPORTWAGEN",
+        "description": "Der Hybrid-Supersportwagen aus Maranello. Der 296 GTB kombiniert einen Twin-Turbo-V6 mit einem Elektromotor für 830 PS Gesamtleistung, verpackt in Ferraris typischer Fahrdynamik.",
+        "feature1": "830 PS - 3,0L V6 Twin-Turbo + Elektromotor",
+        "feature2": "8-Gang DCT Doppelkupplung",
+        "feature3": "Vollständiger Wiechers-Rollkäfig und Renngeschirr",
+        "feature4": "Ferrari Active Suspension mit Side Slip Control",
+        "feature5": "Keramik-Bremsen, Michelin Pilot Sport Cup 2 Reifen"
       }
     }
   },
