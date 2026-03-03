@@ -93,7 +93,7 @@
       "backToFleet": "Back to Fleet",
       "packages": {
         "arriveDrive": "Arrive & Drive",
-        "basic": "Basic Prices",
+        "basic": "Basic Package",
         "arriveDriveDesc": "The \"Arrive and Drive\" package includes the first tank of fuel, and the use of our lap ticket. This saves you from refuelling at the end of your rental, and from queuing in line to buy your lap tickets.",
         "basicDesc": "This only rents the car. Lap tickets and fuel are NOT included."
       }
