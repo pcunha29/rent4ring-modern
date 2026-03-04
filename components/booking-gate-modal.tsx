@@ -41,7 +41,13 @@ export function BookingGateModal({
   };
 
   return (
-    <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) setChecked({}); }}>
+    <Dialog
+      open={open}
+      onOpenChange={(v) => {
+        setOpen(v);
+        if (!v) setChecked({});
+      }}
+    >
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
@@ -70,10 +76,11 @@ export function BookingGateModal({
         </div>
 
         <Button
-          className="mt-4 w-full font-semibold uppercase"
+          className="mt-4 w-full font-semibold uppercase cursor-pointer"
           size="lg"
           disabled={!allChecked}
           onClick={handleProceed}
+          type="button"
         >
           {t("proceed")}
         </Button>

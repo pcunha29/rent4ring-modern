@@ -53,7 +53,7 @@ export function PricingSection({
                 <Button
                   variant={pkg.featured ? "default" : "secondary"}
                   size="sm"
-                  className="mt-4 w-full font-semibold uppercase"
+                  className="mt-4 w-full font-semibold uppercase cursor-pointer"
                 >
                   {d("bookNow")}: €{pkg.firstLap},-
                 </Button>
