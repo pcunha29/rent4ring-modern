@@ -8,7 +8,7 @@ const WIDGET_CSS = "https://raceticket.de/widget/raceticket-widget.css";
 const WIDGET_JS = "https://raceticket.de/widget/raceticket-widget.js";
 const HOST_SLUG = "rent4ring";
 
-const INIT_DELAY_MS = 600;
+const INIT_DELAY_MS = 1000;
 
 type WidgetInitOpts = {
   container: string;
@@ -83,7 +83,13 @@ export function RaceTicketEmbed({
       ...(filterRentalPackageId != null && { filterRentalPackageId }),
       ...(filterRentalQuantity != null && { filterRentalQuantity }),
     }),
-    [containerId, locale, filterCarGroupId, filterRentalPackageId, filterRentalQuantity],
+    [
+      containerId,
+      locale,
+      filterCarGroupId,
+      filterRentalPackageId,
+      filterRentalQuantity,
+    ],
   );
 
   useEffect(() => {
