@@ -15,6 +15,7 @@ type WidgetInitOpts = {
   filterCarGroupId?: number;
   filterCarMode?: string;
   filterRentalQuantity?: number;
+  filterRentalPackageId?: number;
 };
 
 function getWidget() {
@@ -88,7 +89,7 @@ export function RaceTicketEmbed({
       locale,
       filterRentalQuantity: 4, // default to 4 laps
       filterCarGroupId: 21,
-      //filterCarMode: filterCarGroupId != null ? "preselect" : "",
+      filterRentalPackageId: 70,
     });
   };
 
@@ -105,6 +106,7 @@ export function RaceTicketEmbed({
         hostSlug: HOST_SLUG,
         locale,
         filterRentalQuantity: 4, // default to 4 laps
+        filterRentalPackageId: 70,
         filterCarGroupId: 21,
       });
     });
