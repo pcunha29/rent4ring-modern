@@ -58,8 +58,12 @@ function cleanupWidgetDOM() {
 
 export function RaceTicketEmbed({
   filterCarGroupId,
+  filterRentalPackageId,
+  filterRentalQuantity,
 }: {
   filterCarGroupId?: number;
+  filterRentalPackageId?: number;
+  filterRentalQuantity?: number;
 }) {
   const locale = useLocale() as "en" | "de";
   const id = useId().replace(/:/g, "");
@@ -87,9 +91,9 @@ export function RaceTicketEmbed({
       container: `#${containerId}`,
       hostSlug: HOST_SLUG,
       locale,
-      filterRentalQuantity: 4, // default to 4 laps
-      filterCarGroupId: 21,
-      filterRentalPackageId: 70,
+      ...(filterCarGroupId != null && { filterCarGroupId }),
+      ...(filterRentalPackageId != null && { filterRentalPackageId }),
+      ...(filterRentalQuantity != null && { filterRentalQuantity }),
     });
   };
 
@@ -105,9 +109,9 @@ export function RaceTicketEmbed({
         container: `#${containerId}`,
         hostSlug: HOST_SLUG,
         locale,
-        filterRentalQuantity: 4, // default to 4 laps
-        filterRentalPackageId: 70,
-        filterCarGroupId: 21,
+        ...(filterCarGroupId != null && { filterCarGroupId }),
+        ...(filterRentalPackageId != null && { filterRentalPackageId }),
+        ...(filterRentalQuantity != null && { filterRentalQuantity }),
       });
     });
     return () => {
@@ -116,7 +120,7 @@ export function RaceTicketEmbed({
       if (w && typeof w.destroy === "function") w.destroy();
       cleanupWidgetDOM();
     };
-  }, [containerId, filterCarGroupId, locale]);
+  }, [containerId, filterCarGroupId, filterRentalPackageId, filterRentalQuantity, locale]);
 
   // Cleanup on unmount (e.g. when leaving the book page) – remove any widget UI left in body
   useEffect(() => {

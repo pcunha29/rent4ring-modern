@@ -87,6 +87,8 @@
       "pricing": "Pricing",
       "firstLap": "First Lap",
       "additionalLap": "Additional lap",
+      "numberOfLaps": "Number of Laps",
+      "total": "Total",
       "bookNow": "Book Now",
       "fromPrice": "From €{price},-",
       "backToFleet": "Back to Fleet",

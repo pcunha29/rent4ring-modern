@@ -10,13 +10,18 @@ import { RaceTicketEmbed } from "@/components/book/raceticket-embed";
 function BookPageContent() {
   const t = useTranslations("book");
   const searchParams = useSearchParams();
-  const carId = searchParams.get("carId")
-    ? parseInt(searchParams.get("carId")!, 10)
-    : undefined;
+
+  const parseIntParam = (key: string) => {
+    const v = searchParams.get(key);
+    return v ? parseInt(v, 10) : undefined;
+  };
+
+  const carId = parseIntParam("carId");
+  const packageId = parseIntParam("packageId");
+  const laps = parseIntParam("laps");
 
   return (
     <div className="w-full pb-16 md:pb-24">
-      {/* Header with background image and gentle fade into booking */}
       <section className="relative min-h-[250px] w-full overflow-hidden pt-24 md:pt-48">
         <Image
           src="/vehicles/r4r-gr-supra-book.jpg"
@@ -26,7 +31,6 @@ function BookPageContent() {
           sizes="100vw"
           priority
         />
-        {/* Gradient: subtle tint at top, long fade to background */}
         <div
           className="absolute inset-0"
           style={{
@@ -52,7 +56,11 @@ function BookPageContent() {
 
       <Container className="mt-0 pt-0">
         <div className="rounded-xl bg-card">
-          <RaceTicketEmbed filterCarGroupId={carId ?? undefined} />
+          <RaceTicketEmbed
+            filterCarGroupId={carId}
+            filterRentalPackageId={packageId}
+            filterRentalQuantity={laps}
+          />
         </div>
       </Container>
     </div>

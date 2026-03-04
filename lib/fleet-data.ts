@@ -16,6 +16,7 @@ export type PricingPackage = {
   additionalLap: number;
   descriptionKey: string;
   featured?: boolean;
+  filterRentalPackageId: number;
 };
 
 export type FleetVehicle = {
@@ -65,12 +66,14 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 129,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 63,
       },
       {
         nameKey: "basic",
         firstLap: 179,
         additionalLap: 79,
         descriptionKey: "basicDesc",
+        filterRentalPackageId: 62,
       },
     ],
     basicLiability: 12000,
@@ -104,12 +107,14 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 169,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 65,
       },
       {
         nameKey: "basic",
         firstLap: 219,
         additionalLap: 119,
         descriptionKey: "basicDesc",
+        filterRentalPackageId: 64,
       },
     ],
     basicLiability: 20000,
@@ -143,12 +148,14 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 199,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 67,
       },
       {
         nameKey: "basic",
         firstLap: 249,
         additionalLap: 149,
         descriptionKey: "basicDesc",
+        filterRentalPackageId: 66,
       },
     ],
     basicLiability: 20000,
@@ -174,6 +181,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 299,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 68,
       },
     ],
     basicLiability: null,
@@ -199,6 +207,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 399,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 69,
       },
     ],
     basicLiability: null,
@@ -224,6 +233,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 699,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 70,
       },
     ],
     basicLiability: null,
@@ -249,6 +259,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         additionalLap: 699,
         descriptionKey: "arriveDriveDesc",
         featured: true,
+        filterRentalPackageId: 71,
       },
     ],
     basicLiability: null,

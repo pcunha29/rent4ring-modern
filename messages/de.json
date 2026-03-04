@@ -91,6 +91,8 @@
       "pricing": "Preise",
       "firstLap": "Erste Runde",
       "additionalLap": "Zusätzliche Runde",
+      "numberOfLaps": "Anzahl Runden",
+      "total": "Gesamt",
       "bookNow": "Jetzt buchen",
       "fromPrice": "Ab €{price},-",
       "backToFleet": "Zurück zur Flotte",
