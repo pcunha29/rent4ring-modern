@@ -86,8 +86,8 @@ export function RaceTicketEmbed({
       container: `#${containerId}`,
       hostSlug: HOST_SLUG,
       locale,
-      filterCarGroupId: filterCarGroupId ?? undefined,
       filterRentalQuantity: 4, // default to 4 laps
+      filterCarGroupId: 21,
       //filterCarMode: filterCarGroupId != null ? "preselect" : "",
     });
   };
@@ -104,7 +104,8 @@ export function RaceTicketEmbed({
         container: `#${containerId}`,
         hostSlug: HOST_SLUG,
         locale,
-        filterCarGroupId: filterCarGroupId ?? undefined,
+        filterRentalQuantity: 4, // default to 4 laps
+        filterCarGroupId: 21,
       });
     });
     return () => {
