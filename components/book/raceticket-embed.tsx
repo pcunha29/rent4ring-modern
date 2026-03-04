@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useId, useRef, useCallback } from "react";
+import { useEffect, useId } from "react";
 import { useLocale } from "next-intl";
 import Script from "next/script";
 
 const WIDGET_CSS = "https://raceticket.de/widget/raceticket-widget.css";
 const WIDGET_JS = "https://raceticket.de/widget/raceticket-widget.js";
 const HOST_SLUG = "rent4ring";
-
-const INIT_DELAY_MS = 1000;
 
 type WidgetInitOpts = {
   container: string;
@@ -32,8 +30,10 @@ function getWidget() {
   ).RaceTicketWidget;
 }
 
+/** Remove widget UI injected outside our container (e.g. subtotal bar in body) */
 function cleanupWidgetDOM() {
   if (typeof document === "undefined") return;
+  // 1) Direct children of body with rt- class or raceticket id
   const bodyChildren = Array.from(document.body.children);
   bodyChildren.forEach((el) => {
     const className = el.getAttribute("class") ?? "";
@@ -44,6 +44,7 @@ function cleanupWidgetDOM() {
       id.includes("raceticket");
     if (isRaceTicket) el.remove();
   });
+  // 2) Any rt-subtotal / rt-summary / rt-bar tree (bar may be nested under a wrapper)
   const barLike = document.querySelectorAll(
     '[class*="rt-subtotal"], [class*="rt-summary"], [class*="rt-bar"], [class*="rt-sticky"]',
   );
@@ -67,30 +68,6 @@ export function RaceTicketEmbed({
   const locale = useLocale() as "en" | "de";
   const id = useId().replace(/:/g, "");
   const containerId = `raceticket-widget-${id}`;
-  const initTimerRef = useRef<ReturnType<typeof setTimeout>>(0 as never);
-
-  const hasFilters =
-    filterCarGroupId != null ||
-    filterRentalPackageId != null ||
-    filterRentalQuantity != null;
-
-  const buildOpts = useCallback(
-    (): WidgetInitOpts => ({
-      container: `#${containerId}`,
-      hostSlug: HOST_SLUG,
-      locale,
-      ...(filterCarGroupId != null && { filterCarGroupId }),
-      ...(filterRentalPackageId != null && { filterRentalPackageId }),
-      ...(filterRentalQuantity != null && { filterRentalQuantity }),
-    }),
-    [
-      containerId,
-      locale,
-      filterCarGroupId,
-      filterRentalPackageId,
-      filterRentalQuantity,
-    ],
-  );
 
   useEffect(() => {
     const linkId = "raceticket-widget-css";
@@ -105,29 +82,53 @@ export function RaceTicketEmbed({
     };
   }, []);
 
-  const scheduleInit = useCallback(() => {
-    clearTimeout(initTimerRef.current);
-    const delay = hasFilters ? INIT_DELAY_MS : 0;
-    initTimerRef.current = setTimeout(() => {
-      const widget = getWidget();
-      const el = document.getElementById(containerId);
-      if (!widget || !el) return;
-      widget.init(buildOpts());
-    }, delay);
-  }, [hasFilters, containerId, buildOpts]);
+  const initWidget = () => {
+    const widget = getWidget();
+    if (!widget) return;
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    widget.init({
+      container: `#${containerId}`,
+      hostSlug: HOST_SLUG,
+      locale,
+      ...(filterCarGroupId != null && { filterCarGroupId }),
+      ...(filterRentalPackageId != null && { filterRentalPackageId }),
+      ...(filterRentalQuantity != null && { filterRentalQuantity }),
+    });
+  };
 
+  // When script is already loaded (e.g. after navigating back), init in useEffect.
+  // Runs on mount and when filterCarGroupId changes; containerId is stable per instance (useId).
   useEffect(() => {
     const widget = getWidget();
     if (!widget) return;
-    scheduleInit();
+    const frame = requestAnimationFrame(() => {
+      const el = document.getElementById(containerId);
+      if (!el) return;
+      widget.init({
+        container: `#${containerId}`,
+        hostSlug: HOST_SLUG,
+        locale,
+        ...(filterCarGroupId != null && { filterCarGroupId }),
+        ...(filterRentalPackageId != null && { filterRentalPackageId }),
+        ...(filterRentalQuantity != null && { filterRentalQuantity }),
+      });
+    });
     return () => {
-      clearTimeout(initTimerRef.current);
+      cancelAnimationFrame(frame);
       const w = getWidget();
       if (w && typeof w.destroy === "function") w.destroy();
       cleanupWidgetDOM();
     };
-  }, [scheduleInit]);
+  }, [
+    containerId,
+    filterCarGroupId,
+    filterRentalPackageId,
+    filterRentalQuantity,
+    locale,
+  ]);
 
+  // Cleanup on unmount (e.g. when leaving the book page) – remove any widget UI left in body
   useEffect(() => {
     return () => {
       cleanupWidgetDOM();
@@ -139,7 +140,9 @@ export function RaceTicketEmbed({
       <Script
         src={WIDGET_JS}
         strategy="afterInteractive"
-        onLoad={scheduleInit}
+        onLoad={() => {
+          requestAnimationFrame(initWidget);
+        }}
       />
       <div
         id={containerId}
