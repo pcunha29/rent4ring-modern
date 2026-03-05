@@ -144,33 +144,41 @@ export default async function FleetDetailPage({ params }: Props) {
                 </ul>
 
                 {vehicle.basicLiability !== null && (
-                  <div className="rounded-lg border border-border bg-muted/50 p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold text-foreground">
-                        {rc("basicLiability")}
-                      </span>
-                      <span className="font-semibold text-foreground">
-                        €{vehicle.basicLiability.toLocaleString()}*
-                      </span>
-                    </div>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      *{rc("basicLiabilityNote")}
-                    </p>
-                    {vehicle.reducedLiability !== null && (
-                      <>
-                        <div className="mt-3 flex items-center justify-between">
-                          <span className="font-semibold text-foreground">
-                            {rc("reducedLiability")}
-                          </span>
-                          <span className="font-semibold text-foreground">
-                            €{vehicle.reducedLiability.toLocaleString()}
-                          </span>
-                        </div>
-                        <p className="mt-1 text-xs text-muted-foreground">
-                          {rc("reducedLiabilityNote")}
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-foreground">
+                      {rc("damageExcess")}
+                    </h3>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="rounded-lg border border-border p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {rc("basicLiability")}
                         </p>
-                      </>
-                    )}
+                        <p className="mt-1 text-xl font-bold text-foreground">
+                          €{vehicle.basicLiability.toLocaleString()}
+                        </p>
+                        <p className="mt-1 text-xs text-muted-foreground">
+                          *{rc("basicLiabilityNote")}
+                        </p>
+                      </div>
+                      {vehicle.reducedLiability !== null && (
+                        <div className="rounded-lg border border-secondary/40 bg-secondary/5 p-4">
+                          <p className="text-xs font-semibold uppercase tracking-wider text-secondary">
+                            {rc("reducedLiability")}
+                          </p>
+                          <p className="mt-1 text-xl font-bold text-foreground">
+                            €{vehicle.reducedLiability.toLocaleString()}
+                          </p>
+                          {vehicle.premiumInsurance !== null && (
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              {rc("premiumInsurance")}: €{vehicle.premiumInsurance},- {rc("perRental")}
+                            </p>
+                          )}
+                          <p className="mt-1 text-xs text-muted-foreground">
+                            {rc("reducedLiabilityNote")}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 

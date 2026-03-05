@@ -35,6 +35,7 @@ export type FleetVehicle = {
   packages: PricingPackage[];
   basicLiability: number | null;
   reducedLiability: number | null;
+  premiumInsurance: number | null;
 };
 
 export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
@@ -78,6 +79,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: 12000,
     reducedLiability: 6000,
+    premiumInsurance: 249,
   },
   "toyota-gr-yaris": {
     priceFrom: 219,
@@ -119,6 +121,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: 20000,
     reducedLiability: 10000,
+    premiumInsurance: 299,
   },
   "toyota-gr-supra": {
     priceFrom: 249,
@@ -160,6 +163,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: 20000,
     reducedLiability: 10000,
+    premiumInsurance: null,
   },
   "porsche-taycan-turbo-gt": {
     priceFrom: 299,
@@ -186,6 +190,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: null,
     reducedLiability: null,
+    premiumInsurance: null,
   },
   "porsche-spyder-rs": {
     priceFrom: 399,
@@ -212,6 +217,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: null,
     reducedLiability: null,
+    premiumInsurance: null,
   },
   "porsche-911-gt3-rs-992": {
     priceFrom: 699,
@@ -238,6 +244,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: null,
     reducedLiability: null,
+    premiumInsurance: null,
   },
   "ferrari-296-gtb": {
     priceFrom: 699,
@@ -264,6 +271,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     ],
     basicLiability: null,
     reducedLiability: null,
+    premiumInsurance: null,
   },
 };
 
