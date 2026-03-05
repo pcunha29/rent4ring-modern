@@ -10,6 +10,14 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FLEET_SLUGS, FLEET_DATA } from "@/lib/fleet-data";
 
+const DRIVE_LABEL: Record<string, string> = {
+  FF: "FWD",
+  FR: "RWD",
+  MR: "RWD",
+  RR: "RWD",
+  AWD: "AWD",
+};
+
 export function FleetSlider() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("fleet");
@@ -180,10 +188,10 @@ export function FleetSlider() {
                     <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
                       <div>
                         <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                          0-100
+                          {t("specDrive")}
                         </dt>
                         <dd className="mt-0.5 font-semibold text-foreground">
-                          {data.spec0_100}
+                          {DRIVE_LABEL[data.type] ?? data.type}
                         </dd>
                       </div>
                       <div>
@@ -196,10 +204,10 @@ export function FleetSlider() {
                       </div>
                       <div>
                         <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                          {t("specTopSpeed")}
+                          {t("specWeight")}
                         </dt>
                         <dd className="mt-0.5 font-semibold text-foreground">
-                          {data.specTopSpeed}
+                          {data.weight}
                         </dd>
                       </div>
                     </dl>

@@ -68,7 +68,8 @@
     "nextLabel": "Weiter",
     "bookNow": "Jetzt buchen",
     "specPower": "Leistung",
-    "specTopSpeed": "Höchstgeschwindigkeit",
+    "specDrive": "Antrieb",
+    "specWeight": "Gewicht",
     "badges": {
       "inStock": "AUF LAGER",
       "popular": "BELIEBT"
@@ -108,12 +109,12 @@
         "brand": "MINI",
         "model": "Cooper S",
         "tagline": "KOMPAKTER THRILL",
-        "description": "Der Nachfolger unseres Suzuki Swift Sport. Der neue MINI Cooper S bietet eine leistungsstärkere, stabilere Plattform. Sein Doppelkupplungsgetriebe mit Schaltwippen ermöglicht schnellere, fehlerfreie Gangwechsel.",
+        "description": "Der neue MINI Cooper S bietet eine leistungsstärkere, stabilere Plattform. Sein Doppelkupplungsgetriebe mit Schaltwippen ermöglicht schnellere, fehlerfreie Gangwechsel.",
         "feature1": "192 PS - 2,0L 4-Zylinder Turbo",
         "feature2": "7-Gang DCT Getriebe",
         "feature3": "Entkernt und mit vollständigem Wiechers-Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten ausgestattet",
-        "feature4": "Aufgerüstet mit maßgeschneiderter Öhlins DFV-Federung von 4RUO und Uniball-Querlenkern von Forge Motorsports",
-        "feature5": "Leichte 17\"-Preo-Track-Felgen mit Ultra-High-Performance-Reifen",
+        "feature4": "Aufgerüstet mit maßgeschneiderter Öhlins DFV-Fede rung und Uniball-Querlenkern",
+        "feature5": "Leichte 17\" Pro Track Felgen mit Ultra-High-Performance-Reifen",
         "feature6": "Milltek Sportauspuff und Sport-Luftfilter",
         "feature7": "Aufgerüstete Bremsen mit Endless Racing Belägen, Flüssigkeit und Leitungen"
       },
@@ -197,9 +198,10 @@
     "subtitle": "Bitte bestätigen Sie, dass Sie die folgenden Voraussetzungen erfüllen:",
     "check1": "Ich verstehe, dass ich mindestens 21 Jahre alt sein muss",
     "check2": "Ich verstehe, dass ich einen gültigen Führerschein benötige",
-    "check3": "Ich verstehe, dass die Kommunikation auf Englisch oder Deutsch erfolgen muss",
+    "check3": "Ich verstehe, dass ich eine grundlegende Verständnis von Englisch oder Deutsch benötige",
     "check4": "Ich verstehe, dass ich eine Kreditkarte oder Bargeld als Kaution benötige",
     "check5": "Ich verstehe, dass meine Vorreservierungsgebühr von 100 € nicht erstattet wird, wenn ich diese Kriterien am Tag meiner Miete nicht erfülle",
+    "check6": "Ich verstehe, dass meine Vorreservierungsgebühr nicht erstattet wird, wenn ich meine Buchung weniger als 72 Stunden vorher storniere",
     "proceed": "Weiter zur Buchung",
     "rentalConditions": "Mietbedingungen",
     "minAge": "Mindestalter: 21 Jahre",
@@ -214,9 +216,6 @@
     "importantInfo": "Wichtige Informationen",
     "idRequired": "Personalausweis / Reisepass erforderlich",
     "licenceRequired": "Vollständiger und gültiger Führerschein",
-    "treatAsOwn": "Behandeln Sie das Fahrzeug wie Ihr eigenes!",
-    "arriveEarly": "Bitte kommen Sie mindestens 15 Minuten vor Beginn Ihrer Buchung an. Bei Verspätung kontaktieren Sie uns mindestens 15 Minuten vorher. Andernfalls behalten wir uns das Recht vor, das Fahrzeug anderweitig zu vermieten.",
-    "cancellationPolicy": "Falls Sie das Fahrzeug nicht abholen können oder darauf verzichten, stornieren Sie bitte mindestens 2 Tage vor dem Mietdatum!",
     "fullDayPolicy": "Für Ganztagesöffnungen bitten wir um eine Mindestbuchung von 4 Runden. Fahrer, die weniger Runden fahren möchten, können am Tag vorbeikommen oder eine Abendsitzung unter der Woche buchen."
   },
   "whyRent4Ring": {
@@ -233,7 +232,7 @@
       "suspension": {
         "label": "PRÄZISIONSTUNING",
         "title": "Federung (Öhlins)",
-        "description": "Maßgeschneiderte Öhlins DFV- oder TTX-Setups für präzises Handling, entwickelt mit den Nürburgring-Federexperten 4RUO."
+        "description": "Maßgeschneiderte Öhlins DFV- oder TTX-Setups für präzises Handling"
       },
       "tires": {
         "label": "MECHANISCHER GRIP",

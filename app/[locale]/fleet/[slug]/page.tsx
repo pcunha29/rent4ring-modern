@@ -181,9 +181,6 @@ export default async function FleetDetailPage({ params }: Props) {
                   <ul className="mt-2 space-y-1.5">
                     <li>{rc("idRequired")}</li>
                     <li>{rc("licenceRequired")}</li>
-                    <li>{rc("treatAsOwn")}</li>
-                    <li>{rc("arriveEarly")}</li>
-                    <li>{rc("cancellationPolicy")}</li>
                     <li>{rc("fullDayPolicy")}</li>
                   </ul>
                 </div>

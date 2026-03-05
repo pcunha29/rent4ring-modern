@@ -68,7 +68,8 @@
     "nextLabel": "Next",
     "bookNow": "Book Now",
     "specPower": "Power",
-    "specTopSpeed": "Top Speed",
+    "specDrive": "Drive",
+    "specWeight": "Weight",
     "viewMore": "View More",
     "detail": {
       "eyebrow": "Fleet",
@@ -104,12 +105,12 @@
         "brand": "MINI",
         "model": "Cooper S",
         "tagline": "COMPACT THRILL",
-        "description": "The replacement for our Suzuki Swift Sport, the new MINI Cooper S offers a more powerful, more stable platform. Its paddle-shift DCT gearbox allows drivers to concentrate on the track ahead, while allowing faster, error-free, gear shifts.",
+        "description": "The new MINI Cooper S offers a more powerful, more stable platform. Its paddle-shift DCT gearbox allows drivers to concentrate on the track ahead, while allowing faster, error-free, gear shifts.",
         "feature1": "192hp - 2.0L 4-Cylinder Turbo",
         "feature2": "7-speed DCT gearbox",
         "feature3": "Stripped out and fitted with a full Wiechers rollcage, Recaro racing seats and Schroth harnesses",
-        "feature4": "Upgraded with our own custom Öhlins DFV suspension by 4RUO and uniball control arms from Forge Motorsports",
-        "feature5": "Lightweight, 17\" Preo-track alloys with Ultra High Performance tires",
+        "feature4": "Upgraded with our own custom Öhlins DFV suspension and uniball control arms",
+        "feature5": "Lightweight, 17\" Pro-Track alloys with Ultra High Performance tires",
         "feature6": "Milltek Sports exhaust and sports air intake",
         "feature7": "Upgraded brakes with top-spec Endless Racing pads, fluid and hoses"
       },
@@ -193,9 +194,10 @@
     "subtitle": "Please confirm you meet the following requirements:",
     "check1": "I understand I must be at least 21 years old",
     "check2": "I understand I need a full and valid driving licence",
-    "check3": "I understand communication must be in English or German",
+    "check3": "I understand I need basic understanding of English or German",
     "check4": "I understand I need a credit card or cash to guarantee the deposit",
     "check5": "I understand that if I do not fulfil these criteria on the day of my rental, my €100 pre-reservation fee is non-refundable",
+    "check6": "I understand that if I cancel my booking with less than 72 hours notice, my pre-reservation fee is non-refundable",
     "proceed": "Proceed to Booking",
     "rentalConditions": "Rental Conditions",
     "minAge": "Minimum age: 21 years",
@@ -210,9 +212,6 @@
     "importantInfo": "Important Information",
     "idRequired": "Personal ID / Passport required",
     "licenceRequired": "Full and valid driving licence",
-    "treatAsOwn": "Treat it like your own car!",
-    "arriveEarly": "Please arrive at least 15 minutes before the start time of your booking. If you are delayed, contact us at least 15 minutes before. Otherwise we reserve the right to rent the car to someone else.",
-    "cancellationPolicy": "If you can't pick up the car or decide not to take it, please make the cancellation at least 2 days before the rental date!",
     "fullDayPolicy": "For full-day openings we ask for a minimum booking of 4 laps. Drivers wanting fewer laps can walk-in on the day, or book a mid-week evening session."
   },
   "whyRent4Ring": {
@@ -229,7 +228,7 @@
       "suspension": {
         "label": "PRECISION TUNING",
         "title": "Suspension (Öhlins)",
-        "description": "Custom engineered Öhlins DFV or TTX setups for precision handling, engineered alongside Nürburgring suspension experts 4RUO."
+        "description": "Custom engineered Öhlins DFV or TTX setups for precision handling"
       },
       "tires": {
         "label": "MECHANICAL GRIP",

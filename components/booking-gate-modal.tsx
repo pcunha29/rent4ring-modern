@@ -14,7 +14,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 
-const CHECKS = ["check1", "check2", "check3", "check4", "check5"] as const;
+const CHECKS = ["check1", "check2", "check3", "check4", "check5", "check6"] as const;
 
 export function BookingGateModal({
   bookingUrl = "/book",
