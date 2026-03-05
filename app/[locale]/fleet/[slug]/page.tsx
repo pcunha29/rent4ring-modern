@@ -190,6 +190,7 @@ export default async function FleetDetailPage({ params }: Props) {
                     <li>{rc("idRequired")}</li>
                     <li>{rc("licenceRequired")}</li>
                     <li>{rc("fullDayPolicy")}</li>
+                    <li className="font-medium text-foreground">{rc("depositNote")}</li>
                   </ul>
                 </div>
               </div>

@@ -131,6 +131,9 @@ export function PricingSection({
                   </Button>
                 }
               />
+              <p className="mt-2 text-center text-xs text-muted-foreground">
+                {d("depositNote")}
+              </p>
             </div>
           );
         })}

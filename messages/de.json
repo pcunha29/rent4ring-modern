@@ -95,6 +95,7 @@
       "numberOfLaps": "Anzahl Runden",
       "total": "Gesamt",
       "bookNow": "Jetzt buchen",
+      "depositNote": "Die Vorreservierungsgebühr von 100 € wird am Tag der Miete von Ihren Gesamtkosten abgezogen.",
       "fromPrice": "Ab €{price},-",
       "backToFleet": "Zurück zur Flotte",
       "packages": {
@@ -203,6 +204,7 @@
     "check5": "Ich verstehe, dass meine Vorreservierungsgebühr von 100 € nicht erstattet wird, wenn ich diese Kriterien am Tag meiner Miete nicht erfülle",
     "check6": "Ich verstehe, dass meine Vorreservierungsgebühr nicht erstattet wird, wenn ich meine Buchung weniger als 72 Stunden vorher storniere",
     "proceed": "Weiter zur Buchung",
+    "depositNote": "Die Vorreservierungsgebühr von 100 € wird am Tag der Miete von Ihren Gesamtkosten abgezogen.",
     "rentalConditions": "Mietbedingungen",
     "minAge": "Mindestalter: 21 Jahre",
     "minExperience": "Mindestfahrerfahrung: 3 Jahre",

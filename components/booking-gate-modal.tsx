@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { Info } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -73,6 +74,13 @@ export function BookingGateModal({
               </span>
             </label>
           ))}
+        </div>
+
+        <div className="mt-2 flex items-start gap-2.5 rounded-lg border border-secondary/20 bg-secondary/5 p-3">
+          <Info className="mt-0.5 size-4 shrink-0 text-secondary" />
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            {t("depositNote")}
+          </p>
         </div>
 
         <Button

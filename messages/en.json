@@ -91,6 +91,7 @@
       "numberOfLaps": "Number of Laps",
       "total": "Total",
       "bookNow": "Book Now",
+      "depositNote": "The €100 pre-reservation fee will be deducted from your total rental cost on the day.",
       "fromPrice": "From €{price},-",
       "backToFleet": "Back to Fleet",
       "packages": {
@@ -199,6 +200,7 @@
     "check5": "I understand that if I do not fulfil these criteria on the day of my rental, my €100 pre-reservation fee is non-refundable",
     "check6": "I understand that if I cancel my booking with less than 72 hours notice, my pre-reservation fee is non-refundable",
     "proceed": "Proceed to Booking",
+    "depositNote": "The €100 pre-reservation fee will be deducted from your total rental cost on the day.",
     "rentalConditions": "Rental Conditions",
     "minAge": "Minimum age: 21 years",
     "minExperience": "Minimum driving experience: 3 years",
