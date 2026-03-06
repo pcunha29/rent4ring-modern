@@ -204,6 +204,7 @@
     "check5": "Ich verstehe, dass meine Vorreservierungsgebühr von 100 € nicht erstattet wird, wenn ich diese Kriterien am Tag meiner Miete nicht erfülle",
     "check6": "Ich verstehe, dass meine Vorreservierungsgebühr nicht erstattet wird, wenn ich meine Buchung weniger als 72 Stunden vorher storniere",
     "proceed": "Weiter zur Buchung",
+    "progress": "{count} von {total} bestätigt",
     "depositNote": "Die Vorreservierungsgebühr von 100 € wird am Tag der Miete von Ihren Gesamtkosten abgezogen.",
     "rentalConditions": "Mietbedingungen",
     "minAge": "Mindestalter: 21 Jahre",
