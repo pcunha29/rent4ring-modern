@@ -214,6 +214,8 @@
     "basicLiability": "Basis-Haftung",
     "reducedLiability": "Reduzierte Haftung",
     "premiumInsurance": "Premium-Versicherung",
+    "firstDriver": "Erster Fahrer",
+    "additionalDriver": "Jeder weitere Fahrer",
     "basicLiabilityNote": "Beinhaltet keine Leitplanken, Sicherheitsteam oder Abschleppwagen!",
     "reducedLiabilityNote": "Kostet extra. Bitte fragen Sie!",
     "premiumInsuranceNote": "Reduzierte Selbstbeteiligung mit Premium-Deckung",

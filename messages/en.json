@@ -210,6 +210,8 @@
     "basicLiability": "Basic Liability",
     "reducedLiability": "Reduced Liability",
     "premiumInsurance": "Premium Insurance",
+    "firstDriver": "First driver",
+    "additionalDriver": "Every additional driver",
     "basicLiabilityNote": "Does not include guardrail, safety team, or recovery truck!",
     "reducedLiabilityNote": "Costs extra. Please ask!",
     "premiumInsuranceNote": "Reduced excess with premium coverage",

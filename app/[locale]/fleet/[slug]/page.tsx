@@ -169,9 +169,19 @@ export default async function FleetDetailPage({ params }: Props) {
                             €{vehicle.reducedLiability.toLocaleString()}
                           </p>
                           {vehicle.premiumInsurance !== null && (
-                            <p className="mt-1 text-xs text-muted-foreground">
-                              {rc("premiumInsurance")}: €{vehicle.premiumInsurance},- {rc("perRental")}
-                            </p>
+                            <div className="mt-2 border-t border-border/50 pt-2">
+                              <p className="text-xs font-semibold uppercase tracking-wider text-secondary">
+                                {rc("premiumInsurance")}
+                              </p>
+                              <div className="mt-1 space-y-0.5">
+                                <p className="text-xs text-muted-foreground">
+                                  {rc("firstDriver")}: <span className="font-semibold text-foreground">€{vehicle.premiumInsurance.firstDriver},-</span>
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                  {rc("additionalDriver")}: <span className="font-semibold text-foreground">€{vehicle.premiumInsurance.additionalDriver},-</span>
+                                </p>
+                              </div>
+                            </div>
                           )}
                           <p className="mt-1 text-xs text-muted-foreground">
                             {rc("reducedLiabilityNote")}
