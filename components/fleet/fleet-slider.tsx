@@ -176,14 +176,14 @@ export function FleetSlider() {
                           {tagline}
                         </p>
                       </div>
-                      <span className="shrink-0 text-right">
+                      {/* <span className="shrink-0 text-right">
                         <span className="font-semibold text-secondary">
                           €{data.priceFrom}
                         </span>
                         <span className="text-sm font-medium text-muted-foreground">
                           /lap
                         </span>
-                      </span>
+                      </span> */}
                     </div>
                     <dl className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
                       <div>
