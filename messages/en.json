@@ -146,9 +146,8 @@
         "model": "Taycan Turbo GT",
         "tagline": "ELECTRIC RECORD SETTER",
         "description": "The fastest electric car ever to lap the Nürburgring. Instant torque from dual electric motors and Porsche's legendary chassis engineering make this a truly surreal experience.",
-        "feature1": "1,093hp - Dual Electric Motors with overboost",
+        "feature1": "1,034hp - Dual Electric Motors with overboost",
         "feature2": "2-speed automatic rear-axle transmission",
-        "feature3": "Full Wiechers rollcage, Recaro racing seats and Schroth harnesses",
         "feature4": "Active suspension management, rear-axle steering",
         "feature5": "Porsche Ceramic Composite Brakes (PCCB)"
       },
@@ -184,7 +183,6 @@
         "description": "The hybrid supercar from Maranello. The 296 GTB pairs a twin-turbo V6 with an electric motor for 830hp of combined output, wrapped in Ferrari's signature driving drama and stunning Italian design.",
         "feature1": "830hp - 3.0L V6 Twin-Turbo + Electric Motor",
         "feature2": "8-speed DCT dual-clutch",
-        "feature3": "Full Wiechers rollcage and racing harnesses",
         "feature4": "Ferrari Active Suspension with Side Slip Control",
         "feature5": "Carbon-ceramic brakes, Michelin Pilot Sport Cup 2 tires"
       }
