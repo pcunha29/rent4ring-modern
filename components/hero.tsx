@@ -121,6 +121,7 @@ export function Hero() {
           className="flex flex-wrap justify-center md:justify-end gap-4"
         >
           <BookingGateModal
+            source="hero"
             trigger={
               <Button variant="default" size="lg">
                 {t("bookExperience")}

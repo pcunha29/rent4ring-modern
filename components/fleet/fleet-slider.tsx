@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FLEET_SLUGS, FLEET_DATA } from "@/lib/fleet-data";
+import { trackFleetCardClicked } from "@/lib/amplitude";
 
 const DRIVE_LABEL: Record<string, string> = {
   FF: "FWD",
@@ -130,7 +131,7 @@ export function FleetSlider() {
               "[&::-webkit-scrollbar]:hidden",
             )}
           >
-            {FLEET_SLUGS.map((slug) => {
+            {FLEET_SLUGS.map((slug, cardIndex) => {
               const data = FLEET_DATA[slug];
               const brand = t(`cars.${slug}.brand`);
               const model = t(`cars.${slug}.model`);
@@ -149,6 +150,16 @@ export function FleetSlider() {
                     href={`/fleet/${slug}`}
                     className="absolute inset-0 z-10"
                     aria-label={`${brand} ${model} — ${t("viewMore")}`}
+                    onClick={() =>
+                      trackFleetCardClicked({
+                        car_slug: slug,
+                        car_id: data.carId,
+                        brand,
+                        model,
+                        price_from: data.priceFrom,
+                        card_index: cardIndex,
+                      })
+                    }
                   />
                   <div className="relative aspect-4/3 w-full overflow-hidden bg-muted">
                     <Image

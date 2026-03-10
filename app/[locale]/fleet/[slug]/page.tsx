@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { PricingSection } from "./pricing-section";
+import { TrackVehicleDetailView } from "./track-view";
 import { FLEET_SLUGS, FLEET_DATA, type FleetSlug } from "@/lib/fleet-data";
 
 export function generateStaticParams() {
@@ -57,6 +58,15 @@ export default async function FleetDetailPage({ params }: Props) {
 
   return (
     <div className="w-full pb-16 md:pb-24">
+      <TrackVehicleDetailView
+        car_slug={slug}
+        car_id={vehicle.carId}
+        brand={brand}
+        model={model}
+        price_from={vehicle.priceFrom}
+        has_basic_package={vehicle.packages.some((p) => p.nameKey === "basic")}
+        has_insurance={vehicle.premiumInsurance !== null}
+      />
       {/* Hero image */}
       <section className="relative min-h-[320px] w-full overflow-hidden md:min-h-[420px]">
         <Image

@@ -6,6 +6,7 @@ import { Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingGateModal } from "@/components/booking-gate-modal";
 import type { PricingPackage } from "@/lib/fleet-data";
+import { trackLapCountChanged } from "@/lib/amplitude";
 
 function LapStepper({
   value,
@@ -102,9 +103,15 @@ export function PricingSection({
                 </span>
                 <LapStepper
                   value={lapCount}
-                  onChange={(v) =>
-                    setLaps((prev) => ({ ...prev, [pkg.nameKey]: v }))
-                  }
+                  onChange={(v) => {
+                    setLaps((prev) => ({ ...prev, [pkg.nameKey]: v }));
+                    trackLapCountChanged({
+                      car_id: carId,
+                      package_name: pkg.nameKey,
+                      lap_count: v,
+                      total_price: getTotal(pkg, v),
+                    });
+                  }}
                 />
               </div>
 
@@ -120,6 +127,7 @@ export function PricingSection({
               )}
 
               <BookingGateModal
+                source="pricing"
                 bookingUrl={`/book?carId=${carId}&packageId=${pkg.filterRentalPackageId}&laps=${lapCount}`}
                 trigger={
                   <Button

@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { trackFaqItemExpanded } from "@/lib/amplitude";
 
 const FAQ_ITEM_COUNT = 10;
 
@@ -20,7 +21,19 @@ export default function FAQPage() {
         <h1 className="mb-8 font-serif text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           {t("title")}
         </h1>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full"
+          onValueChange={(value) => {
+            if (!value) return;
+            const idx = parseInt(value.replace("item-", ""), 10);
+            trackFaqItemExpanded({
+              question_index: idx,
+              question_key: `item${idx}`,
+            });
+          }}
+        >
           {Array.from({ length: FAQ_ITEM_COUNT }, (_, i) => i + 1).map(
             (num) => (
               <AccordionItem key={num} value={`item-${num}`}>

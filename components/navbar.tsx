@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
+import { trackLanguageSwitched } from "@/lib/amplitude";
 
 const navLinks = [
   { key: "fleet" as const, href: "/#fleet" },
@@ -59,7 +60,12 @@ export function Navbar() {
               href={pathname}
               locale={loc}
               className="cursor-pointer"
-              onClick={() => setSheetOpen(false)}
+              onClick={() => {
+                if (loc !== locale) {
+                  trackLanguageSwitched({ from_locale: locale, to_locale: loc });
+                }
+                setSheetOpen(false);
+              }}
             >
               {tLang(loc)}
             </Link>
@@ -71,6 +77,7 @@ export function Navbar() {
 
   const bookNowButton = (
     <BookingGateModal
+      source="navbar"
       trigger={
         <Button
           variant="secondary"
@@ -186,6 +193,7 @@ export function Navbar() {
               <div className="flex flex-col gap-3 px-4 pb-4">
                 {langSwitcher}
                 <BookingGateModal
+                  source="navbar"
                   trigger={
                     <Button
                       variant="secondary"

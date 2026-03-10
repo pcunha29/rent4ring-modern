@@ -5,6 +5,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { trackGetDirectionsClicked } from "@/lib/amplitude";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/Rent4Ring+GmbH+%26+Co.+KG/@50.3431937,6.952336,985m/data=!3m1!1e3!4m6!3m5!1s0x47bfad2b4e0f4257:0xab66aeadfdeea77b!8m2!3d50.3430471!4d6.952068!16s%2Fg%2F1tjxdt2_?entry=ttu";
@@ -48,6 +49,7 @@ export function VisitGarage() {
             href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackGetDirectionsClicked()}
             className={cn(
               "inline-flex items-center gap-2 text-sm font-semibold text-secondary",
               "underline decoration-secondary/60 underline-offset-4",

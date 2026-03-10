@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { RaceTicketEmbed } from "@/components/book/raceticket-embed";
+import { trackBookingPageLoaded } from "@/lib/amplitude";
 
 function BookPageContent() {
   const t = useTranslations("book");
@@ -19,6 +20,15 @@ function BookPageContent() {
   const carId = parseIntParam("carId");
   const packageId = parseIntParam("packageId");
   const laps = parseIntParam("laps");
+
+  useEffect(() => {
+    trackBookingPageLoaded({
+      car_id: carId,
+      package_id: packageId,
+      laps,
+      has_filters: carId != null || packageId != null || laps != null,
+    });
+  }, [carId, packageId, laps]);
 
   return (
     <div className="w-full pb-16 md:pb-24">

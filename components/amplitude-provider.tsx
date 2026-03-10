@@ -1,6 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { identifyUser } from "@/lib/amplitude";
+
+function getDeviceType() {
+  const w = window.innerWidth;
+  if (w < 768) return "mobile";
+  if (w < 1024) return "tablet";
+  return "desktop";
+}
 
 export function AmplitudeProvider() {
   const initialized = useRef(false);
@@ -8,7 +16,7 @@ export function AmplitudeProvider() {
   useEffect(() => {
     if (initialized.current) return;
 
-    const apiKey = process.env.AMPLITUDE_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
     if (!apiKey) return;
 
     initialized.current = true;
@@ -18,6 +26,12 @@ export function AmplitudeProvider() {
         serverZone: "EU",
         analytics: { autocapture: true },
         sessionReplay: { sampleRate: 1 },
+      });
+
+      identifyUser({
+        locale: document.documentElement.lang || "en",
+        device_type: getDeviceType(),
+        entry_page: window.location.pathname,
       });
     });
   }, []);

@@ -14,6 +14,10 @@ import {
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import {
+  trackBookingGateOpened,
+  trackBookingGateCompleted,
+} from "@/lib/amplitude";
 
 const CHECKS = [
   "check1",
@@ -24,12 +28,28 @@ const CHECKS = [
   "check6",
 ] as const;
 
+function parseUrlParams(url: string) {
+  try {
+    const search = url.includes("?") ? url.split("?")[1] : "";
+    const params = new URLSearchParams(search);
+    const int = (k: string) => {
+      const v = params.get(k);
+      return v ? parseInt(v, 10) : undefined;
+    };
+    return { car_id: int("carId"), package_id: int("packageId"), laps: int("laps") };
+  } catch {
+    return {};
+  }
+}
+
 export function BookingGateModal({
   bookingUrl = "/book",
   trigger,
+  source = "navbar",
 }: {
   bookingUrl?: string;
   trigger: React.ReactNode;
+  source?: string;
 }) {
   const t = useTranslations("bookingGate");
   const locale = useLocale();
@@ -45,6 +65,10 @@ export function BookingGateModal({
     setChecked((prev) => ({ ...prev, [key]: !prev[key] }));
 
   const handleProceed = () => {
+    trackBookingGateCompleted({
+      booking_url: bookingUrl,
+      ...parseUrlParams(bookingUrl),
+    });
     setOpen(false);
     setChecked({});
     router.push(`/${locale}${bookingUrl}`);
@@ -55,6 +79,13 @@ export function BookingGateModal({
       open={open}
       onOpenChange={(v) => {
         setOpen(v);
+        if (v) {
+          trackBookingGateOpened({
+            source,
+            booking_url: bookingUrl,
+            ...parseUrlParams(bookingUrl),
+          });
+        }
         if (!v) setChecked({});
       }}
     >

@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { trackCookieConsentResponded } from "@/lib/amplitude";
 
 const STORAGE_KEY = "r4r-cookie-consent-v1";
 
@@ -32,6 +33,7 @@ export function CookieConsent() {
     } catch {
       // ignore
     }
+    trackCookieConsentResponded("allowed");
     setVisible(false);
   };
 
@@ -41,6 +43,7 @@ export function CookieConsent() {
     } catch {
       // ignore
     }
+    trackCookieConsentResponded("declined");
     setVisible(false);
   };
 
