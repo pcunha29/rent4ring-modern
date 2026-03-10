@@ -21,12 +21,19 @@ export function AmplitudeProvider() {
 
     initialized.current = true;
 
-    import("@amplitude/unified").then((amplitude) => {
-      amplitude.initAll(apiKey, {
+    import("@amplitude/unified").then(async (amplitude) => {
+      await amplitude.initAll(apiKey, {
         serverZone: "EU",
         analytics: { autocapture: true },
         sessionReplay: { sampleRate: 1 },
       });
+
+      console.log(
+        "[Amplitude] initialized — sessionId:",
+        amplitude.getSessionId(),
+        "deviceId:",
+        amplitude.getDeviceId(),
+      );
 
       identifyUser({
         locale: document.documentElement.lang || "en",
