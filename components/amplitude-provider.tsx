@@ -15,12 +15,11 @@ export function AmplitudeProvider() {
 
   useEffect(() => {
     if (initialized.current) return;
-
+    console.log("[Amplitude] initializing...");
     const apiKey = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
     if (!apiKey) return;
 
     initialized.current = true;
-
     import("@amplitude/unified").then(async (amplitude) => {
       await amplitude.initAll(apiKey, {
         serverZone: "EU",

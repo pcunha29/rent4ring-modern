@@ -3,6 +3,7 @@ import { Inter, Nunito, Roboto_Mono } from "next/font/google";
 import { AnalyticsProvider } from "@/components/analytics";
 import { AmplitudeProvider } from "@/components/amplitude-provider";
 import "./globals.css";
+const amplitude = import("@amplitude/unified");
 
 const inter = Inter({
   variable: "--font-sans",
@@ -64,7 +65,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+  amplitude.then((amplitude) => amplitude.track("Sign Up"));
   return (
     <html lang="en">
       <AnalyticsProvider />
