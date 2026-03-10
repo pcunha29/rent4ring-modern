@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Nunito, Roboto_Mono } from "next/font/google";
 import { AnalyticsProvider } from "@/components/analytics";
+import { AmplitudeProvider } from "@/components/amplitude-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AnalyticsProvider />
+      <AmplitudeProvider />
       <body
         className={`${inter.variable} ${nunito.variable} ${robotoMono.variable} antialiased`}
       >
