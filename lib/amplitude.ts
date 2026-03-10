@@ -1,18 +1,64 @@
 "use client";
 
-let amplitudeModule: typeof import("@amplitude/unified") | null = null;
+import * as amplitude from "@amplitude/unified";
+import { useEffect, useRef } from "react";
 
-function getAmplitude() {
-  if (amplitudeModule) return Promise.resolve(amplitudeModule);
-  return import("@amplitude/unified").then((mod) => {
-    amplitudeModule = mod;
-    return mod;
+const apiKey = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY;
+const isDev = process.env.NODE_ENV === "development";
+
+if (typeof window !== "undefined" && apiKey && !isDev) {
+  amplitude.initAll(apiKey, {
+    serverZone: "EU",
+    analytics: { autocapture: true },
+    sessionReplay: { sampleRate: 1 },
   });
+} else if (typeof window !== "undefined" && isDev) {
+  console.log("[Amplitude] dev mode, amplitude not tracking atm");
 }
+
+// ---------------------------------------------------------------------------
+// Internal helper — no-ops in dev, calls amplitude.track in production
+// ---------------------------------------------------------------------------
 
 function track(event: string, properties?: Record<string, unknown>) {
-  getAmplitude().then((amp) => amp.track(event, properties));
+  if (isDev) {
+    console.log(`[Amplitude] ${event}`, properties ?? "");
+    return;
+  }
+  amplitude.track(event, properties);
 }
+
+// ---------------------------------------------------------------------------
+// React component — mount in root layout to trigger identify once per session
+// ---------------------------------------------------------------------------
+
+function getDeviceType() {
+  const w = window.innerWidth;
+  if (w < 768) return "mobile";
+  if (w < 1024) return "tablet";
+  return "desktop";
+}
+
+export function AmplitudeProvider() {
+  const identified = useRef(false);
+
+  useEffect(() => {
+    if (identified.current || !apiKey || isDev) return;
+    identified.current = true;
+
+    const identify = new amplitude.Identify();
+    identify.setOnce("locale", document.documentElement.lang || "en");
+    identify.setOnce("device_type", getDeviceType());
+    identify.setOnce("entry_page", window.location.pathname);
+    amplitude.identify(identify);
+  }, []);
+
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Typed event helpers
+// ---------------------------------------------------------------------------
 
 export function trackCookieConsentResponded(response: "allowed" | "declined") {
   track("cookie_consent_responded", { response });
@@ -94,18 +140,4 @@ export function trackFaqItemExpanded(props: {
 
 export function trackGetDirectionsClicked() {
   track("get_directions_clicked");
-}
-
-export function identifyUser(props: {
-  locale: string;
-  device_type: string;
-  entry_page: string;
-}) {
-  getAmplitude().then((amp) => {
-    const identify = new amp.Identify();
-    identify.setOnce("locale", props.locale);
-    identify.setOnce("device_type", props.device_type);
-    identify.setOnce("entry_page", props.entry_page);
-    amp.identify(identify);
-  });
 }

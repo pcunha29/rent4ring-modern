@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Nunito, Roboto_Mono } from "next/font/google";
 import { AnalyticsProvider } from "@/components/analytics";
-import { AmplitudeProvider } from "@/components/amplitude-provider";
+import { AmplitudeProvider } from "@/lib/amplitude";
+
 import "./globals.css";
 const amplitude = import("@amplitude/unified");
 
