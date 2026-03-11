@@ -6,7 +6,8 @@
     "aboutUs": "About Us",
     "faq": "FAQ",
     "giftVouchers": "Gift Vouchers",
-    "bookNow": "Book Now"
+    "bookNow": "Book Now",
+    "calendar": "Calendar"
   },
   "hero": {
     "est": "EST. 2008",
@@ -248,5 +249,15 @@
         "description": "Full German-made Wiechers roll cages, Recaro seats, and Schroth 4-point harnesses for ultimate driver safety."
       }
     }
+  },
+  "calendar": {
+    "title": "Track Calendar",
+    "subtitle": "Touristenfahrten opening hours at the Nürburgring",
+    "noSessions": "No Touristenfahrten scheduled for this day",
+    "sessionTime": "Open",
+    "motorcyclesAllowed": "Motorcycles allowed",
+    "layout": "Layout",
+    "selectDay": "Select a day to see details",
+    "pickYourWeapon": "Pick Your Weapon"
   }
 }
