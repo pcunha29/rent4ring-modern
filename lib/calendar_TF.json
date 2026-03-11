@@ -1,0 +1,427 @@
+[
+  {
+    "date": "2026-03-07",
+    "weekday": "Saturday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": true
+      }
+    ]
+  },
+  {
+    "date": "2026-03-08",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "18:30",
+        "layout": "nls",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-03-15",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-03-16",
+    "weekday": "Monday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-03-17",
+    "weekday": "Tuesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-03-18",
+    "weekday": "Wednesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-03-19",
+    "weekday": "Thursday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "18:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+
+  {
+    "date": "2026-04-03",
+    "weekday": "Friday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "weekday": "Saturday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-05",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+
+  {
+    "date": "2026-05-01",
+    "weekday": "Friday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-05-02",
+    "weekday": "Saturday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-05-03",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+
+  {
+    "date": "2026-06-01",
+    "weekday": "Monday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-02",
+    "weekday": "Tuesday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-03",
+    "weekday": "Wednesday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-04",
+    "weekday": "Thursday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-08",
+    "weekday": "Monday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-09",
+    "weekday": "Tuesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-11",
+    "weekday": "Thursday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-14",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "13:30",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-15",
+    "weekday": "Monday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-06-16",
+    "weekday": "Tuesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+
+  {
+    "date": "2026-07-01",
+    "weekday": "Wednesday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-02",
+    "weekday": "Thursday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-03",
+    "weekday": "Friday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-04",
+    "weekday": "Saturday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-05",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "08:00",
+        "end": "19:00",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-06",
+    "weekday": "Monday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "weekday": "Tuesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "weekday": "Wednesday",
+    "sessions": [
+      {
+        "start": "17:30",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-07-10",
+    "weekday": "Friday",
+    "sessions": [
+      {
+        "start": "17:00",
+        "end": "19:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+
+  {
+    "date": "2026-11-01",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "16:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "weekday": "Saturday",
+    "sessions": [
+      {
+        "start": "14:30",
+        "end": "16:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "weekday": "Sunday",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "16:30",
+        "layout": "nordschleife",
+        "motorcycles": false
+      }
+    ]
+  }
+]

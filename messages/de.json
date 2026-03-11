@@ -6,7 +6,8 @@
     "aboutUs": "Über uns",
     "faq": "FAQ",
     "giftVouchers": "Geschenkgutscheine",
-    "bookNow": "Jetzt buchen"
+    "bookNow": "Jetzt buchen",
+    "calendar": "Kalender"
   },
   "hero": {
     "est": "GEGR. 2008",
@@ -254,5 +255,15 @@
         "description": "Vollständige deutsche Wiechers-Rollkäfige, Recaro-Sitze und Schroth-4-Punkt-Gurte für maximale Fahrersicherheit."
       }
     }
+  },
+  "calendar": {
+    "title": "Streckenkalender",
+    "subtitle": "Touristenfahrten Öffnungszeiten am Nürburgring",
+    "noSessions": "Keine Touristenfahrten für diesen Tag geplant",
+    "sessionTime": "Geöffnet",
+    "motorcyclesAllowed": "Motorräder erlaubt",
+    "layout": "Layout",
+    "selectDay": "Wählen Sie einen Tag für Details",
+    "pickYourWeapon": "Wähle Deine Waffe"
   }
 }
