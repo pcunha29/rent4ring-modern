@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingGateModal } from "@/components/booking-gate-modal";
 import type { PricingPackage } from "@/lib/fleet-data";
@@ -64,6 +64,14 @@ export function PricingSection({
       <h2 className="font-serif text-xl font-bold tracking-tight text-foreground md:text-2xl">
         {d("pricing")}
       </h2>
+
+      <div className="mt-4 flex gap-3 rounded-xl border border-secondary/20 bg-secondary/5 p-4">
+        <Wallet className="mt-0.5 size-5 shrink-0 text-secondary" />
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          {d("pricingCallout")}
+        </p>
+      </div>
+
       <div className="mt-4 flex flex-col gap-4">
         {packages.map((pkg) => {
           const lapCount = getLaps(pkg.nameKey);
