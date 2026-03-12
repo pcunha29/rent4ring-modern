@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Minus, Plus, Wallet } from "lucide-react";
+import { Minus, Plus, ShieldCheck, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingGateModal } from "@/components/booking-gate-modal";
 import type { PricingPackage } from "@/lib/fleet-data";
@@ -65,11 +65,29 @@ export function PricingSection({
         {d("pricing")}
       </h2>
 
-      <div className="mt-4 flex gap-3 rounded-xl border border-secondary/20 bg-secondary/5 p-4">
-        <Wallet className="mt-0.5 size-5 shrink-0 text-secondary" />
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {d("pricingCallout")}
-        </p>
+      <div className="mt-4 space-y-3 rounded-xl border border-secondary/20 bg-secondary/5 p-4">
+        <div className="flex gap-3">
+          <ShieldCheck className="mt-0.5 size-5 shrink-0 text-secondary" />
+          <div>
+            <p className="text-sm font-semibold text-foreground">
+              {d("pricingCalloutTitle1")}
+            </p>
+            <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+              {d("pricingCalloutBody1")}
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3">
+          <Gauge className="mt-0.5 size-5 shrink-0 text-secondary" />
+          <div>
+            <p className="text-sm font-semibold text-foreground">
+              {d("pricingCalloutTitle2")}
+            </p>
+            <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+              {d("pricingCalloutBody2")}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="mt-4 flex flex-col gap-4">
@@ -147,9 +165,6 @@ export function PricingSection({
                   </Button>
                 }
               />
-              <p className="mt-2 text-center text-xs text-muted-foreground">
-                {d("depositNote")}
-              </p>
             </div>
           );
         })}
