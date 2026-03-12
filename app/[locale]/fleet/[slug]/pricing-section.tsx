@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Minus, Plus, ShieldCheck, Gauge } from "lucide-react";
+import { Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingGateModal } from "@/components/booking-gate-modal";
 import type { PricingPackage } from "@/lib/fleet-data";
@@ -78,7 +78,7 @@ export function PricingSection({
           </div>
         </div>
         <div className="flex gap-3">
-          <Gauge className="mt-0.5 size-5 shrink-0 text-secondary" />
+          <Wallet className="mt-0.5 size-5 shrink-0 text-secondary" />
           <div>
             <p className="text-sm font-semibold text-foreground">
               {d("pricingCalloutTitle2")}
