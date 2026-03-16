@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
-import { Info } from "lucide-react";
+import { Info, ChevronsDown } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -36,7 +36,11 @@ function parseUrlParams(url: string) {
       const v = params.get(k);
       return v ? parseInt(v, 10) : undefined;
     };
-    return { car_id: int("carId"), package_id: int("packageId"), laps: int("laps") };
+    return {
+      car_id: int("carId"),
+      package_id: int("packageId"),
+      laps: int("laps"),
+    };
   } catch {
     return {};
   }
@@ -56,6 +60,30 @@ export function BookingGateModal({
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const [showScrollHint, setShowScrollHint] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const checkOverflow = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setShowScrollHint(el.scrollHeight - el.scrollTop - el.clientHeight > 12);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const t1 = setTimeout(checkOverflow, 100);
+    const t2 = setTimeout(checkOverflow, 350);
+
+    const el = scrollRef.current;
+    const ro = el ? new ResizeObserver(checkOverflow) : null;
+    if (el) ro?.observe(el);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      ro?.disconnect();
+    };
+  }, [open, checkOverflow]);
 
   const checkedCount = CHECKS.filter((k) => checked[k]).length;
   const allChecked = checkedCount === CHECKS.length;
@@ -104,7 +132,11 @@ export function BookingGateModal({
         </div>
 
         {/* Scrollable checkboxes */}
-        <div className="flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-4">
+        <div
+          ref={scrollRef}
+          onScroll={checkOverflow}
+          className="min-h-0 flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-4 custom-scrollbar"
+        >
           <div className="space-y-2.5 sm:space-y-3">
             {CHECKS.map((key) => (
               <label
@@ -123,6 +155,17 @@ export function BookingGateModal({
             ))}
           </div>
         </div>
+        <div
+          aria-hidden="true"
+          className={`flex shrink-0 items-center justify-center py-1 transition-all duration-500 ${showScrollHint ? "h-8 opacity-100" : "h-0 overflow-hidden opacity-0"}`}
+        >
+          <div className="flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1">
+            <ChevronsDown className="size-3.5  text-secondary" />
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Scroll
+            </span>
+          </div>
+        </div>
 
         {/* Sticky footer */}
         <div className="shrink-0 border-t border-border px-4 pt-3 pb-4 sm:px-6 sm:pt-4 sm:pb-6">
@@ -136,7 +179,13 @@ export function BookingGateModal({
           {/* Progress */}
           <div className="mb-3">
             <div className="flex items-center justify-between text-[11px] sm:text-xs">
-              <span className={allChecked ? "font-medium text-green-600" : "text-muted-foreground"}>
+              <span
+                className={
+                  allChecked
+                    ? "font-medium text-green-600"
+                    : "text-muted-foreground"
+                }
+              >
                 {t("progress", { count: checkedCount, total: CHECKS.length })}
               </span>
               {allChecked && (
