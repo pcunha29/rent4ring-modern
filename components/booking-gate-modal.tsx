@@ -66,7 +66,8 @@ export function BookingGateModal({
   const checkOverflow = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
-    setShowScrollHint(el.scrollHeight - el.scrollTop - el.clientHeight > 12);
+    const remaining = Math.ceil(el.scrollHeight - el.scrollTop - el.clientHeight);
+    setShowScrollHint(remaining > 2);
   }, []);
 
   useEffect(() => {
