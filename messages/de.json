@@ -10,9 +10,9 @@
   },
   "hero": {
     "est": "GEGR. 2008",
-    "headlineLine1": "HERZ DES",
+    "headlineLine1": "HERZ DER",
     "headlineLine2": "GRÜNEN HÖLLE.",
-    "description": "Mehr als ein Verleih. Wir sind eine Gemeinschaft von Nordschleifen-Enthusiasten, die durch Tradition, Präzision und Sicherheit den perfekten Rundenrekord verfolgen.",
+    "description": "Mehr als ein Vermieter. Wir sind ein Team von Nordschleifen-Enthusiasten, die durch Tradition, Präzision und Sicherheit das perfekte Erlebnis verfolgen.",
     "bookExperience": "Erlebnis buchen",
     "exploreFleet": "Flotte entdecken"
   },
@@ -25,7 +25,7 @@
     "code": "404",
     "eyebrow": "Falsche Abzweigung",
     "title": "Du hast die Ideallinie verlassen.",
-    "description": "Diese Runde existiert nicht. Auch wir verfahren uns auf der Nordschleife mal. Zeit für einen Boxenstopp—zurück in die Box.",
+    "description": "Diese Abkürzung existiert nicht. Auch wir verfahren uns auf der Nordschleife mal. Zeit für einen Boxenstopp—zurück in die Box.",
     "backHome": "Zurück auf die Strecke",
     "bookExperience": "Erlebnis buchen"
   },
@@ -49,7 +49,7 @@
   "trustStrip": {
     "ariaLabel": "Kennzahlen",
     "stat1": { "value": "2008", "label": "Gegr." },
-    "stat2": { "value": "15+", "label": "Fahrzeuge" },
+    "stat2": { "value": "20+", "label": "Fahrzeuge" },
     "stat3": { "value": "Nürburgring", "label": "Unsere Strecke" },
     "stat4": { "value": "100%", "label": "Streckenbereit" }
   },
@@ -62,7 +62,7 @@
   },
   "fleet": {
     "eyebrow": "Die Flotte",
-    "title": "Wähle deine Bestie",
+    "title": "Wähle dein Fahrzeug",
     "description": "Unsere Flotte wird von spezialisierten Rennsport-Ingenieuren gepflegt, um Höchstleistung bei jeder Runde zu gewährleisten.",
     "prevLabel": "Zurück",
     "nextLabel": "Weiter",
@@ -70,10 +70,6 @@
     "specPower": "Leistung",
     "specDrive": "Antrieb",
     "specWeight": "Gewicht",
-    "badges": {
-      "inStock": "AUF LAGER",
-      "popular": "BELIEBT"
-    },
     "viewMore": "Details ansehen",
     "detail": {
       "eyebrow": "Flotte",
@@ -114,39 +110,39 @@
         "brand": "MINI",
         "model": "Cooper S",
         "tagline": "KOMPAKTER THRILL",
-        "description": "Der neue MINI Cooper S bietet eine leistungsstärkere, stabilere Plattform. Sein Doppelkupplungsgetriebe mit Schaltwippen ermöglicht schnellere, fehlerfreie Gangwechsel.",
+        "description": "Der neue MINI Cooper S bietet eine leistungsstarke und stabile Plattform. Sein Doppelkupplungsgetriebe mit Schaltwippen ermöglicht schnellere, fehlerfreie Gangwechsel.",
         "feature1": "192 PS - 2,0L 4-Zylinder Turbo",
         "feature2": "7-Gang DCT Getriebe",
-        "feature3": "Entkernt und mit vollständigem Wiechers-Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten ausgestattet",
-        "feature4": "Aufgerüstet mit maßgeschneiderter Öhlins DFV-Fede rung und Uniball-Querlenkern",
+        "feature3": "Leergeräumter Innenraum und mit vollständigem Wiechers-Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten ausgestattet",
+        "feature4": "Aufgerüstet mit maßgeschneiderter Öhlins DFV-Fahrwerk und Uniball-Querlenkern",
         "feature5": "Leichte 17\" Pro Track Felgen mit Ultra-High-Performance-Reifen",
         "feature6": "Milltek Sportauspuff und Sport-Luftfilter",
-        "feature7": "Aufgerüstete Bremsen mit Endless Racing Belägen, Flüssigkeit und Leitungen"
+        "feature7": "Verbesserte Bremsen mit Endless Racing Belägen, Flüssigkeit und Leitungen"
       },
       "toyota-gr-yaris": {
         "brand": "Toyota",
         "model": "GR Yaris",
         "tagline": "RALLYE-BLUT",
-        "description": "Der aktualisierte GR Yaris ist das perfekte Mietfahrzeug für die Nürburgring Nordschleife. Mit unseren fahrerorientierten Modifikationen bietet er ein begeisterndes, vertrauenserweckendes Erlebnis für Fahrer aller Könnerstufen. Sein Doppelkupplungsgetriebe und die rallye-erprobte Technik machen ihn bei jedem Wetter zur zuverlässigen Streckenwaffe.",
+        "description": "Der aktualisierte GR Yaris ist das perfekte Mietfahrzeug für die Nürburgring Nordschleife. Mit unseren bewährten Modifikationen bietet er ein begeisterndes, vertrauenserweckendes Erlebnis für Fahrer aller Könnerstufen. Sein modernes Automatikgetriebe und die Rallye-erprobte Technik machen ihn bei jedem Wetter zur zuverlässigen Streckenwaffe.",
         "feature1": "280 PS Turbomotor",
         "feature2": "Fortschrittliches AWD-System für unglaublichen Grip und Stabilität",
-        "feature3": "Nahtloses 8-Gang-Automatikgetriebe mit Schaltwippen",
-        "feature4": "Maßgeschneiderte MCS 3Way Remote Federung, perfekt abgestimmt für den Nürburgring",
-        "feature5": "18\"-Leichtmetallräder mit straßenzugelassenen Hochleistungs-Rennreifen",
-        "feature6": "Mit Rollkäfig, Recaro-Rennsitzen und Schroth-Gurten für maximale Sicherheit",
-        "feature7": "Aufgerüstete Bremsen mit Endless-Belägen und Motul-Bremsflüssigkeit"
+        "feature3": "Modernes 8-Gang-Automatikgetriebe mit Schaltwippen",
+        "feature4": "Maßgeschneidertes MCS 3Way Remote Fahrwerk, perfekt abgestimmt für den Nürburgring",
+        "feature5": "18\"-Leichtmetallräder mit straßenzugelassenen Hochleistungs Reifen",
+        "feature6": "Mit Überrollkäfig, Recaro-Rennsitzen und Schroth-Gurten für maximale Sicherheit",
+        "feature7": "Verbesserte Bremsen mit Endless-Belägen und Motul-Bremsflüssigkeit"
       },
       "toyota-gr-supra": {
         "brand": "Toyota",
         "model": "GR Supra",
         "tagline": "REINER SPORTWAGEN",
-        "description": "Der neueste Zugang zu unserer Mietflotte — die Supra ist ein fantastischer Hinterradantrieb-Sportwagen, der in den richtigen Händen zu schnellen und geschmeidigen Runden fähig ist.",
-        "feature1": "Semi-Slick straßenzugelassene Rennreifen",
-        "feature2": "Maßgeschneiderte Öhlins TTX-Dämpfer von 4RUO",
+        "description": "Das aggressivste unserer Flotte — die Supra ist ein fantastischer Sportwagen mit heckantrieb, der in den richtigen Händen zu schnellen und geschmeidigen Runden fähig ist.",
+        "feature1": "Semi-Slick straßenzugelassene Reifen",
+        "feature2": "Maßgeschneiderte Öhlins TTX-Dämpfer von",
         "feature3": "Werks-GT4-Querlenker mit Uniballs und eigenen Sturz+Spur-Korrektur-Upgrades!",
         "feature4": "Mit Rollkäfig, Recaro Pole Position Rennsitzen und Schroth-Gurten",
         "feature5": "8-Gang-Schaltwippen",
-        "feature6": "Aufgerüstete Bremsen mit Motul-Flüssigkeit und Endless-Belägen",
+        "feature6": "Verbesserte Bremsen mit Motul-Flüssigkeit und Endless-Belägen",
         "feature7": "Hervorragende Fahreigenschaften, hoher Grip und starke Beschleunigung"
       },
       "porsche-taycan-turbo-gt": {
@@ -154,9 +150,8 @@
         "model": "Taycan Turbo GT",
         "tagline": "ELEKTRISCHER REKORDJÄGER",
         "description": "Das schnellste Elektroauto, das je den Nürburgring umrundete. Sofortiges Drehmoment und Porsches legendäre Fahrwerkstechnik machen dies zu einem surrealen Erlebnis.",
-        "feature1": "1.093 PS — Duale Elektromotoren mit Overboost",
+        "feature1": "1.034 PS — Duale Elektromotoren mit Overboost",
         "feature2": "2-Gang Automatik-Hinterachsgetriebe",
-        "feature3": "Vollständiger Wiechers-Rollkäfig, Recaro-Rennsitze und Schroth-Gurte",
         "feature4": "Aktives Fahrwerksmanagement, Hinterachslenkung",
         "feature5": "Porsche Ceramic Composite Bremsen (PCCB)"
       },
@@ -164,13 +159,13 @@
         "brand": "Porsche",
         "model": "718 Spyder RS",
         "tagline": "OFFENES PRÄZISIONSFAHRZEUG",
-        "description": "Unser Porsche 718 Spyder RS mit Weissach-Paket bietet eines der aufregendsten Fahrerlebnisse für die Nürburgring Nordschleife. Mit seinem hochdrehenden Saugmotor-Boxersechser, dem hochmodernen PDK-Getriebe und dem Leichtbau ist dieses Mietfahrzeug gebaut, um eine der anspruchsvollsten Rennstrecken der Welt zu bezwingen.",
+        "description": "Unser Porsche 718 Spyder RS mit Weissach-Paket bietet eines der aufregendsten Fahrerlebnisse für die Nürburgring Nordschleife. Mit seinem hochdrehenden 4.0 Liter Boxermotor, dem hochmodernen PDK-Getriebe und Leichtbau ist dieses Fahrzeug gebaut, um eine der anspruchsvollsten Rennstrecken der Welt zu bezwingen.",
         "feature1": "500 PS Saugmotor-Boxer-Sechszylinder, drehend bis 9.000 U/min",
         "feature2": "7-Gang-PDK-Automatikgetriebe für blitzschnelle Schaltvorgänge",
         "feature3": "Weissach-Paket: Carbon-Komponenten für reduziertes Gewicht und verbesserte Aerodynamik",
         "feature4": "Hinterradantrieb mit präziser Fahrwerksabstimmung für die Nordschleife",
-        "feature5": "Ultraleichte Magnesiumräder mit Michelin Pilot Sport Cup 2 R Reifen",
-        "feature6": "Aerodynamik-Verbesserungen, inkl. motorsport-inspiriertem Heckdiffusor und Spoiler",
+        "feature5": "Ultraleichte Magnesiumräder mit Hochleisdtungsreifen",
+        "feature6": "Aerodynamik-Verbesserungen, inkl. Motorsport-inspiriertem Heckdiffusor und Spoiler",
         "feature7": "Rennsport-inspiriertes Interieur mit Carbon-Schalensitzen, Alcantara und Leichtbau"
       },
       "porsche-911-gt3-rs-992": {
@@ -181,8 +176,8 @@
         "feature1": "525 PS Saugmotor-Boxer-Sechszylinder, drehend bis 9.000 U/min",
         "feature2": "Hinterradantrieb mit fortschrittlicher Aerodynamik für maximalen Abtrieb und Kurvenstabilität",
         "feature3": "7-Gang-PDK-Getriebe für blitzschnelle Schaltvorgänge",
-        "feature4": "Streckenoptimierte Michelin Pilot Sport Cup 2 R Reifen",
-        "feature5": "Leichtgewichtige Räder für reduzierte ungefederte Massen",
+        "feature4": "Streckenoptimierte Michelin Pilot Sport Cup 2 Reifen",
+        "feature5": "Ultra leichte Räder für reduzierte ungefederte Massen",
         "feature6": "Rennsport-inspiriertes Interieur mit Carbon-Schalensitzen und Motorsport-Lenkrad"
       },
       "ferrari-296-gtb": {
@@ -192,9 +187,8 @@
         "description": "Der Hybrid-Supersportwagen aus Maranello. Der 296 GTB kombiniert einen Twin-Turbo-V6 mit einem Elektromotor für 830 PS Gesamtleistung, verpackt in Ferraris typischer Fahrdynamik.",
         "feature1": "830 PS - 3,0L V6 Twin-Turbo + Elektromotor",
         "feature2": "8-Gang DCT Doppelkupplung",
-        "feature3": "Vollständiger Wiechers-Rollkäfig und Renngeschirr",
         "feature4": "Ferrari Active Suspension mit Side Slip Control",
-        "feature5": "Keramik-Bremsen, Michelin Pilot Sport Cup 2 Reifen"
+        "feature5": "Keramik-Bremsen, hochleistungs Reifen"
       }
     }
   },
@@ -216,7 +210,7 @@
     "skillLevel": "Empfohlenes Können: Anfänger bis Experte!",
     "heightLimit": "Geeignet für Fahrer bis ca. 195 cm und 125 kg",
     "heightLimitNote": "Kontaktieren Sie uns, wenn Sie diese Größe erreichen oder überschreiten",
-    "basicLiability": "Basis-Haftung",
+    "basicLiability": "Standard-Haftung",
     "reducedLiability": "Reduzierte Haftung",
     "premiumInsurance": "Premium-Versicherung",
     "firstDriver": "Erster Fahrer",
@@ -249,7 +243,7 @@
       },
       "tires": {
         "label": "MECHANISCHER GRIP",
-        "title": "Reifen (Michelin / Yokohama)",
+        "title": "Reifen (Michelin / Yokohama / Toyo)",
         "description": "Wir setzen auf Premium-Marken; die meisten unserer Autos fahren mit Michelin- und Yokohama-Rennreifen für maximalen Grip bei jedem Wetter."
       },
       "safety": {

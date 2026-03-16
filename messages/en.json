@@ -49,7 +49,7 @@
   "trustStrip": {
     "ariaLabel": "Key facts",
     "stat1": { "value": "2008", "label": "Est." },
-    "stat2": { "value": "15+", "label": "Vehicles" },
+    "stat2": { "value": "20+", "label": "Vehicles" },
     "stat3": { "value": "Nürburgring", "label": "Our playground" },
     "stat4": { "value": "100%", "label": "Track-ready" }
   },
@@ -138,7 +138,7 @@
         "tagline": "PURE SPORTS CAR",
         "description": "The newest addition to our rental fleet, the Supra is a fantastic RWD sportscar, capable of smooth and fast laps in the right hands.",
         "feature1": "Semi-slick road-legal race tyres",
-        "feature2": "Custom Öhlins TTX dampers by 4RUO",
+        "feature2": "Custom Öhlins TTX dampers",
         "feature3": "Factory GT4 control arms, featuring uniballs and our own camber+toe correction upgrades!",
         "feature4": "Roll-caged, with Recaro Pole Position racing seats and Schroth harnesses",
         "feature5": "8-speed paddle-shift",
@@ -159,12 +159,12 @@
         "brand": "Porsche",
         "model": "Spyder RS",
         "tagline": "OPEN-TOP PRECISION",
-        "description": "Our Porsche 718 Spyder RS with Weissach Package offers one of the most thrilling driving experiences for the Nürburgring Nordschleife. With its high-revving naturally aspirated flat-six engine, cutting-edge PDK transmission, and lightweight design, this rental car is built to conquer one of the world's most challenging circuits.",
+        "description": "Our Porsche 718 Spyder RS ​​with Weissach package offers one of the most exhilarating driving experiences on the Nürburgring Nordschleife. With its high-revving 4.0-liter boxer engine, state-of-the-art PDK transmission, and lightweight construction, this vehicle is built to conquer one of the most demanding racetracks in the world.",
         "feature1": "500hp naturally aspirated flat-six engine, revving to 9,000 rpm",
         "feature2": "7-speed PDK automatic transmission for lightning-fast shifts",
         "feature3": "Weissach Package: Carbon fiber components for reduced weight and enhanced aerodynamics",
         "feature4": "Rear-wheel drive with precision chassis tuning for the Nordschleife",
-        "feature5": "Ultra-light magnesium wheels with Michelin Pilot Sport Cup 2 R tires",
+        "feature5": "Ultra-light magnesium wheels with high-performance tires",
         "feature6": "Aerodynamic enhancements, including a motorsport-inspired rear diffuser and spoiler",
         "feature7": "Racing-inspired interior with carbon bucket seats, Alcantara trim, and lightweight design"
       },
@@ -188,7 +188,7 @@
         "feature1": "830hp - 3.0L V6 Twin-Turbo + Electric Motor",
         "feature2": "8-speed DCT dual-clutch",
         "feature4": "Ferrari Active Suspension with Side Slip Control",
-        "feature5": "Carbon-ceramic brakes, Michelin Pilot Sport Cup 2 tires"
+        "feature5": "Carbon-ceramic brakes, high-performance tires"
       }
     }
   },
@@ -210,7 +210,7 @@
     "skillLevel": "Recommended skill level: Novice to Expert!",
     "heightLimit": "Suitable for drivers up to approximately 195cm and 125kg",
     "heightLimitNote": "Contact us if you are this size or larger",
-    "basicLiability": "Basic Liability",
+    "basicLiability": "Standard Liability",
     "reducedLiability": "Reduced Liability",
     "premiumInsurance": "Premium Insurance",
     "firstDriver": "First driver",
@@ -243,7 +243,7 @@
       },
       "tires": {
         "label": "MECHANICAL GRIP",
-        "title": "Tires (Michelin / Yokohama)",
+        "title": "Tires (Michelin / Yokohama/ Toyo)",
         "description": "We prefer premium brands; most of our cars run Michelin and Yokohama track tires for maximum grip in every weather condition."
       },
       "safety": {
