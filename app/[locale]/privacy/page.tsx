@@ -4,7 +4,7 @@ const linkClass = "text-accent underline";
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-[80vh] py-16">
+    <div className="min-h-[80vh] py-32">
       <Container className="max-w-3xl">
         <h1 className="text-primary font-bold text-3xl md:text-4xl mb-8 text-center uppercase tracking-wider">
           Privacy Policy
