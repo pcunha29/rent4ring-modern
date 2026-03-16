@@ -136,9 +136,20 @@ export function Footer() {
           </a>
         </div>
 
-        {/* Bottom: centered copyright only */}
+        {/* Bottom: copyright + credit */}
         <p className="mt-6 text-center text-xs text-muted-foreground">
           ©{new Date().getFullYear()} Rent4Ring. {t("copyright")}
+        </p>
+        <p className="mt-2 text-center text-[11px] text-muted-foreground/60">
+          made with ❤️ by{" "}
+          <a
+            href="https://pcunhadev.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:text-muted-foreground hover:decoration-muted-foreground/60"
+          >
+            pcunhadev
+          </a>
         </p>
       </Container>
     </footer>
