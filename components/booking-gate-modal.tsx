@@ -19,6 +19,9 @@ import {
   trackBookingGateCompleted,
 } from "@/lib/amplitude";
 
+const HIDE_AT_PX = 4;
+const SHOW_AGAIN_AT_PX = 28;
+
 const CHECKS = [
   "check1",
   "check2",
@@ -62,29 +65,88 @@ export function BookingGateModal({
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [showScrollHint, setShowScrollHint] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isAtBottomRef = useRef(false);
+  const settleCheckEarlyRef = useRef<number | null>(null);
+  const settleCheckLateRef = useRef<number | null>(null);
+
+  const clearSettleChecks = useCallback(() => {
+    if (settleCheckEarlyRef.current !== null) {
+      window.clearTimeout(settleCheckEarlyRef.current);
+      settleCheckEarlyRef.current = null;
+    }
+    if (settleCheckLateRef.current !== null) {
+      window.clearTimeout(settleCheckLateRef.current);
+      settleCheckLateRef.current = null;
+    }
+  }, []);
 
   const checkOverflow = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const remaining = Math.ceil(el.scrollHeight - el.scrollTop - el.clientHeight);
-    setShowScrollHint(remaining > 2);
+    const remaining = Math.max(
+      0,
+      el.scrollHeight - el.scrollTop - el.clientHeight,
+    );
+    const hasOverflow = el.scrollHeight - el.clientHeight > HIDE_AT_PX;
+
+    if (!hasOverflow) {
+      isAtBottomRef.current = true;
+      setShowScrollHint(false);
+      return;
+    }
+
+    if (isAtBottomRef.current) {
+      if (remaining > SHOW_AGAIN_AT_PX) {
+        isAtBottomRef.current = false;
+      }
+    } else if (remaining <= HIDE_AT_PX) {
+      isAtBottomRef.current = true;
+    }
+
+    setShowScrollHint(!isAtBottomRef.current);
   }, []);
 
+  const scheduleSettleChecks = useCallback(() => {
+    clearSettleChecks();
+    settleCheckEarlyRef.current = window.setTimeout(checkOverflow, 120);
+    settleCheckLateRef.current = window.setTimeout(checkOverflow, 280);
+  }, [checkOverflow, clearSettleChecks]);
+
+  const handleScroll = useCallback(() => {
+    checkOverflow();
+    scheduleSettleChecks();
+  }, [checkOverflow, scheduleSettleChecks]);
+
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      clearSettleChecks();
+      return;
+    }
+
+    isAtBottomRef.current = false;
     const t1 = setTimeout(checkOverflow, 100);
     const t2 = setTimeout(checkOverflow, 350);
+    const t3 = setTimeout(checkOverflow, 600);
 
     const el = scrollRef.current;
     const ro = el ? new ResizeObserver(checkOverflow) : null;
     if (el) ro?.observe(el);
+    const onTouchEnd = () => scheduleSettleChecks();
+    if (el) {
+      el.addEventListener("touchend", onTouchEnd, { passive: true });
+    }
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
+      clearSettleChecks();
+      if (el) {
+        el.removeEventListener("touchend", onTouchEnd);
+      }
       ro?.disconnect();
     };
-  }, [open, checkOverflow]);
+  }, [open, checkOverflow, clearSettleChecks, scheduleSettleChecks]);
 
   const checkedCount = CHECKS.filter((k) => checked[k]).length;
   const allChecked = checkedCount === CHECKS.length;
@@ -115,7 +177,11 @@ export function BookingGateModal({
             ...parseUrlParams(bookingUrl),
           });
         }
-        if (!v) setChecked({});
+        if (!v) {
+          setChecked({});
+          setShowScrollHint(false);
+          isAtBottomRef.current = false;
+        }
       }}
     >
       <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -135,7 +201,7 @@ export function BookingGateModal({
         {/* Scrollable checkboxes */}
         <div
           ref={scrollRef}
-          onScroll={checkOverflow}
+          onScroll={handleScroll}
           className="min-h-0 flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-4 custom-scrollbar"
         >
           <div className="space-y-2.5 sm:space-y-3">
@@ -158,9 +224,11 @@ export function BookingGateModal({
         </div>
         <div
           aria-hidden="true"
-          className={`flex shrink-0 items-center justify-center py-1 transition-all duration-500 ${showScrollHint ? "h-8 opacity-100" : "h-0 overflow-hidden opacity-0"}`}
+          className={`flex shrink-0 items-center justify-center overflow-hidden px-4 transition-[max-height,opacity,padding] duration-300 ease-out sm:px-6 ${showScrollHint ? "max-h-10 py-1 opacity-100" : "max-h-0 py-0 opacity-0"}`}
         >
-          <div className="flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1">
+          <div
+            className={`flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 transition-opacity duration-300 ${showScrollHint ? "opacity-100" : "opacity-0"}`}
+          >
             <ChevronsDown className="size-3.5  text-secondary" />
             <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
               Scroll
