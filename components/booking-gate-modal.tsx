@@ -117,6 +117,19 @@ export function BookingGateModal({
     scheduleSettleChecks();
   }, [checkOverflow, scheduleSettleChecks]);
 
+  const handleScrollHintClick = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    el.scrollTo({
+      top: el.scrollHeight,
+      behavior: "smooth",
+    });
+
+    scheduleSettleChecks();
+    window.setTimeout(checkOverflow, 420);
+  }, [checkOverflow, scheduleSettleChecks]);
+
   useEffect(() => {
     if (!open) {
       clearSettleChecks();
@@ -223,17 +236,20 @@ export function BookingGateModal({
           </div>
         </div>
         <div
-          aria-hidden="true"
-          className={`flex shrink-0 items-center justify-center overflow-hidden px-4 transition-[max-height,opacity,padding] duration-300 ease-out sm:px-6 ${showScrollHint ? "max-h-10 py-1 opacity-100" : "max-h-0 py-0 opacity-0"}`}
+          className={`flex shrink-0 items-center justify-center overflow-hidden px-4 transition-[max-height,opacity,padding] duration-300 ease-out sm:px-6 ${showScrollHint ? "max-h-10 py-1 opacity-100" : "pointer-events-none max-h-0 py-0 opacity-0"}`}
         >
-          <div
-            className={`flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 transition-opacity duration-300 ${showScrollHint ? "opacity-100" : "opacity-0"}`}
+          <button
+            type="button"
+            onClick={handleScrollHintClick}
+            disabled={!showScrollHint}
+            aria-label="Scroll to end of checklist"
+            className={`flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 transition-opacity duration-300 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-default ${showScrollHint ? "opacity-100" : "opacity-0"}`}
           >
-            <ChevronsDown className="size-3.5  text-secondary" />
+            <ChevronsDown className="size-3.5 text-secondary" />
             <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
               Scroll
             </span>
-          </div>
+          </button>
         </div>
 
         {/* Sticky footer */}
