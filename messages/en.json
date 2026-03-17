@@ -227,6 +227,18 @@
     "licenceRequired": "Full and valid driving licence",
     "fullDayPolicy": "For full-day openings we ask for a minimum booking of 4 laps. Drivers wanting fewer laps can walk-in on the day, or book a mid-week evening session."
   },
+  "permitPackage": {
+    "eyebrow": "Permit Package",
+    "title": "Permit package",
+    "subtitle": "Applies to permit courses at the Nürburgring Nordschleife.",
+    "description1": "This package covers the mandatory 16 laps required to obtain the permit.",
+    "description2": "Prices do not include gas or the fee for the course.",
+    "pricingTitle": "Available cars and pricing",
+    "emailButton": "Send us an email",
+    "mini": "Mini",
+    "yaris": "Yaris",
+    "supra": "Supra"
+  },
   "whyRent4Ring": {
     "heading": "Why Rent4Ring?",
     "intro1": "At Rent4Ring, we take a genuine motorsport approach to every car in our fleet. Each vehicle is upgraded and modified in-house by experts and enthusiasts to ensure top-tier performance and reliability.",
