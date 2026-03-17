@@ -90,6 +90,8 @@
       "pricingCalloutBody1": "When you reserve a car, you will only be charged a €100 reservation fee. This will be deducted from your total rental cost on the day.",
       "pricingCalloutTitle2": "Only pay for what you drive.",
       "pricingCalloutBody2": "On the day of the rental, you will only be charged for the laps you drive. Just give us an idea of how many laps you're planning so we can schedule accordingly.",
+      "instructionMandatoryTitle": "Mandatory instruction",
+      "instructionMandatoryBody": "1:1 instruction is mandatory for this car. This is included in the price.",
       "firstLap": "First Lap",
       "additionalLap": "Additional lap",
       "numberOfLaps": "Number of Laps",
