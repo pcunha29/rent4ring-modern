@@ -22,7 +22,7 @@ export default async function PermitPackagePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover saturate-[0.6]"
+          className="object-cover saturate-[0.6] blur-[2px]"
         />
         <div
           className="absolute inset-0"
@@ -33,9 +33,6 @@ export default async function PermitPackagePage() {
           aria-hidden
         />
         <Container className="relative z-10 flex min-h-[340px] flex-col justify-center md:min-h-[420px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-secondary-foreground/85">
-            {t("eyebrow")}
-          </p>
           <h1 className="mt-3 max-w-2xl font-serif text-3xl font-bold tracking-tight text-white md:text-5xl">
             {t("title")}
           </h1>
@@ -47,8 +44,12 @@ export default async function PermitPackagePage() {
 
       <Container className="-mt-10 max-w-5xl md:-mt-16">
         <section className="relative z-10 rounded-2xl border border-border/60 bg-card/95 p-5 shadow-xl backdrop-blur-sm md:p-8">
-          <p className="text-sm text-muted-foreground md:text-base">{t("description1")}</p>
-          <p className="mt-2 text-sm text-muted-foreground md:text-base">{t("description2")}</p>
+          <p className="text-sm text-muted-foreground md:text-base">
+            {t("description1")}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground md:text-base">
+            {t("description2")}
+          </p>
 
           <div className="my-6 h-px w-full bg-border/70" />
 
@@ -72,7 +73,9 @@ export default async function PermitPackagePage() {
                   <div className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-transparent" />
                 </div>
                 <div className="flex items-center justify-between px-4 py-3">
-                  <span className="text-sm font-medium text-foreground md:text-base">{t(pkg.key)}</span>
+                  <span className="text-sm font-medium text-foreground md:text-base">
+                    {t(pkg.key)}
+                  </span>
                   <span className="text-base font-semibold text-foreground md:text-lg">
                     {pkg.price}
                   </span>
@@ -82,7 +85,11 @@ export default async function PermitPackagePage() {
           </div>
 
           <div className="mt-7 flex justify-center md:justify-start">
-            <Button asChild size="lg" className="min-w-56 font-semibold uppercase shadow-lg">
+            <Button
+              asChild
+              size="lg"
+              className="min-w-56 font-semibold uppercase shadow-lg"
+            >
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=Permit%20Package%20Inquiry`}
               >
