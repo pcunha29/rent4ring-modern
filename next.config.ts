@@ -30,6 +30,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/de/rennwagen-mieten-fuer-nordschleife.html",
+        destination: "/de",
+        permanent: true,
+      },
+      {
+        source: "/de/rennwagen-mieten-fuer-nordschleife",
+        destination: "/de",
+        permanent: true,
+      },
+      {
         source: "/de/dpn.html",
         destination: "/de/permit-package",
         permanent: true,
@@ -37,6 +47,11 @@ const nextConfig: NextConfig = {
       {
         source: "/de/dpn",
         destination: "/de/permit-package",
+        permanent: true,
+      },
+      {
+        source: "/en/do/orderform",
+        destination: "/en",
         permanent: true,
       },
     ];
