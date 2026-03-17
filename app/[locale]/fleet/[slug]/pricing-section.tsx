@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
+import { AlertTriangle, Minus, Plus, ShieldCheck, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingGateModal } from "@/components/booking-gate-modal";
 import type { PricingPackage } from "@/lib/fleet-data";
 import { trackLapCountChanged } from "@/lib/amplitude";
+
+const MANDATORY_INSTRUCTION_CAR_IDS = new Set([21, 22, 23, 24]);
 
 function LapStepper({
   value,
@@ -88,6 +90,19 @@ export function PricingSection({
             </p>
           </div>
         </div>
+        {MANDATORY_INSTRUCTION_CAR_IDS.has(carId) && (
+          <div className="flex gap-3">
+            <AlertTriangle className="mt-0.5 size-5 shrink-0 text-secondary" />
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                {d("instructionMandatoryTitle")}
+              </p>
+              <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+                {d("instructionMandatoryBody")}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mt-4 flex flex-col gap-4">

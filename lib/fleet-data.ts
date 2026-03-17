@@ -177,7 +177,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     transmission: "2-speed Automatic",
     weight: "2,295 kg",
     descriptionKey: "description",
-    featuresKeys: ["feature1", "feature2", "feature3", "feature4", "feature5"],
+    featuresKeys: ["feature1", "feature2", "feature4", "feature5"],
     packages: [
       {
         nameKey: "arriveDrive",
@@ -273,7 +273,7 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
     transmission: "8-speed DCT",
     weight: "1,470 kg",
     descriptionKey: "description",
-    featuresKeys: ["feature1", "feature2", "feature3", "feature4", "feature5"],
+    featuresKeys: ["feature1", "feature2", "feature4", "feature5"],
     packages: [
       {
         nameKey: "arriveDrive",
