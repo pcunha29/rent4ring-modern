@@ -14,9 +14,9 @@ import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const EMAIL = "info@rent4ring.de";
-const PHONE = "+49 160 1740386";
+const PHONE = "+49 160 96671158";
 const LANDLINE = "+49 2691 935735";
-const PHONE_TEL = "tel:+491601740386";
+const PHONE_TEL = "tel:+4916096671158";
 const LANDLINE_TEL = "tel:+492691935735";
 
 /** X (formerly Twitter) logo - Lucide has no X icon */
