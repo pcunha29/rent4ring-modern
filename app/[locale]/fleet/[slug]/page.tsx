@@ -100,6 +100,11 @@ export default async function FleetDetailPage({ params }: Props) {
               {description}
             </p>
 
+            {/* Mobile pricing placement: description -> pricing -> highlights */}
+            <div className="mt-8 lg:hidden">
+              <PricingSection packages={vehicle.packages} carId={vehicle.carId} />
+            </div>
+
             {/* Features */}
             <section className="mt-8">
               <h2 className="font-serif text-xl font-bold tracking-tight text-foreground md:text-2xl">
@@ -217,8 +222,10 @@ export default async function FleetDetailPage({ params }: Props) {
             </section>
           </div>
 
-          {/* Right column — pricing packages */}
-          <PricingSection packages={vehicle.packages} carId={vehicle.carId} />
+          {/* Right column — pricing packages (desktop only) */}
+          <div className="hidden lg:block">
+            <PricingSection packages={vehicle.packages} carId={vehicle.carId} />
+          </div>
         </div>
       </Container>
     </div>
