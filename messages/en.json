@@ -9,10 +9,10 @@
     "bookNow": "Book Now"
   },
   "hero": {
-    "est": "EST. 2008",
+    "est": "EST. 2009",
     "headlineLine1": "HEART OF",
     "headlineLine2": "THE GREEN HELL.",
-    "description": "More than a rental company. We are a collective of Nordschleife enthusiasts dedicated to the pursuit of the perfect lap through heritage, precision, and safety.",
+    "description": "More than just a rental company. We are a team of Nordschleife enthusiasts dedicated to the pursuit of the perfect lap through experience, precision, and safety. The first choice for enthusiasts. We offer rental options for Tourist drives, Track days, and the Industry Pool.",
     "bookExperience": "Book Your Experience",
     "exploreFleet": "Explore the Fleet"
   },
@@ -48,7 +48,7 @@
   "home": { "hello": "Hello World", "secondary": "Secondary" },
   "trustStrip": {
     "ariaLabel": "Key facts",
-    "stat1": { "value": "2008", "label": "Est." },
+    "stat1": { "value": "2009", "label": "Est." },
     "stat2": { "value": "20+", "label": "Vehicles" },
     "stat3": { "value": "Nürburgring", "label": "Our playground" },
     "stat4": { "value": "100%", "label": "Track-ready" }

@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[65vh] md:min-h-[85vh] w-full overflow-hidden bg-muted"
+      className="relative min-h-[70vh] md:min-h-[90vh] w-full overflow-hidden bg-muted"
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -72,7 +72,7 @@ export function Hero() {
       />
       <Container
         className={cn(
-          "relative z-10 flex mt-8 md:mt-0 min-h-[65vh] flex-col items-center justify-center text-center md:min-h-[85vh] md:items-end md:text-right py-20",
+          "relative z-10 flex mt-8 md:mt-0 min-h-[70vh] flex-col items-center justify-center text-center md:min-h-[90vh] md:items-end md:text-right py-30",
         )}
       >
         <motion.p

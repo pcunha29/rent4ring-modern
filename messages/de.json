@@ -9,10 +9,10 @@
     "bookNow": "Jetzt buchen"
   },
   "hero": {
-    "est": "GEGR. 2008",
+    "est": "GEGR. 2009",
     "headlineLine1": "HERZ DER",
     "headlineLine2": "GRÜNEN HÖLLE.",
-    "description": "Mehr als ein Vermieter. Wir sind ein Team von Nordschleifen-Enthusiasten, die durch Tradition, Präzision und Sicherheit das perfekte Erlebnis verfolgen.",
+    "description": "Mehr als ein Vermieter. Wir sind ein Team von Nordschleifen-Enthusiasten, das sich durch Erfahrung, Präzision und Sicherheit der Jagd nach der perfekten Runde widmet. Die erste Wahl für Enthusiasten. Wir bieten Mietoptionen für Touristenfahrten, Trackdays und den Industry Pool.",
     "bookExperience": "Erlebnis buchen",
     "exploreFleet": "Flotte entdecken"
   },
@@ -48,7 +48,7 @@
   "home": { "hello": "Hallo Welt", "secondary": "Sekundär" },
   "trustStrip": {
     "ariaLabel": "Kennzahlen",
-    "stat1": { "value": "2008", "label": "Gegr." },
+    "stat1": { "value": "2009", "label": "Gegr." },
     "stat2": { "value": "20+", "label": "Fahrzeuge" },
     "stat3": { "value": "Nürburgring", "label": "Unsere Strecke" },
     "stat4": { "value": "100%", "label": "Streckenbereit" }
