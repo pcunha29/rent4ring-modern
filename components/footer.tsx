@@ -7,6 +7,7 @@ import {
   Mail,
   Smartphone,
   Phone,
+  MapPin,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -19,7 +20,6 @@ const LANDLINE = "+49 2691 935735";
 const PHONE_TEL = "tel:+4916096671158";
 const LANDLINE_TEL = "tel:+492691935735";
 
-/** X (formerly Twitter) logo - Lucide has no X icon */
 function XIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -52,6 +52,9 @@ const SOCIAL = [
   },
 ] as const;
 
+const linkClass =
+  "text-sm text-muted-foreground transition-colors hover:text-foreground";
+
 export function Footer() {
   const t = useTranslations("footer");
 
@@ -59,98 +62,140 @@ export function Footer() {
     <footer
       className={cn(
         "w-full border-t border-border bg-background text-foreground",
-        "py-8 md:py-10",
+        "py-10 md:py-14",
       )}
       role="contentinfo"
     >
       <Container>
-        {/* Top row: Logo | Nav links | Social (like footer-component-01) */}
-        <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between">
-          <Link href="/" className="shrink-0 opacity-90 hover:opacity-100">
-            <Image
-              src="/logo_home.svg"
-              alt="Rent4Ring"
-              width={140}
-              height={49}
-              className="h-8 w-auto md:h-9"
-            />
-          </Link>
-
-          <nav
-            className="flex flex-wrap items-center justify-center gap-6 md:gap-8"
-            aria-label="Footer navigation"
-          >
-            <Link
-              href="/privacy"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {t("privacyPolicy")}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[2fr_1fr_1fr_1.4fr_1fr]">
+          {/* Brand + tagline + address */}
+          <div className="col-span-2 lg:col-span-1">
+            <Link href="/" className="inline-block opacity-90 hover:opacity-100">
+              <Image
+                src="/logo_home.svg"
+                alt="Rent4Ring"
+                width={140}
+                height={49}
+                className="h-8 w-auto md:h-9"
+              />
             </Link>
-            <Link
-              href="/imprint"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {t("legalImprint")}
-            </Link>
-          </nav>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              {t("tagline")}
+            </p>
+            <address className="mt-4 not-italic text-sm text-muted-foreground">
+              <span className="inline-flex items-start gap-1.5">
+                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
+                {t("address")}
+              </span>
+            </address>
+          </div>
 
-          <ul className="flex items-center gap-4">
-            {SOCIAL.map(({ name, href, icon: Icon }) => (
-              <li key={name}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                  aria-label={name}
-                >
-                  <Icon className="size-5" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          {/* Explore */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {t("explore")}
+            </h3>
+            <nav className="mt-3 flex flex-col gap-2" aria-label="Footer explore">
+              <Link href="/#fleet" className={linkClass}>
+                {t("fleet")}
+              </Link>
+              <Link href="/faq" className={linkClass}>
+                {t("faq")}
+              </Link>
+              <Link href="/permit-package" className={linkClass}>
+                {t("permitPackage")}
+              </Link>
+              <Link href="/book" className={linkClass}>
+                {t("bookNow")}
+              </Link>
+            </nav>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {t("legal")}
+            </h3>
+            <nav className="mt-3 flex flex-col gap-2" aria-label="Footer legal">
+              <Link href="/privacy" className={linkClass}>
+                {t("privacyPolicy")}
+              </Link>
+              <Link href="/imprint" className={linkClass}>
+                {t("legalImprint")}
+              </Link>
+            </nav>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {t("contact")}
+            </h3>
+            <div className="mt-3 flex flex-col gap-2">
+              <a
+                href={`mailto:${EMAIL}`}
+                className={cn(linkClass, "inline-flex items-center gap-1.5")}
+              >
+                <Mail className="size-4 shrink-0" aria-hidden />
+                {EMAIL}
+              </a>
+              <a
+                href={PHONE_TEL}
+                className={cn(linkClass, "inline-flex items-center gap-1.5")}
+              >
+                <Smartphone className="size-4 shrink-0" aria-hidden />
+                {PHONE}
+              </a>
+              <a
+                href={LANDLINE_TEL}
+                className={cn(linkClass, "inline-flex items-center gap-1.5")}
+              >
+                <Phone className="size-4 shrink-0" aria-hidden />
+                {LANDLINE}
+              </a>
+            </div>
+          </div>
+
+          {/* Follow Us */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {t("followUs")}
+            </h3>
+            <ul className="mt-3 flex items-center gap-4">
+              {SOCIAL.map(({ name, href, icon: Icon }) => (
+                <li key={name}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    aria-label={name}
+                  >
+                    <Icon className="size-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Contact: email, phone, landline (compact row) */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 border-t border-border pt-6 text-sm text-muted-foreground">
-          <a
-            href={`mailto:${EMAIL}`}
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Mail className="size-4 shrink-0" aria-hidden />
-            {EMAIL}
-          </a>
-          <a
-            href={PHONE_TEL}
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Smartphone className="size-4 shrink-0" aria-hidden />
-            {PHONE}
-          </a>
-          <a
-            href={LANDLINE_TEL}
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Phone className="size-4 shrink-0" aria-hidden />
-            {LANDLINE}
-          </a>
+        {/* Bottom bar */}
+        <div className="mt-10 border-t border-border pt-6 text-center">
+          <p className="text-xs text-muted-foreground">
+            &copy;{new Date().getFullYear()} Rent4Ring GmbH und Co. KG. {t("copyright")}
+          </p>
+          <p className="mt-2 text-[11px] text-muted-foreground/60">
+            made with ❤️ by{" "}
+            <a
+              href="https://pcunhadev.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:text-muted-foreground hover:decoration-muted-foreground/60"
+            >
+              pcunhadev
+            </a>
+          </p>
         </div>
-
-        {/* Bottom: copyright + credit */}
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          ©{new Date().getFullYear()} Rent4Ring. {t("copyright")}
-        </p>
-        <p className="mt-2 text-center text-[11px] text-muted-foreground/60">
-          made with ❤️ by{" "}
-          <a
-            href="https://pcunhadev.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:text-muted-foreground hover:decoration-muted-foreground/60"
-          >
-            pcunhadev
-          </a>
-        </p>
       </Container>
     </footer>
   );

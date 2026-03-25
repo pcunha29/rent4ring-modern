@@ -1,4 +1,20 @@
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
+import { localeAlternates } from "@/lib/seo";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata.imprint" });
+  return {
+    title: t("title"),
+    robots: { index: false, follow: true },
+    alternates: localeAlternates(locale, "imprint"),
+  };
+}
 
 export default function ImprintPage() {
   return (

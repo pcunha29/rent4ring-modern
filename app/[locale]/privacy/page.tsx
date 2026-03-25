@@ -1,6 +1,22 @@
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
+import { localeAlternates } from "@/lib/seo";
 
 const linkClass = "text-accent underline";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata.privacy" });
+  return {
+    title: t("title"),
+    robots: { index: false, follow: true },
+    alternates: localeAlternates(locale, "privacy"),
+  };
+}
 
 export default function PrivacyPage() {
   return (

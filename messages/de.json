@@ -35,6 +35,12 @@
     "getDirections": "Route planen"
   },
   "footer": {
+    "tagline": "Premium Nürburgring Mietwagen seit 2009. Streckenerprobte Fahrzeuge für Touristenfahrten, Trackdays und den Industry Pool.",
+    "explore": "Entdecken",
+    "fleet": "Flotte",
+    "faq": "FAQ",
+    "permitPackage": "Permit-Paket",
+    "bookNow": "Jetzt buchen",
     "legal": "Rechtliches",
     "privacyPolicy": "Datenschutz",
     "legalImprint": "Impressum",
@@ -43,7 +49,8 @@
     "email": "E-Mail",
     "phone": "Mobil",
     "landline": "Festnetz",
-    "copyright": "Alle Rechte vorbehalten."
+    "copyright": "Alle Rechte vorbehalten.",
+    "address": "Burgstraße 1, 53520 Nürburg, Deutschland"
   },
   "home": { "hello": "Hallo Welt", "secondary": "Sekundär" },
   "trustStrip": {
@@ -237,6 +244,30 @@
     "mini": "Mini Cooper S",
     "yaris": "GR Yaris",
     "supra": "GR Supra"
+  },
+  "metadata": {
+    "home": {
+      "title": "Premium Nürburgring Mietwagen — Nordschleife seit 2009",
+      "description": "Mieten Sie streckenerprobte Rennwagen auf der Nürburgring Nordschleife. MINI Cooper S, GR Yaris, GR Supra, Porsche GT3 RS, Ferrari 296 GTB und mehr. Touristenfahrten & Trackdays seit 2009."
+    },
+    "faq": {
+      "title": "FAQ — Häufige Fragen zur Nürburgring-Autovermietung",
+      "description": "Häufig gestellte Fragen zum Mieten eines Autos auf der Nürburgring Nordschleife. Versicherung, Buchung, Trackdays, Voraussetzungen und mehr — beantwortet vom Rent4Ring-Team."
+    },
+    "book": {
+      "title": "Nürburgring-Erlebnis buchen",
+      "description": "Reservieren Sie Ihren streckenerprobten Mietwagen auf der Nürburgring Nordschleife. Wählen Sie Datum und Fahrzeug und erleben Sie die Grüne Hölle."
+    },
+    "permitPackage": {
+      "title": "Nürburgring Permit-Paket — 16-Runden-Kurs",
+      "description": "Absolvieren Sie den verpflichtenden 16-Runden Permit-Kurs auf der Nürburgring Nordschleife mit Rent4Ring. Wählen Sie zwischen MINI Cooper S, GR Yaris oder GR Supra."
+    },
+    "imprint": {
+      "title": "Impressum"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung"
+    }
   },
   "whyRent4Ring": {
     "heading": "Warum Rent4Ring?",
