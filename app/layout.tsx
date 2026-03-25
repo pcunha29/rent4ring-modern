@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Nunito, Roboto_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsProvider } from "@/components/analytics";
 import { AmplitudeProvider } from "@/lib/amplitude";
 
@@ -109,6 +110,7 @@ export default function RootLayout({
         className={`${inter.variable} ${nunito.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
