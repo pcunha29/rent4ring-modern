@@ -5,7 +5,9 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { PricingSection } from "./pricing-section";
 import { TrackVehicleDetailView } from "./track-view";
+import { JsonLd } from "@/components/seo/json-ld";
 import { FLEET_SLUGS, FLEET_DATA, type FleetSlug } from "@/lib/fleet-data";
+import { BASE_URL, localeAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return FLEET_SLUGS.map((slug) => ({ slug }));
@@ -22,9 +24,24 @@ export async function generateMetadata({ params }: Props) {
   if (!vehicle) return {};
   const brand = t(`cars.${slug}.brand`);
   const model = t(`cars.${slug}.model`);
+  const description = t(`cars.${slug}.description`).slice(0, 160);
   return {
-    title: `${brand} ${model} — Rent4Ring`,
-    description: t(`cars.${slug}.description`).slice(0, 160),
+    title: `${brand} ${model}`,
+    description,
+    alternates: localeAlternates(locale, `fleet/${slug}`),
+    openGraph: {
+      title: `${brand} ${model} — Rent4Ring`,
+      description,
+      url: `${BASE_URL}/${locale}/fleet/${slug}`,
+      images: [
+        {
+          url: vehicle.imagePath,
+          width: 1200,
+          height: 630,
+          alt: `${brand} ${model} — Nürburgring Rental`,
+        },
+      ],
+    },
   };
 }
 
@@ -56,8 +73,53 @@ export default async function FleetDetailPage({ params }: Props) {
     { label: d("specWeight"), value: vehicle.weight },
   ];
 
+  const lowestLap = Math.min(...vehicle.packages.map((p) => p.firstLap));
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${brand} ${model} — Nürburgring Rental`,
+    description,
+    image: `${BASE_URL}${vehicle.imagePath}`,
+    brand: { "@type": "Brand", name: brand },
+    offers: {
+      "@type": "Offer",
+      url: `${BASE_URL}/${locale}/fleet/${slug}`,
+      priceCurrency: "EUR",
+      price: lowestLap,
+      priceValidUntil: new Date(new Date().getFullYear() + 1, 0, 1).toISOString().split("T")[0],
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Rent4Ring",
+        item: `${BASE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Fleet",
+        item: `${BASE_URL}/${locale}#fleet`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${brand} ${model}`,
+        item: `${BASE_URL}/${locale}/fleet/${slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="w-full pb-16 md:pb-24">
+      <JsonLd data={productJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <TrackVehicleDetailView
         car_slug={slug}
         car_id={vehicle.carId}

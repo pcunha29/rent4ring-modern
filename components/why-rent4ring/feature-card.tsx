@@ -3,35 +3,9 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import type { Feature } from "./features-data";
 
-const FEATURES = [
-  {
-    id: "brakes",
-    gradient: "from-amber-950/90 to-primary",
-    image: "/endlesspads.jpeg",
-  },
-  {
-    id: "suspension",
-    gradient: "from-sky-950/80 to-primary",
-    image: "/ohlins.jpeg",
-  },
-  {
-    id: "tires",
-    gradient: "from-stone-800 to-primary",
-    image: "/yokohama.jpg",
-  },
-  {
-    id: "safety",
-    gradient: "from-stone-900 to-primary",
-    image: "/alpine_interior.jpeg",
-  },
-] as const;
-
-export type Feature = (typeof FEATURES)[number];
-
-export function getFeatures(): readonly Feature[] {
-  return FEATURES;
-}
+export type { Feature };
 
 export default function FeatureCard({ feature }: { feature: Feature }) {
   const t = useTranslations("whyRent4Ring");

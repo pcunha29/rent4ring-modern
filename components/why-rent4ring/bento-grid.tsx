@@ -1,11 +1,8 @@
 import { MotionPreset } from "@/components/ui/motion-preset";
 import { Container } from "@/components/ui/container";
-import FeatureCard, {
-  getFeatures,
-} from "@/components/why-rent4ring/feature-card";
+import FeatureCard from "@/components/why-rent4ring/feature-card";
+import { FEATURES } from "@/components/why-rent4ring/features-data";
 import WhyRent4RingCell from "@/components/why-rent4ring/why-rent4ring-cell";
-
-const FEATURES = getFeatures();
 
 const BentoGrid = () => {
   return (

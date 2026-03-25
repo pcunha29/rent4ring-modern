@@ -22,28 +22,50 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rent4Ring",
+  metadataBase: new URL("https://rent4ring.de"),
+  title: {
+    template: "%s | Rent4Ring",
+    default:
+      "Rent4Ring — Premium Nürburgring Rental Cars for the Nordschleife",
+  },
   description:
-    "Welcome to Rent4Ring - Premium Nürburgring Rental Cars for an Unforgettable Experience",
+    "Rent track-prepared cars at the Nürburgring Nordschleife. MINI Cooper S, GR Yaris, GR Supra, Porsche GT3 RS, Ferrari 296 GTB and more. Touristenfahrten & track days since 2009.",
   keywords: [
     "Rent4Ring",
     "Nürburgring",
-    "Rental Cars",
+    "Nürburgring rental cars",
     "Nordschleife",
+    "Nordschleife car rental",
     "Nürburgring Nordschleife",
+    "rent a car Nürburgring",
+    "Green Hell rental",
+    "Nürburgring experience",
+    "track car rental Germany",
     "Touristenfahrten",
-    "Touristenfahrt",
     "Touristenfahrt Nürburgring",
-    "Track Days",
     "Track Days Nürburgring",
     "Track Days Germany",
-    "Track Days Europe",
+    "Porsche GT3 RS rental Nürburgring",
+    "Ferrari rental Nürburgring",
+    "Nürburgring lap rental",
+    "sports car rental Nordschleife",
   ],
   openGraph: {
-    title: "Rent4Ring",
+    type: "website",
+    siteName: "Rent4Ring",
+    title: "Rent4Ring — Premium Nürburgring Rental Cars",
     description:
-      "Welcome to Rent4Ring - Premium Nürburgring Rental Cars for an Unforgettable Experience",
-    images: ["/r4r-welcome.jpg"],
+      "Rent track-prepared cars at the Nürburgring Nordschleife. Touristenfahrten & track days since 2009.",
+    images: [
+      {
+        url: "/r4r-welcome.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Rent4Ring — Premium Nürburgring Rental Cars",
+      },
+    ],
+    locale: "en",
+    alternateLocale: "de",
   },
   twitter: {
     card: "summary_large_image",
@@ -54,10 +76,22 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://rent4ring.de",
+    languages: {
+      en: "https://rent4ring.de/en",
+      de: "https://rent4ring.de/de",
+      "x-default": "https://rent4ring.de/en",
+    },
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
