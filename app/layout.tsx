@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: {
     template: "%s | Rent4Ring",
     default:
-      "Rent4Ring — Premium Nürburgring Rental Cars for the Nordschleife",
+      "Rent4Ring - Premium Nürburgring Rental Cars for the Nordschleife",
   },
   description:
     "Rent track-prepared cars at the Nürburgring Nordschleife. MINI Cooper S, GR Yaris, GR Supra, Porsche GT3 RS, Ferrari 296 GTB and more. Touristenfahrten & track days since 2009.",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Rent4Ring",
-    title: "Rent4Ring — Premium Nürburgring Rental Cars",
+    title: "Rent4Ring -  Premium Nürburgring Rental Cars",
     description:
       "Rent track-prepared cars at the Nürburgring Nordschleife. Touristenfahrten & track days since 2009.",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: "/r4r-welcome.jpg",
         width: 1200,
         height: 630,
-        alt: "Rent4Ring — Premium Nürburgring Rental Cars",
+        alt: "Rent4Ring - Premium Nürburgring Rental Cars",
       },
     ],
     locale: "en",

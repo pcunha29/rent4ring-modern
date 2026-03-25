@@ -149,7 +149,7 @@ export function FleetSlider() {
                   <Link
                     href={`/fleet/${slug}`}
                     className="absolute inset-0 z-10"
-                    aria-label={`${brand} ${model} — ${t("viewMore")}`}
+                    aria-label={`${brand} ${model} - ${t("viewMore")}`}
                     onClick={() =>
                       trackFleetCardClicked({
                         car_slug: slug,

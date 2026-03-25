@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props) {
     description,
     alternates: localeAlternates(locale, `fleet/${slug}`),
     openGraph: {
-      title: `${brand} ${model} — Rent4Ring`,
+      title: `${brand} ${model} - Rent4Ring`,
       description,
       url: `${BASE_URL}/${locale}/fleet/${slug}`,
       images: [
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props) {
           url: vehicle.imagePath,
           width: 1200,
           height: 630,
-          alt: `${brand} ${model} — Nürburgring Rental`,
+          alt: `${brand} ${model} - Nürburgring Rental`,
         },
       ],
     },
@@ -77,7 +77,7 @@ export default async function FleetDetailPage({ params }: Props) {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: `${brand} ${model} — Nürburgring Rental`,
+    name: `${brand} ${model} - Nürburgring Rental`,
     description,
     image: `${BASE_URL}${vehicle.imagePath}`,
     brand: { "@type": "Brand", name: brand },
