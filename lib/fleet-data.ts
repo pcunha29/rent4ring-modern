@@ -77,8 +77,8 @@ export const FLEET_DATA: Record<FleetSlug, FleetVehicle> = {
         filterRentalPackageId: 62,
       },
     ],
-    basicLiability: 12000,
-    reducedLiability: 6000,
+    basicLiability: 14000,
+    reducedLiability: 7000,
     premiumInsurance: { firstDriver: 249, additionalDriver: 149 },
   },
   "toyota-gr-yaris": {

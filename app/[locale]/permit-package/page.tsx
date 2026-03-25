@@ -1,8 +1,9 @@
 import { getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-
+import { BASE_URL, localeAlternates } from "@/lib/seo";
 const CONTACT_EMAIL = "info@rent4ring.de";
 const PACKAGE_PRICES = [
   { key: "mini", price: "1199€", imagePath: "/vehicles/r4r-mini-cooper.jpg" },
@@ -10,7 +11,28 @@ const PACKAGE_PRICES = [
   { key: "supra", price: "2199€", imagePath: "/vehicles/r4r-supra.jpg" },
 ] as const;
 
-export default async function PermitPackagePage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata.permitPackage" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: localeAlternates(locale, "permit-package"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/permit-package`,
+    },
+  };
+}
+
+export default async function PermitPackagePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("permitPackage");
 
   return (

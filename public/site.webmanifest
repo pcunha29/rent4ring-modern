@@ -1,0 +1,16 @@
+{
+  "name": "Rent4Ring",
+  "short_name": "Rent4Ring",
+  "description": "Premium Nürburgring Rental Cars - Nordschleife Since 2009",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

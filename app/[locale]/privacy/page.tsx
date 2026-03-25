@@ -1,6 +1,22 @@
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
+import { localeAlternates } from "@/lib/seo";
 
 const linkClass = "text-accent underline";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata.privacy" });
+  return {
+    title: t("title"),
+    robots: { index: false, follow: true },
+    alternates: localeAlternates(locale, "privacy"),
+  };
+}
 
 export default function PrivacyPage() {
   return (
@@ -840,8 +856,8 @@ export default function PrivacyPage() {
           <p className="text-foreground text-base leading-relaxed mb-4">
             If the data subject is logged in at the same time on Facebook,
             Facebook detects with every call-up to our website by the data
-            subject—and for the entire duration of their stay on our Internet
-            site—which specific sub-site of our Internet page was visited by the
+            subject, and for the entire duration of their stay on our Internet
+            site, which specific sub-site of our Internet page was visited by the
             data subject. This information is collected through the Facebook
             component and associated with the respective Facebook account of the
             data subject. If the data subject clicks on one of the Facebook
