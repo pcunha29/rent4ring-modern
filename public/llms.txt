@@ -1,0 +1,33 @@
+# Rent4Ring
+
+> Premium Nürburgring Nordschleife rental cars since 2009. Track-prepared vehicles for Touristenfahrten, track days, and the Industry Pool.
+
+## About
+
+Rent4Ring GmbH und Co. KG is the leading car rental company at the Nürburgring Nordschleife in Nürburg, Germany. Founded in 2009, we offer a fleet of 20+ track-prepared vehicles ranging from the MINI Cooper S (from €179/lap) to the Ferrari 296 GTB (from €699/lap). Every car is upgraded in-house with motorsport-grade parts: Öhlins suspension, Endless racing brakes, Michelin/Yokohama tires, Wiechers roll cages, and Recaro seats.
+
+## Fleet
+
+- MINI Cooper S - 192 HP, from €179/lap
+- Toyota GR Yaris - 280 HP, AWD, from €219/lap
+- Toyota GR Supra - 258 HP, from €249/lap
+- Porsche Taycan Turbo GT - 1,034 HP, from €299/lap
+- Porsche 718 Spyder RS - 500 HP, from €399/lap
+- Porsche 911 GT3 RS (992) - 525 HP, from €699/lap
+- Ferrari 296 GTB - 830 HP, from €699/lap
+
+## Location
+
+Burgstraße 1, 53520 Nürburg, Germany
+
+## Contact
+
+- Website: https://rent4ring.de
+- Email: info@rent4ring.de
+- Phone: +49 2691 935735
+
+## Links
+
+- [Book Now](https://rent4ring.de/en/book)
+- [FAQ](https://rent4ring.de/en/faq)
+- [Permit Package](https://rent4ring.de/en/permit-package)
