@@ -72,6 +72,7 @@ export function CookieConsent() {
               {t("message")}
             </p>
             <Link
+              prefetch={false}
               href="/privacy"
               className="text-xs font-medium text-primary underline-offset-4 hover:underline"
             >

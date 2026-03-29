@@ -70,7 +70,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[2fr_1fr_1fr_1.4fr_1fr]">
           {/* Brand + tagline + address */}
           <div className="col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block opacity-90 hover:opacity-100">
+            <Link prefetch={false} href="/" className="inline-block opacity-90 hover:opacity-100">
               <Image
                 src="/logo_home.svg"
                 alt="Rent4Ring"
@@ -96,16 +96,16 @@ export function Footer() {
               {t("explore")}
             </h3>
             <nav className="mt-3 flex flex-col gap-2" aria-label="Footer explore">
-              <Link href="/#fleet" className={linkClass}>
+              <Link prefetch={false} href="/#fleet" className={linkClass}>
                 {t("fleet")}
               </Link>
-              <Link href="/faq" className={linkClass}>
+              <Link prefetch={false} href="/faq" className={linkClass}>
                 {t("faq")}
               </Link>
-              <Link href="/permit-package" className={linkClass}>
+              <Link prefetch={false} href="/permit-package" className={linkClass}>
                 {t("permitPackage")}
               </Link>
-              <Link href="/book" className={linkClass}>
+              <Link prefetch={false} href="/book" className={linkClass}>
                 {t("bookNow")}
               </Link>
             </nav>
@@ -117,10 +117,10 @@ export function Footer() {
               {t("legal")}
             </h3>
             <nav className="mt-3 flex flex-col gap-2" aria-label="Footer legal">
-              <Link href="/privacy" className={linkClass}>
+              <Link prefetch={false} href="/privacy" className={linkClass}>
                 {t("privacyPolicy")}
               </Link>
-              <Link href="/imprint" className={linkClass}>
+              <Link prefetch={false} href="/imprint" className={linkClass}>
                 {t("legalImprint")}
               </Link>
             </nav>

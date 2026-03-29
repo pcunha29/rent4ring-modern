@@ -48,10 +48,10 @@ export default function RootNotFound() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="default" size="lg" asChild>
-            <Link href={`${base}/`}>{t.backHome}</Link>
+            <Link prefetch={false} href={`${base}/`}>{t.backHome}</Link>
           </Button>
           <Button variant="secondary" size="lg" asChild>
-            <Link href={`${base}/book`}>{t.bookExperience}</Link>
+            <Link prefetch={false} href={`${base}/book`}>{t.bookExperience}</Link>
           </Button>
         </div>
       </Container>

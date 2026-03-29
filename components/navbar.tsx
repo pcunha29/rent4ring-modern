@@ -57,6 +57,7 @@ export function Navbar() {
         {routing.locales.map((loc) => (
           <DropdownMenuItem key={loc} asChild>
             <Link
+              prefetch={false}
               href={pathname}
               locale={loc}
               className="cursor-pointer"
@@ -105,6 +106,7 @@ export function Navbar() {
       >
         <div className="flex shrink-0 items-end">
           <Link
+            prefetch={false}
             href="/"
             className={cn(
               "block opacity-100 hover:opacity-90",
@@ -130,6 +132,7 @@ export function Navbar() {
           {navLinks.map(({ key, href }) => (
             <Link
               key={key}
+              prefetch={false}
               href={href}
               className={cn(
                 "relative text-sm font-semibold text-foreground/90",
@@ -177,6 +180,7 @@ export function Navbar() {
                 {navLinks.map(({ key, href }) => (
                   <Link
                     key={key}
+                    prefetch={false}
                     href={href}
                     className={cn(
                       "rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90",
