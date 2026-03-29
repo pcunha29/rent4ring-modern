@@ -147,6 +147,7 @@ export function FleetSlider() {
                   )}
                 >
                   <Link
+                    prefetch={false}
                     href={`/fleet/${slug}`}
                     className="absolute inset-0 z-10"
                     aria-label={`${brand} ${model} - ${t("viewMore")}`}

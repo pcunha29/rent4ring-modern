@@ -62,10 +62,10 @@ export default function NotFoundContent() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="default" size="lg" asChild>
-            <Link href="/">{t("backHome")}</Link>
+            <Link prefetch={false} href="/">{t("backHome")}</Link>
           </Button>
           <Button variant="secondary" size="lg" asChild>
-            <Link href="/book">{t("bookExperience")}</Link>
+            <Link prefetch={false} href="/book">{t("bookExperience")}</Link>
           </Button>
         </div>
       </Container>

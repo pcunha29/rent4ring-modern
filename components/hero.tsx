@@ -129,7 +129,7 @@ export function Hero() {
             }
           />
           <Button variant="secondary" size="lg" asChild>
-            <Link href="/#fleet">{t("exploreFleet")}</Link>
+            <Link prefetch={false} href="/#fleet">{t("exploreFleet")}</Link>
           </Button>
         </motion.div>
       </Container>
