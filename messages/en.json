@@ -207,7 +207,7 @@
     "check1": "I understand I must be at least 21 years old",
     "check2": "I understand I need a full and valid driving licence",
     "check3": "I understand I need basic understanding of English or German",
-    "check4": "I understand I need a credit card or cash to guarantee the maximum liability on the car <faqLink>insurance FAQ</faqLink>.",
+    "check4": "I understand I need a credit card or cash to guarantee the maximum liability on the car. See our <faqLink>Insurance FAQ</faqLink> for more information.",
     "check5": "I understand that if I do not fulfil these criteria on the day of my rental, my €100 reservation fee is non-refundable",
     "check6": "I understand that if I cancel my booking with less than 72 hours notice, my reservation fee is non-refundable",
     "proceed": "Proceed to Booking",
