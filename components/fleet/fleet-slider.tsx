@@ -91,7 +91,7 @@ export function FleetSlider() {
               variant="ghost"
               size="icon"
               className={cn(
-                "size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
+                "size-10 rounded-full text-foreground transition-colors hover:bg-primary/10 hover:text-primary md:size-12",
                 !scrollState.canScrollLeft &&
                   "cursor-not-allowed opacity-50 hover:bg-transparent hover:text-foreground",
               )}
@@ -100,14 +100,14 @@ export function FleetSlider() {
               disabled={!scrollState.canScrollLeft}
               onClick={() => scroll("left")}
             >
-              <ChevronLeft className="size-5" />
+              <ChevronLeft className="size-5 md:size-6" />
             </Button>
             <Button
               type="button"
               variant="ghost"
               size="icon"
               className={cn(
-                "size-10 rounded-full text-foreground hover:bg-primary/10 hover:text-primary transition-colors",
+                "size-10 rounded-full text-foreground transition-colors hover:bg-primary/10 hover:text-primary md:size-12",
                 !scrollState.canScrollRight &&
                   "cursor-not-allowed opacity-50 hover:bg-transparent hover:text-foreground",
               )}
@@ -116,7 +116,7 @@ export function FleetSlider() {
               disabled={!scrollState.canScrollRight}
               onClick={() => scroll("right")}
             >
-              <ChevronRight className="size-5" />
+              <ChevronRight className="size-5 md:size-6" />
             </Button>
           </div>
         </header>

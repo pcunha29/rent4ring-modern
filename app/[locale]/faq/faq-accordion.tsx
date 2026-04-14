@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   Accordion,
@@ -13,11 +14,21 @@ const FAQ_ITEM_COUNT = 10;
 
 export function FaqAccordion() {
   const t = useTranslations("faq");
+  const [openInsuranceFromHash, setOpenInsuranceFromHash] = useState(false);
+
+  useEffect(() => {
+    setOpenInsuranceFromHash(
+      typeof window !== "undefined" &&
+        window.location.hash === "#insurance-faq",
+    );
+  }, []);
 
   return (
     <Accordion
+      key={openInsuranceFromHash ? "insurance-faq-open" : "insurance-faq-default"}
       type="single"
       collapsible
+      defaultValue={openInsuranceFromHash ? "item-3" : undefined}
       className="w-full"
       onValueChange={(value) => {
         if (!value) return;
@@ -29,7 +40,12 @@ export function FaqAccordion() {
       }}
     >
       {Array.from({ length: FAQ_ITEM_COUNT }, (_, i) => i + 1).map((num) => (
-        <AccordionItem key={num} value={`item-${num}`}>
+        <AccordionItem
+          key={num}
+          value={`item-${num}`}
+          id={num === 3 ? "insurance-faq" : undefined}
+          className={num === 3 ? "scroll-mt-28" : undefined}
+        >
           <AccordionTrigger className="text-left">
             {t(`item${num}.question`)}
           </AccordionTrigger>

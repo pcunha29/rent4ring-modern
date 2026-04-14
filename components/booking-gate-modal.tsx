@@ -18,6 +18,7 @@ import {
   trackBookingGateOpened,
   trackBookingGateCompleted,
 } from "@/lib/amplitude";
+import { Link } from "@/i18n/navigation";
 
 const HIDE_AT_PX = 4;
 const SHOW_AGAIN_AT_PX = 28;
@@ -224,12 +225,28 @@ export function BookingGateModal({
                 className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-border p-2.5 transition-colors hover:bg-muted/50 sm:gap-3 sm:p-3"
               >
                 <Checkbox
+                  id={key === "check4" ? "booking-gate-check4" : undefined}
                   checked={!!checked[key]}
                   onCheckedChange={() => toggle(key)}
                   className="mt-0.5"
                 />
                 <span className="text-xs leading-relaxed text-foreground sm:text-sm">
-                  {t(key)}
+                  {key === "check4"
+                    ? t.rich("check4", {
+                        faqLink: (chunks) => (
+                          <Link
+                            href="/faq#insurance-faq"
+                            className="font-medium text-secondary underline underline-offset-2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpen(false);
+                            }}
+                          >
+                            {chunks}
+                          </Link>
+                        ),
+                      })
+                    : t(key)}
                 </span>
               </label>
             ))}
