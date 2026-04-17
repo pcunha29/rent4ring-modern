@@ -21,10 +21,9 @@ import { trackLanguageSwitched } from "@/lib/amplitude";
 
 const navLinks = [
   { key: "fleet" as const, href: "/#fleet" },
-  // { key: "trackdays" as const, href: "/" },
+  { key: "calendar" as const, href: "/calendar" },
   { key: "aboutUs" as const, href: "/#why-rent4ring" },
   { key: "faq" as const, href: "/faq" },
-  // { key: "giftVouchers" as const, href: "/" },
 ] as const;
 
 export function Navbar() {
