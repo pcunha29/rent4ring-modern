@@ -51,7 +51,18 @@ export function FaqAccordion() {
           </AccordionTrigger>
           <AccordionContent>
             <p className="whitespace-pre-line text-muted-foreground">
-              {t(`item${num}.answer`)}
+              {t.rich(`item${num}.answer`, {
+                link: (chunks) => (
+                  <a
+                    href="https://nuerburgring.de/open-hours#event-inline-12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    {chunks}
+                  </a>
+                ),
+              })}
             </p>
           </AccordionContent>
         </AccordionItem>
